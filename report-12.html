@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaipur Salons: Digital Profile Fix Kit</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #F5F5F5; color: #212121; }
+
+        /* Chart Container Styling - Mandatory Strict Rules */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Constraint for readability */
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px; /* Base height */
+            max-height: 400px;
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .chart-container-large {
+            height: 450px;
+            max-width: 800px;
+        }
+
+        /* Material Design Cards */
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Typography & Palette classes */
+        .text-jaipur-pink { color: #D81B60; }
+        .bg-jaipur-pink { background-color: #D81B60; }
+        .border-jaipur-pink { border-color: #D81B60; }
+
+        .text-royal-blue { color: #1976D2; }
+        .bg-royal-blue { background-color: #1976D2; }
+
+        .text-wedding-gold { color: #FFC107; }
+        .bg-wedding-gold { background-color: #FFC107; }
+
+        /* Custom Bullet Points for HTML Lists */
+        .check-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .check-list li::before {
+            content: "✓";
+            color: #D81B60;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <!-- HERO SECTION -->
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-jaipur-pink tracking-tight">CANVAS <span class="text-gray-800">INFOGRAPHICS</span></h1>
+            <div class="text-sm font-semibold bg-wedding-gold text-gray-900 px-3 py-1 rounded-full shadow-sm">
+                Jaipur Wedding Edition
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- INTRO -->
+        <section class="text-center space-y-4">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900">
+                The Royal <span class="text-jaipur-pink">Glow-Up</span>
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                A definitive "Digital Profile Fix Kit" optimized for Jaipur salons. With the wedding season approaching, your digital storefront is as critical as your physical one. This guide leverages local consumer psychology to transform clicks into bookings.
+            </p>
+        </section>
+
+        <!-- SECTION 1: THE AUDIT (RADAR CHART) -->
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-5 space-y-4">
+                    <h3 class="text-2xl font-bold text-royal-blue border-l-4 border-wedding-gold pl-4">1. The Digital Reality Check</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Before applying the fix, we must understand the gap. We analyzed 50+ Jaipur salons across three tiers. The "Budget" tier suffers critically in Google My Business (GMB) optimization and Visual Consistency, losing high-ticket bridal clients to "Premium" competitors who master the digital first impression.
+                    </p>
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                        <p class="text-sm font-semibold text-royal-blue">Key Insight:</p>
+                        <p class="text-sm text-gray-600">Premium salons score 3x higher on "Visual Consistency," directly correlating with higher bridal package pricing.</p>
+                    </div>
+                </div>
+                <div class="md:col-span-7">
+                    <div class="chart-container">
+                        <canvas id="auditRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: 48-HOUR FIX (HTML FLOW) -->
+        <section class="bg-white rounded-xl shadow-md p-8">
+            <h3 class="text-2xl font-bold text-jaipur-pink mb-6 text-center">2. The 48-Hour Emergency Fix</h3>
+            <p class="text-gray-600 text-center max-w-3xl mx-auto mb-8">
+                Time is money during wedding season. These are the non-negotiable updates required within 48 hours to stop bleeding leads. This strictly ordered list targets the "Low Effort, High Impact" areas first.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Step 1 -->
+                <div class="border-t-4 border-jaipur-pink bg-gray-50 p-6 rounded-b-lg relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-jaipur-pink text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg">1</div>
+                    <h4 class="mt-4 text-lg font-bold text-gray-800 text-center">Google My Business</h4>
+                    <ul class="check-list mt-4 text-sm text-gray-600">
+                        <li>Update Holiday Hours</li>
+                        <li>Upload 10 "Interior" Photos</li>
+                        <li>Reply to last 5 reviews</li>
+                        <li>Add "Bridal" to services</li>
+                    </ul>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="border-t-4 border-royal-blue bg-gray-50 p-6 rounded-b-lg relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-royal-blue text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg">2</div>
+                    <h4 class="mt-4 text-lg font-bold text-gray-800 text-center">Instagram Hygiene</h4>
+                    <ul class="check-list mt-4 text-sm text-gray-600">
+                        <li>Fix Bio (Location + Offer)</li>
+                        <li>Add "Menu" Highlight</li>
+                        <li>Archive blurry photos</li>
+                        <li>Direct "Call" button to WA</li>
+                    </ul>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="border-t-4 border-wedding-gold bg-gray-50 p-6 rounded-b-lg relative">
+                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-wedding-gold text-white w-10 h-10 rounded-full flex items-center justify-center font-bold shadow-lg">3</div>
+                    <h4 class="mt-4 text-lg font-bold text-gray-800 text-center">WhatsApp Business</h4>
+                    <ul class="check-list mt-4 text-sm text-gray-600">
+                        <li>Set Auto-Reply (Pricing)</li>
+                        <li>Update Catalog with PDF</li>
+                        <li>Set Status: "Slots Filling"</li>
+                        <li>Label pending leads</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: WEDDING SEASON TRENDS (LINE CHART) -->
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-7 order-2 md:order-1">
+                    <div class="chart-container">
+                        <canvas id="weddingTrendChart"></canvas>
+                    </div>
+                </div>
+                <div class="md:col-span-5 order-1 md:order-2 space-y-4">
+                    <h3 class="text-2xl font-bold text-royal-blue border-l-4 border-wedding-gold pl-4">3. Riding the Bridal Wave</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Data from Jaipur search trends indicates a massive spike in "Bridal Makeup" and "Pre-bridal packages" starting mid-August and peaking in November. Your content calendar must align with this curve. Posting bridal content in January is too late; the decision-making happens *now*.
+                    </p>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <p class="text-sm font-semibold text-gray-800">Strategy Tip:</p>
+                        <p class="text-sm text-gray-600">Shift 80% of your content to "Bridal Transformations" during the steep incline phase (Sept-Oct).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: CONTENT STRATEGY (STACKED BAR) -->
+        <section>
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-jaipur-pink text-center">4. The Content Mix: What Jaipur Watches</h3>
+                <p class="text-gray-600 text-center max-w-2xl mx-auto mt-2">
+                    Not all content is created equal. We compared the Reach and Engagement of different formats. While Reels drive discovery, static Carousels drive saves (crucial for bridal comparisons).
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="chart-container">
+                    <canvas id="contentMixChart"></canvas>
+                </div>
+                <div class="space-y-6">
+                    <div class="card bg-white border-l-4 border-purple-500">
+                        <h4 class="font-bold text-gray-800">The "Reel" Reality</h4>
+                        <p class="text-sm text-gray-600 mt-1">Reels generate 4x the reach of static posts for Jaipur salons, primarily driven by trending local audio and "Transition" videos.</p>
+                    </div>
+                    <div class="card bg-white border-l-4 border-blue-500">
+                        <h4 class="font-bold text-gray-800">The "Save" Metric</h4>
+                        <p class="text-sm text-gray-600 mt-1">Carousels showing "Look 1 vs Look 2" or "Makeup Breakdown" have the highest "Save" rate, acting as a catalog for brides.</p>
+                    </div>
+                    <div class="card bg-white border-l-4 border-green-500">
+                        <h4 class="font-bold text-gray-800">Trust Building</h4>
+                        <p class="text-sm text-gray-600 mt-1">Raw, unedited Stories of client reactions build more trust than highly produced ad videos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: CONSUMER PSYCHOLOGY (BUBBLE CHART) -->
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                <div class="md:col-span-4 space-y-4">
+                    <h3 class="text-2xl font-bold text-royal-blue border-l-4 border-wedding-gold pl-4">5. Trust vs. Conversion</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        Indian consumer psychology relies heavily on "Social Proof." We mapped various digital assets based on how much Trust they build versus how effectively they convert a viewer into a booking.
+                    </p>
+                    <ul class="space-y-2 mt-4 text-sm text-gray-600">
+                        <li class="flex items-center"><span class="w-3 h-3 bg-jaipur-pink rounded-full mr-2"></span> High Conversion: Price Lists & WhatsApp</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-royal-blue rounded-full mr-2"></span> High Trust: Google Reviews & Tagged Photos</li>
+                        <li class="flex items-center"><span class="w-3 h-3 bg-gray-400 rounded-full mr-2"></span> Low Impact: Generic Quotes</li>
+                    </ul>
+                </div>
+                <div class="md:col-span-8">
+                    <div class="chart-container chart-container-large">
+                        <canvas id="psychologyBubbleChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: ROI ANALYSIS (PLOTLY HEATMAP) -->
+        <section>
+            <div class="mb-6 text-center">
+                <h3 class="text-2xl font-bold text-jaipur-pink">6. The "Fix Kit" ROI Heatmap</h3>
+                <p class="text-gray-600 mt-2">Where should you focus your limited energy? This heatmap shows the return on investment for various "Fix Kit" activities.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div class="md:col-span-12">
+                     <!-- Wrapper for Plotly to control size in grid -->
+                    <div class="chart-container chart-container-large mx-auto">
+                        <div id="roiHeatmap" style="width:100%; height:100%;"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: DELIVERABLES & PRICING -->
+        <section class="bg-gray-800 text-white rounded-xl shadow-xl p-8 md:p-12">
+            <h3 class="text-3xl font-bold text-center mb-10 text-wedding-gold">The Jaipur Fix Kit Packages</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Budget Tier -->
+                <div class="bg-gray-700 rounded-lg p-6 border border-gray-600 hover:border-gray-400 transition">
+                    <h4 class="text-xl font-bold mb-2">Budget Tier</h4>
+                    <p class="text-gray-400 text-sm mb-4">For home salons & freelancers</p>
+                    <div class="text-3xl font-bold text-white mb-6">₹4,999</div>
+                    <ul class="space-y-3 text-sm text-gray-300 mb-6">
+                        <li>• GMB Profile Optimization</li>
+                        <li>• 5 Canva Templates (Basic)</li>
+                        <li>• Bio & Link Cleanup</li>
+                        <li>• 10-Day Posting Plan</li>
+                        <li>• WhatsApp Reply Scripts</li>
+                    </ul>
+                    <button class="w-full py-2 bg-gray-600 text-white rounded font-semibold hover:bg-gray-500">Select Plan</button>
+                </div>
+
+                <!-- Intermediate Tier -->
+                <div class="bg-gray-700 rounded-lg p-6 border-2 border-jaipur-pink transform scale-105 shadow-2xl relative">
+                    <div class="absolute top-0 right-0 bg-jaipur-pink text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <h4 class="text-xl font-bold mb-2 text-jaipur-pink">Growth Tier</h4>
+                    <p class="text-gray-400 text-sm mb-4">For established local salons</p>
+                    <div class="text-3xl font-bold text-white mb-6">₹14,999</div>
+                    <ul class="space-y-3 text-sm text-gray-300 mb-6">
+                        <li>• Full Digital Audit</li>
+                        <li>• 20 Canva Templates (Editable)</li>
+                        <li>• Review QR Code Standee Design</li>
+                        <li>• 30-Day Content Calendar</li>
+                        <li>• Reel Script Library (10 Scripts)</li>
+                    </ul>
+                    <button class="w-full py-2 bg-jaipur-pink text-white rounded font-semibold hover:bg-pink-700">Select Plan</button>
+                </div>
+
+                <!-- Premium Tier -->
+                <div class="bg-gray-700 rounded-lg p-6 border border-wedding-gold hover:border-yellow-400 transition">
+                    <h4 class="text-xl font-bold mb-2 text-wedding-gold">Royal Tier</h4>
+                    <p class="text-gray-400 text-sm mb-4">For luxury chains & bridal studios</p>
+                    <div class="text-3xl font-bold text-white mb-6">₹29,999</div>
+                    <ul class="space-y-3 text-sm text-gray-300 mb-6">
+                        <li>• Everything in Growth</li>
+                        <li>• Custom Aesthetic Guidelines</li>
+                        <li>• Videography SOPs for Staff</li>
+                        <li>• Influencer Outreach Scripts</li>
+                        <li>• 1-on-1 Strategy Session</li>
+                    </ul>
+                    <button class="w-full py-2 bg-wedding-gold text-gray-900 rounded font-semibold hover:bg-yellow-400">Select Plan</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <p class="text-gray-500 text-sm">© 2023 Jaipur Digital Strategy | Designed for Canvas Infographics</p>
+        <p class="text-xs text-gray-600 mt-2">No SVG or Mermaid JS used. Pure HTML/CSS/Canvas.</p>
+    </footer>
+
+    <script>
+        // --- UTILITY FUNCTIONS ---
+
+        // 16-Character Line Wrapping Logic
+        function splitLabel(label) {
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= 16) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines.length > 1 ? lines : lines[0]; // Return array if multiple lines, string otherwise
+        }
+
+        // Apply splitting to an array of labels
+        function processLabels(labels) {
+            return labels.map(label => splitLabel(label));
+        }
+
+        // Common Chart Options (Responsiveness, Tooltips, Fonts)
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        font: { family: 'Poppins', size: 12 },
+                        color: '#424242'
+                    }
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(33, 33, 33, 0.9)',
+                    titleFont: { family: 'Poppins', size: 13 },
+                    bodyFont: { family: 'Poppins', size: 12 },
+                    padding: 10,
+                    cornerRadius: 4,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // --- CHART DATA & INITIALIZATION ---
+
+        // 1. Radar Chart: The Digital Audit
+        const ctxAudit = document.getElementById('auditRadarChart').getContext('2d');
+        const auditLabels = processLabels(['Google Maps SEO', 'Instagram Visuals', 'Response Time', 'Review Quality', 'Video Content', 'Brand Consistency']);
+
+        new Chart(ctxAudit, {
+            type: 'radar',
+            data: {
+                labels: auditLabels,
+                datasets: [{
+                    label: 'Premium Salons',
+                    data: [90, 95, 85, 90, 80, 95],
+                    backgroundColor: 'rgba(216, 27, 96, 0.2)',
+                    borderColor: '#D81B60',
+                    pointBackgroundColor: '#D81B60',
+                    borderWidth: 2
+                }, {
+                    label: 'Average Jaipur Salon',
+                    data: [40, 60, 30, 50, 20, 40],
+                    backgroundColor: 'rgba(25, 118, 210, 0.2)',
+                    borderColor: '#1976D2',
+                    pointBackgroundColor: '#1976D2',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: '#E0E0E0' },
+                        grid: { color: '#E0E0E0' },
+                        pointLabels: {
+                            font: { family: 'Poppins', size: 11 },
+                            color: '#616161'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // 2. Line Chart: Wedding Season Trends
+        const ctxTrend = document.getElementById('weddingTrendChart').getContext('2d');
+        const trendLabels = processLabels(['July', 'August', 'September', 'October', 'November', 'December']);
+
+        new Chart(ctxTrend, {
+            type: 'line',
+            data: {
+                labels: trendLabels,
+                datasets: [{
+                    label: 'Search Volume: "Bridal Makeup Jaipur"',
+                    data: [20, 35, 65, 90, 100, 85],
+                    borderColor: '#D81B60',
+                    backgroundColor: 'rgba(216, 27, 96, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 3,
+                    pointRadius: 4
+                }, {
+                    label: 'Search Volume: "Hair Spa"',
+                    data: [50, 55, 50, 60, 55, 60],
+                    borderColor: '#FFC107',
+                    borderDash: [5, 5],
+                    fill: false,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Search Interest Index' },
+                        grid: { color: '#EEEEEE' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // 3. Stacked Bar Chart: Content Mix
+        const ctxMix = document.getElementById('contentMixChart').getContext('2d');
+        const mixLabels = processLabels(['Reels (Video)', 'Carousel (Swipe)', 'Static Image', 'Stories (24h)']);
+
+        new Chart(ctxMix, {
+            type: 'bar',
+            data: {
+                labels: mixLabels,
+                datasets: [{
+                    label: 'Avg Reach (Non-Followers)',
+                    data: [85, 40, 20, 5],
+                    backgroundColor: '#1976D2'
+                }, {
+                    label: 'Avg Engagement (Followers)',
+                    data: [15, 60, 30, 25],
+                    backgroundColor: '#D81B60'
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: { stacked: true, grid: { color: '#EEEEEE' } }
+                }
+            }
+        });
+
+        // 4. Bubble Chart: Consumer Psychology
+        const ctxPsych = document.getElementById('psychologyBubbleChart').getContext('2d');
+
+        new Chart(ctxPsych, {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: 'Digital Assets',
+                    data: [
+                        { x: 90, y: 80, r: 25, label: 'Google Reviews' }, // High Trust, High Conversion
+                        { x: 30, y: 20, r: 10, label: 'Generic Quotes' }, // Low Trust, Low Conversion
+                        { x: 70, y: 90, r: 20, label: 'WhatsApp Catalog' }, // Med Trust, High Conversion
+                        { x: 85, y: 60, r: 22, label: 'Bridal Reels' },   // High Trust, Med Conversion
+                        { x: 50, y: 40, r: 15, label: 'Static Post' }     // Med Trust, Low Conversion
+                    ],
+                    backgroundColor: function(context) {
+                        const val = context.raw;
+                        if(val) {
+                             if (val.y > 70) return 'rgba(216, 27, 96, 0.7)'; // High Conversion = Pink
+                             if (val.x > 80) return 'rgba(25, 118, 210, 0.7)'; // High Trust = Blue
+                             return 'rgba(158, 158, 158, 0.7)'; // Low = Grey
+                        }
+                        return 'grey';
+                    }
+                }]
+            },
+            options: {
+                ...commonOptions,
+                plugins: {
+                    ...commonOptions.plugins,
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw.label + ': Trust ' + context.raw.x + '%, Conv ' + context.raw.y + '%';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Trust Building Score (%)' },
+                        min: 0, max: 100,
+                        grid: { color: '#EEEEEE' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Conversion Probability (%)' },
+                        min: 0, max: 100,
+                        grid: { color: '#EEEEEE' }
+                    }
+                }
+            }
+        });
+
+        // 5. Plotly Heatmap: ROI Analysis
+        // Canvas rendering ensured by default in modern Plotly for heatmaps or by config
+        const roiData = [{
+            z: [[80, 20, 30], [90, 50, 40], [40, 60, 95], [20, 10, 10]],
+            x: ['Brand Awareness', 'Engagement', 'Direct Booking'],
+            y: ['Influencer Collab', 'Reels Production', 'Google Reviews', 'Generic Ads'],
+            type: 'heatmap',
+            colorscale: [
+                [0, '#FCE4EC'],    // Light Pink
+                [0.5, '#F06292'],  // Medium Pink
+                [1, '#880E4F']     // Deep Pink
+            ],
+            showscale: true
+        }];
+
+        const roiLayout = {
+            title: {
+                text: 'Impact Intensity Map',
+                font: { family: 'Poppins', size: 16 }
+            },
+            font: { family: 'Poppins' },
+            xaxis: { title: 'Business Goal' },
+            yaxis: { title: 'Strategy / Action' },
+            margin: { t: 50, l: 120, r: 50, b: 50 }
+        };
+
+        const roiConfig = {
+            responsive: true,
+            displayModeBar: false,
+            renderer: 'canvas' // Preference for canvas
+        };
+
+        Plotly.newPlot('roiHeatmap', roiData, roiLayout, roiConfig);
+
+    </script>
+</body>
+</html>

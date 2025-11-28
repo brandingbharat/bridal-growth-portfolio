@@ -1,0 +1,607 @@
+<!--
+    Palette Name: Royal Rajasthan Vibrant
+    Colors:
+    - Primary: #1e3a8a (Deep Royal Blue) - Represents Trust & Royalty
+    - Secondary: #db2777 (Vibrant Rani Pink) - Represents Festivity & Weddings
+    - Accent: #f59e0b (Marigold Gold) - Represents Prosperity & Decor
+    - Background: #fffbeb (Warm Cream) - Canvas for readability
+
+    Narrative Structure:
+    1. Hero: $20B Market Opportunity.
+    2. Macro View: Growth trends & Tier 2 explosion.
+    3. Consumer Profile: The 3 Bride Segments (Budget, Aspirational, Luxury).
+    4. Economics: The "Sider" Economy & Margin Analysis.
+    5. Cultural & Digital: Look Archetypes & Discovery Funnel.
+    6. Strategy Matrix: Volume vs. Margin.
+    7. Playbook: Actionable steps for 2025.
+
+    Visualizations:
+    1. Market Growth (Chart.js Line) - Change over time.
+    2. Price Bands (Chart.js Floating Horizontal Bar) - Comparison of segments.
+    3. Sider Revenue (Chart.js Stacked Bar) - Composition of revenue.
+    4. Service Matrix (Chart.js Bubble) - Relationship between Volume, Margin, and Ticket Size.
+    5. Process Flow (HTML/CSS) - Digital Journey.
+
+    Constraint Confirmation:
+    - NO SVG graphics used.
+    - NO Mermaid JS used.
+    - Chart.js labels wrapped (>16 chars).
+    - Chart.js tooltips configured for multiline.
+    - Chart containers styled with max-width/height/centering.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rajasthan Bridal & Salon Market Intelligence 2024-25</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #fffbeb;
+            color: #1f2937;
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            height: 350px;
+            margin: 0 auto;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-blue-900 via-pink-700 to-amber-600 text-white py-16 px-4 shadow-xl">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div>
+                <span class="inline-block bg-yellow-400 text-blue-900 font-bold text-xs px-3 py-1 rounded-full uppercase tracking-wider mb-4">Market Intelligence Report 2024-25</span>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">
+                    The $20 Billion<br>
+                    <span class="text-yellow-400">Bridal Opportunity</span>
+                </h1>
+                <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-lg">
+                    A strategic deep-dive for Salon Owners in Rajasthan. Unlocking growth in Tier 2 hubs like Udaipur & Kota through data-driven insights.
+                </p>
+                <div class="grid grid-cols-3 gap-4 text-center md:text-left">
+                    <div>
+                        <p class="text-3xl font-bold text-yellow-400">15%</p>
+                        <p class="text-xs uppercase opacity-80">Annual Growth (CAGR)</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-yellow-400">60%</p>
+                        <p class="text-xs uppercase opacity-80">Profit from Weddings</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-bold text-yellow-400">70%</p>
+                        <p class="text-xs uppercase opacity-80">Unorganized Market</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hidden md:block">
+                <!-- Abstract visual representation using HTML/CSS shapes -->
+                <div class="grid grid-cols-2 gap-4 opacity-90">
+                    <div class="bg-white/20 p-6 rounded-lg backdrop-blur-sm border-l-4 border-yellow-400 h-32 flex flex-col justify-end">
+                        <span class="text-2xl">👑</span>
+                        <span class="font-bold mt-2">Luxury Segment</span>
+                    </div>
+                    <div class="bg-white/20 p-6 rounded-lg backdrop-blur-sm border-l-4 border-pink-400 h-32 flex flex-col justify-end mt-8">
+                        <span class="text-2xl">💄</span>
+                        <span class="font-bold mt-2">Bridal Tech</span>
+                    </div>
+                    <div class="bg-white/20 p-6 rounded-lg backdrop-blur-sm border-l-4 border-blue-400 h-32 flex flex-col justify-end">
+                        <span class="text-2xl">🏙️</span>
+                        <span class="font-bold mt-2">Tier 2 Growth</span>
+                    </div>
+                    <div class="bg-white/20 p-6 rounded-lg backdrop-blur-sm border-l-4 border-green-400 h-32 flex flex-col justify-end mt-8">
+                        <span class="text-2xl">📱</span>
+                        <span class="font-bold mt-2">Digital First</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 py-12 space-y-16">
+
+        <!-- SECTION 1: MACRO OVERVIEW -->
+        <section>
+            <div class="mb-8 border-b-2 border-pink-200 pb-4">
+                <h2 class="text-3xl font-bold text-blue-900">1. The Macro Landscape</h2>
+                <p class="text-gray-600 mt-2 text-lg">
+                    The Indian beauty market is resilient. Despite global headwinds, the "Lipstick Effect" drives continuous spending. The shift from unorganized parlors to branded studios in Rajasthan is the single biggest revenue driver.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Text Content -->
+                <div class="space-y-6">
+                    <div class="glass-card p-6 rounded-xl shadow-lg border-l-8 border-blue-800">
+                        <h3 class="text-xl font-bold text-blue-900 mb-2">🚀 The Tier 2 Explosion</h3>
+                        <p class="text-gray-700">
+                            Cities like <strong>Jaipur, Jodhpur, and Kota</strong> are witnessing 18%+ CAGR. Rising disposable income means a bride in Bhilwara now demands the same premium "Instagram Look" as a bride in South Delhi.
+                        </p>
+                    </div>
+                    <div class="glass-card p-6 rounded-xl shadow-lg border-l-8 border-pink-600">
+                        <h3 class="text-xl font-bold text-pink-700 mb-2">⚖️ Organized vs. Unorganized</h3>
+                        <p class="text-gray-700">
+                            <strong>65-70%</strong> of the market is unorganized (freelancers, home parlors). However, post-COVID, trust in hygiene is driving customers to Organized Salons. Professionalizing operations instantly beats local competition.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Visualization -->
+                <div class="glass-card p-4 rounded-xl shadow-md">
+                    <h4 class="text-center font-bold text-gray-700 mb-4">Market Growth Projection (USD Billions)</h4>
+                    <div class="chart-container">
+                        <canvas id="marketGrowthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CONSUMER SEGMENTS -->
+        <section>
+            <div class="mb-8 border-b-2 border-pink-200 pb-4">
+                <h2 class="text-3xl font-bold text-blue-900">2. The Three Rajasthani Brides</h2>
+                <p class="text-gray-600 mt-2 text-lg">
+                    Understanding who you serve is critical. In Rajasthan, the market splits into three distinct segments. The "Aspirational Bride" is the sweet spot for salon profitability.
+                </p>
+            </div>
+
+            <!-- Consumer Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <!-- Budget Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-gray-200 p-4 border-b border-gray-300">
+                        <div class="text-4xl mb-2">💰</div>
+                        <h3 class="font-bold text-xl text-gray-700">The Budget Bride</h3>
+                        <p class="text-sm text-gray-500">Tier 2/3 Locals, Students</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li><span class="font-bold text-blue-900">Focus:</span> Value & Combos</li>
+                            <li><span class="font-bold text-blue-900">Discovery:</span> Walk-ins, Pamphlets</li>
+                            <li><span class="font-bold text-blue-900">Trigger:</span> Price / Discount</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                            <span class="bg-gray-100 text-gray-800 text-xs font-bold px-2 py-1 rounded">Spend: ₹8k - ₹15k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aspirational Card (Hero) -->
+                <div class="bg-white rounded-lg shadow-xl overflow-hidden border-2 border-pink-500 transform scale-105 z-10">
+                    <div class="bg-pink-600 p-4 border-b border-pink-700 text-white">
+                        <div class="text-4xl mb-2">✨</div>
+                        <h3 class="font-bold text-xl">The Aspirational Bride</h3>
+                        <p class="text-sm opacity-90">The "Sweet Spot" Segment</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li><span class="font-bold text-pink-600">Focus:</span> Trends, Dewy Look</li>
+                            <li><span class="font-bold text-pink-600">Discovery:</span> Instagram, Reviews</li>
+                            <li><span class="font-bold text-pink-600">Trigger:</span> Before/After Photos</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                            <span class="bg-pink-100 text-pink-800 text-xs font-bold px-2 py-1 rounded">Spend: ₹25k - ₹60k</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luxury Card -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-amber-100 p-4 border-b border-amber-200">
+                        <div class="text-4xl mb-2">👑</div>
+                        <h3 class="font-bold text-xl text-amber-800">The Royal / HNI</h3>
+                        <p class="text-sm text-amber-600">Business Families, Destination</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li><span class="font-bold text-amber-600">Focus:</span> Exclusivity, Brands</li>
+                            <li><span class="font-bold text-amber-600">Discovery:</span> Referrals, Planners</li>
+                            <li><span class="font-bold text-amber-600">Trigger:</span> Artist Reputation</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-gray-100 text-center">
+                            <span class="bg-amber-100 text-amber-800 text-xs font-bold px-2 py-1 rounded">Spend: ₹1 Lakh+</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Band Chart -->
+            <div class="glass-card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-bold text-gray-800 mb-4 text-center">Comparative Price Bands (INR)</h3>
+                <div class="chart-container">
+                    <canvas id="priceBandChart"></canvas>
+                </div>
+                <p class="text-center text-sm text-gray-500 mt-4">Ranges reflect typical market rates in Jaipur/Udaipur for 2024.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 3: ECONOMICS OF THE SIDER -->
+        <section>
+            <div class="mb-8 border-b-2 border-pink-200 pb-4">
+                <h2 class="text-3xl font-bold text-blue-900">3. The Economics of the "Sider"</h2>
+                <p class="text-gray-600 mt-2 text-lg">
+                    While the bride is the star, the profit volume often comes from the "Siders" (Sisters, Aunts, Friends). Smart salons bundle services to capture the entire family.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Sider Chart -->
+                <div class="glass-card p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-4">Revenue Composition: One Booking</h3>
+                    <div class="chart-container">
+                        <canvas id="siderRevenueChart"></canvas>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">1 Bride @ ₹35k vs 6 Relatives @ ₹6k each.</p>
+                </div>
+
+                <!-- Strategy Matrix Chart -->
+                <div class="glass-card p-6 rounded-xl shadow-md">
+                    <h3 class="font-bold text-gray-800 mb-4">Service Strategy Matrix</h3>
+                    <div class="chart-container">
+                        <canvas id="strategyMatrixChart"></canvas>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">Size of bubble = Average Ticket Size. <br>High Margin + Low Vol = Bridal. Low Margin + High Vol = Waxing.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: DIGITAL & OPERATIONS -->
+        <section>
+             <div class="mb-8 border-b-2 border-pink-200 pb-4">
+                <h2 class="text-3xl font-bold text-blue-900">4. Digital Discovery & Operations</h2>
+                <p class="text-gray-600 mt-2 text-lg">
+                    The journey has shifted from "Auntie's Word" to "Digital Verification." Operations must then deliver on the digital promise.
+                </p>
+            </div>
+
+            <!-- Process Flow (HTML/CSS) -->
+            <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+                <h3 class="text-xl font-bold text-center text-blue-900 mb-8">The Modern Bridal Booking Funnel</h3>
+                <div class="flex flex-col md:flex-row justify-between items-center relative">
+                    <!-- Step 1 -->
+                    <div class="w-full md:w-1/4 flex flex-col items-center text-center z-10">
+                        <div class="w-16 h-16 rounded-full bg-pink-100 flex items-center justify-center text-2xl border-2 border-pink-500 mb-4 shadow-sm">📸</div>
+                        <h4 class="font-bold text-gray-800">Discovery</h4>
+                        <p class="text-sm text-gray-500 mt-1">Instagram Reels & #JaipurMakeup</p>
+                    </div>
+                    <!-- Connector -->
+                    <div class="hidden md:block absolute top-8 left-[12%] w-[25%] h-1 bg-gray-200 -z-0"></div>
+
+                    <!-- Step 2 -->
+                    <div class="w-full md:w-1/4 flex flex-col items-center text-center z-10 mt-6 md:mt-0">
+                        <div class="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center text-2xl border-2 border-blue-500 mb-4 shadow-sm">🔍</div>
+                        <h4 class="font-bold text-gray-800">Verification</h4>
+                        <p class="text-sm text-gray-500 mt-1">Google Maps & Recent Reviews</p>
+                    </div>
+                     <!-- Connector -->
+                     <div class="hidden md:block absolute top-8 left-[37%] w-[25%] h-1 bg-gray-200 -z-0"></div>
+
+                    <!-- Step 3 -->
+                    <div class="w-full md:w-1/4 flex flex-col items-center text-center z-10 mt-6 md:mt-0">
+                        <div class="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center text-2xl border-2 border-amber-500 mb-4 shadow-sm">💬</div>
+                        <h4 class="font-bold text-gray-800">Inquiry</h4>
+                        <p class="text-sm text-gray-500 mt-1">WhatsApp & PDF Pricing</p>
+                    </div>
+                     <!-- Connector -->
+                     <div class="hidden md:block absolute top-8 left-[62%] w-[25%] h-1 bg-gray-200 -z-0"></div>
+
+                    <!-- Step 4 -->
+                    <div class="w-full md:w-1/4 flex flex-col items-center text-center z-10 mt-6 md:mt-0">
+                        <div class="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center text-2xl border-2 border-green-500 mb-4 shadow-sm">✅</div>
+                        <h4 class="font-bold text-gray-800">Booking</h4>
+                        <p class="text-sm text-gray-500 mt-1">Trial & Advance Payment</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Operational Checklist -->
+            <div class="bg-blue-900 text-white rounded-xl shadow-xl p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-yellow-400 mb-4">🚀 Future Trends 2025</h3>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <span class="text-2xl mr-3">💧</span>
+                                <div>
+                                    <strong class="block text-lg">Skin-First ("No-Filter")</strong>
+                                    <span class="text-blue-200 text-sm">Brides want "Glass Skin". Sell 3-month skin prep bootcamps.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-2xl mr-3">🧳</span>
+                                <div>
+                                    <strong class="block text-lg">Travel Squads</strong>
+                                    <span class="text-blue-200 text-sm">Mobile teams for hotel room service in Udaipur/Jaipur.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-2xl mr-3">🎥</span>
+                                <div>
+                                    <strong class="block text-lg">"Reel" Ready</strong>
+                                    <span class="text-blue-200 text-sm">Makeup must withstand 4K video. Offer BTS content creation.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-md">
+                        <h3 class="text-2xl font-bold text-white mb-4">✅ Salon Owner's Checklist</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <input type="checkbox" checked disabled class="accent-green-500 w-5 h-5 mr-3">
+                                <span>Audit Google: Upload 3 new photos/week.</span>
+                            </li>
+                            <li class="flex items-center">
+                                <input type="checkbox" checked disabled class="accent-green-500 w-5 h-5 mr-3">
+                                <span>Hygiene Theater: Open sponges in front of client.</span>
+                            </li>
+                            <li class="flex items-center">
+                                <input type="checkbox" checked disabled class="accent-green-500 w-5 h-5 mr-3">
+                                <span>Lighting: Install 4000K Neutral White bulbs.</span>
+                            </li>
+                            <li class="flex items-center">
+                                <input type="checkbox" checked disabled class="accent-green-500 w-5 h-5 mr-3">
+                                <span>Buffer: Add 45mins between brides.</span>
+                            </li>
+                            <li class="flex items-center">
+                                <input type="checkbox" checked disabled class="accent-green-500 w-5 h-5 mr-3">
+                                <span>Packages: Bundle "Bridal + 5 Siders".</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-400 py-6 text-center text-sm">
+        <p>Generated based on Market Intelligence Report: Indian Bridal & Salon Market (2024-25)</p>
+        <p class="mt-1">Sources: RedSeer, KPMG, WeddingWire India</p>
+    </footer>
+
+    <!-- Chart Logic -->
+    <script>
+        // --- Utility: Label Wrapping ---
+        function wrapLabel(label, maxChars) {
+            if (label.length <= maxChars) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= maxChars) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- Common Chart Defaults ---
+        Chart.defaults.font.family = "'Lato', sans-serif";
+        Chart.defaults.color = '#374151';
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    const label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            },
+            backgroundColor: 'rgba(30, 58, 138, 0.9)', // Blue-900
+            padding: 12,
+            titleFont: { size: 14, weight: 'bold' },
+            bodyFont: { size: 12 }
+        };
+
+        // --- 1. Market Growth Chart (Line) ---
+        new Chart(document.getElementById('marketGrowthChart'), {
+            type: 'line',
+            data: {
+                labels: ['2020', '2021', '2022', '2023', '2024 (Est)', '2025 (Proj)', '2026 (Proj)'],
+                datasets: [{
+                    label: 'Market Size ($ Billions)',
+                    data: [15, 16.2, 17.5, 18.8, 20.0, 22.5, 25.1],
+                    borderColor: '#db2777', // Pink
+                    backgroundColor: 'rgba(219, 39, 119, 0.1)',
+                    borderWidth: 3,
+                    pointBackgroundColor: '#1e3a8a',
+                    pointRadius: 5,
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: { borderDash: [5, 5] },
+                        title: { display: true, text: 'USD Billions' }
+                    },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // --- 2. Price Band Chart (Horizontal Floating Bar) ---
+        const priceLabels = ['Budget Bride', 'Aspirational Bride', 'Luxury Bride', 'Party Makeup (Siders)', 'Pre-Bridal Pkg'];
+        const wrappedPriceLabels = priceLabels.map(l => wrapLabel(l, 18));
+
+        new Chart(document.getElementById('priceBandChart'), {
+            type: 'bar',
+            data: {
+                labels: wrappedPriceLabels,
+                datasets: [{
+                    label: 'Price Range (INR)',
+                    data: [
+                        [8000, 15000],   // Budget
+                        [20000, 60000],  // Aspirational
+                        [75000, 200000], // Luxury
+                        [3000, 10000],   // Siders
+                        [15000, 30000]   // Pre-bridal
+                    ],
+                    backgroundColor: [
+                        '#9ca3af', // Gray
+                        '#db2777', // Pink (Hero)
+                        '#f59e0b', // Amber (Lux)
+                        '#60a5fa', // Blue
+                        '#a78bfa'  // Purple
+                    ],
+                    borderRadius: 6,
+                    barPercentage: 0.6
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        ...tooltipConfig,
+                        callbacks: {
+                            ...tooltipConfig.callbacks,
+                            label: function(context) {
+                                const raw = context.raw;
+                                return `₹${raw[0].toLocaleString()} - ₹${raw[1].toLocaleString()}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        grid: { borderDash: [5, 5] },
+                        title: { display: true, text: 'Price (INR)' }
+                    },
+                    y: { grid: { display: false } }
+                }
+            }
+        });
+
+        // --- 3. Sider Revenue Chart (Stacked Bar) ---
+        new Chart(document.getElementById('siderRevenueChart'), {
+            type: 'bar',
+            data: {
+                labels: [wrapLabel('Total Booking Value', 20)],
+                datasets: [
+                    {
+                        label: 'Bridal Package',
+                        data: [35000],
+                        backgroundColor: '#db2777'
+                    },
+                    {
+                        label: 'Sider Revenue (6 Pax)',
+                        data: [36000],
+                        backgroundColor: '#f59e0b'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: tooltipConfig
+                },
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: {
+                        stacked: true,
+                        grid: { borderDash: [5, 5] },
+                        title: { display: true, text: 'Revenue (INR)' }
+                    }
+                }
+            }
+        });
+
+        // --- 4. Strategy Matrix (Bubble Chart) ---
+        new Chart(document.getElementById('strategyMatrixChart'), {
+            type: 'bubble',
+            data: {
+                datasets: [
+                    {
+                        label: 'Bridal Makeup',
+                        data: [{ x: 10, y: 80, r: 25 }],
+                        backgroundColor: '#db2777'
+                    },
+                    {
+                        label: 'Facials',
+                        data: [{ x: 50, y: 50, r: 15 }],
+                        backgroundColor: '#1e3a8a'
+                    },
+                    {
+                        label: 'Waxing',
+                        data: [{ x: 90, y: 30, r: 10 }],
+                        backgroundColor: '#f59e0b'
+                    },
+                    {
+                        label: 'Party Makeup',
+                        data: [{ x: 30, y: 65, r: 12 }],
+                        backgroundColor: '#9ca3af'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: {
+                        ...tooltipConfig,
+                        callbacks: {
+                            title: function(context) { return context[0].dataset.label; },
+                            label: function(context) {
+                                return `Vol: ${context.raw.x}%, Margin: ${context.raw.y}%`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Client Volume (Frequency)' },
+                        min: 0, max: 100,
+                        grid: { borderDash: [5, 5] }
+                    },
+                    y: {
+                        title: { display: true, text: 'Profit Margin %' },
+                        min: 0, max: 100,
+                        grid: { borderDash: [5, 5] }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

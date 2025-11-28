@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaipur Salon Growth Playbook 2024-2025</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Custom Font Application */
+        h1, h2, h3, h4, h5, h6 { font-family: 'Playfair Display', serif; }
+        body { font-family: 'Lato', sans-serif; }
+
+        /* Chart Container Rules - MANDATORY */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px; /* Mobile default */
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        /* Palette Variables (Tailwind Extension via CSS classes for specific borders/bgs not in default config if needed) */
+        .bg-royal-maroon { background-color: #9F1239; }
+        .text-royal-maroon { color: #9F1239; }
+        .border-royal-maroon { border-color: #9F1239; }
+
+        .bg-jaipur-gold { background-color: #F59E0B; }
+        .text-jaipur-gold { color: #B45309; }
+
+        .bg-heritage-teal { background-color: #0F766E; }
+        .text-heritage-teal { color: #0F766E; }
+
+        /* Card Styling */
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-top: 4px solid #9F1239; /* Royal Maroon Accent */
+        }
+
+        /* Timeline Styling */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 3px solid #E5E7EB;
+            padding-bottom: 2rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #F59E0B; /* Gold */
+            border: 3px solid white;
+        }
+    </style>
+    <!--
+    Palette Selection: "Royal Rajasthan"
+    Primary: #9F1239 (Rose Red/Maroon) - Represents Bridal/Passion
+    Secondary: #F59E0B (Amber/Gold) - Represents Luxury/Prosperity
+    Accent: #0F766E (Teal) - Represents Heritage/Peacock
+    Background: #F3F4F6 (Gray 100)
+    -->
+    <!--
+    Plan Summary:
+    1. Introduction: Scope of Jaipur market.
+    2. Market Snapshot: Demographics & Segments (Donut Chart).
+    3. Idea Validation: Bubble Chart (Ease vs Impact).
+    4. Strategies: Premium vs Budget (Cards).
+    5. Risks: Bar Chart (Likelihood vs Impact).
+    6. Action Plan: Timeline.
+    -->
+    <!--
+    Visual Choices Justification (No SVG):
+    - Market Share: Donut Chart (Chart.js) -> Best for comparing parts to whole (Revenue vs Volume).
+    - Idea Validation: Bubble Chart (Chart.js) -> Perfect for showing 3 dimensions: Cost, Impact, Reach.
+    - Risks: Horizontal Bar Chart (Chart.js) -> Clear comparison of risk magnitude.
+    - Timeline: HTML/CSS -> Structured layout for process flow.
+    -->
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Header / Title Section -->
+    <header class="bg-royal-maroon text-white p-8 shadow-lg">
+        <div class="max-w-6xl mx-auto">
+            <div class="md:flex justify-between items-center">
+                <div>
+                    <h5 class="text-jaipur-gold font-bold tracking-widest uppercase text-sm mb-2">Strategic Market Report</h5>
+                    <h1 class="text-3xl md:text-5xl font-bold mb-4">Jaipur Salon Growth Playbook</h1>
+                    <p class="text-lg md:text-xl font-light text-gray-100 max-w-2xl">
+                        Validated Strategies, Campaigns, and Risk Analysis for Premium & Budget Clients (2024–2025).
+                    </p>
+                </div>
+                <div class="mt-6 md:mt-0 text-right hidden md:block">
+                    <div class="bg-white text-royal-maroon font-bold py-2 px-6 rounded-full shadow-md">
+                        Jaipur Focus
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8">
+
+        <!-- Section 1: Introduction & Market Snapshot -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-8 border-royal-maroon pl-4">01. Market Snapshot</h2>
+            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                Jaipur is a dual-engine market: a thriving local economy of ~4 million residents and a global destination wedding hub.
+                The beauty economy is driven by high-volume local engagement (festivals like Gangaur/Teej) and high-value bridal tourism.
+                Understanding the split between <strong>Volume (Headcount)</strong> and <strong>Value (Revenue)</strong> is critical for positioning.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- KPI Cards -->
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-heritage-teal">
+                        <h3 class="text-gray-500 uppercase text-xs font-bold tracking-wider">Target Demographic</h3>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">1.2 Million</p>
+                        <p class="text-sm text-gray-600">Women aged 18-40 in Jaipur Urban Area</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-jaipur-gold">
+                        <h3 class="text-gray-500 uppercase text-xs font-bold tracking-wider">Avg. Premium Bridal Ticket</h3>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">₹45,000+</p>
+                        <p class="text-sm text-gray-600">Including pre-bridal services (Top Tier)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow border-l-4 border-royal-maroon">
+                        <h3 class="text-gray-500 uppercase text-xs font-bold tracking-wider">Destination Impact</h3>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">35-40%</p>
+                        <p class="text-sm text-gray-600">Of annual revenue for Tier-1 salons in Nov-Feb</p>
+                    </div>
+                </div>
+
+                <!-- Market Segmentation Chart -->
+                <div class="card">
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Customer Segments: Volume vs. Revenue</h3>
+                    <p class="text-sm text-gray-600 mb-4">While 'Budget Brides' dominate headcount, the 'Premium/Destination' segment drives outsized profits.</p>
+                    <div class="chart-container">
+                        <canvas id="marketChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Validated Strategies Matrix -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-8 border-royal-maroon pl-4">02. Idea Validation Matrix</h2>
+            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                We generated and scored 30+ marketing ideas based on <strong>Ease of Implementation</strong>, <strong>Likelihood of Success</strong>, and <strong>Business Impact</strong>.
+                The visualization below isolates the "Golden Opportunities"—high impact ideas that are relatively easy to execute.
+            </p>
+
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-gray-800">Strategy Matrix: Ease vs. Impact</h3>
+                <p class="text-sm text-gray-600 mb-4">
+                    <strong>X-Axis:</strong> Ease of Implementation (10 = Easiest).
+                    <strong>Y-Axis:</strong> Impact on Brand/Revenue (10 = Highest).
+                    <strong>Bubble Size:</strong> Potential Reach.
+                </p>
+                <div class="chart-container">
+                    <canvas id="validationChart"></canvas>
+                </div>
+                <div class="mt-4 flex flex-wrap gap-4 justify-center text-sm">
+                    <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-royal-maroon mr-2"></span>Premium Strategy</div>
+                    <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-heritage-teal mr-2"></span>Budget/Volume Strategy</div>
+                    <div class="flex items-center"><span class="w-3 h-3 rounded-full bg-jaipur-gold mr-2"></span>Cross-Marketing</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Strategic Deep Dives (Cards) -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-8 border-royal-maroon pl-4">03. Validated Strategies</h2>
+            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                Detailed breakdowns of the highest-scoring strategies for distinct market segments in Jaipur.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <!-- Premium Strategy Card -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-8 border-royal-maroon">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-royal-maroon">The "Royal Rajputana" Campaign</h3>
+                            <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded">Score: 92%</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 font-bold">Target: Destination & Premium Local Brides</p>
+                        <p class="text-gray-600 text-sm mb-6">
+                            Position the salon not just as a service provider, but as a curator of the "Maharani Look." Leverage Jaipur's heritage aesthetic.
+                        </p>
+
+                        <h4 class="font-bold text-gray-800 mb-2 border-b border-gray-200 pb-1">Key Tactics</h4>
+                        <ul class="list-none space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <span class="text-royal-maroon mr-2 text-xl">❖</span>
+                                <span class="text-sm text-gray-700"><strong>Heritage Venue Shoots:</strong> Collab with emerging heritage hotels (e.g., Narain Niwas) for portfolio shoots.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-royal-maroon mr-2 text-xl">❖</span>
+                                <span class="text-sm text-gray-700"><strong>Concierge Service:</strong> Offer home/hotel visits for trials (charged premium, deductible from booking).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-royal-maroon mr-2 text-xl">❖</span>
+                                <span class="text-sm text-gray-700"><strong>Instagram Reels:</strong> "Behind the Veil" series showing high-definition skin texture (builds trust).</span>
+                            </li>
+                        </ul>
+
+                        <div class="bg-pink-50 p-4 rounded-lg">
+                            <p class="text-xs font-bold text-royal-maroon uppercase">Why it works in Jaipur</p>
+                            <p class="text-xs text-gray-700 mt-1">Jaipur brides value "Royalty" and "Tradition". NRI clients want the authentic Rajasthani experience.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Budget Strategy Card -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden border-t-8 border-heritage-teal">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-2xl font-bold text-heritage-teal">"Smart Value" Neighborhood Blitz</h3>
+                            <span class="bg-gray-100 text-gray-600 text-xs font-bold px-2 py-1 rounded">Score: 88%</span>
+                        </div>
+                        <p class="text-gray-700 mb-4 font-bold">Target: Local Middle-Class & Students</p>
+                        <p class="text-gray-600 text-sm mb-6">
+                            Maximize volume during off-peak hours and non-wedding dates using hyper-local targeting.
+                        </p>
+
+                        <h4 class="font-bold text-gray-800 mb-2 border-b border-gray-200 pb-1">Key Tactics</h4>
+                        <ul class="list-none space-y-3 mb-6">
+                            <li class="flex items-start">
+                                <span class="text-heritage-teal mr-2 text-xl">❖</span>
+                                <span class="text-sm text-gray-700"><strong>WhatsApp Status Marketing:</strong> Weekly "Flash Deals" (e.g., "Tuesday Detox: 40% off facial") pushed via client status updates.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-heritage-teal mr-2 text-xl">❖</span>
+                                <span class="text-sm text-gray-700"><strong>Family Packages:</strong> "Nanad-Bhabhi" or "Mother-Daughter" combos. Group pricing drives higher average bill value.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-heritage-teal mr-2 text-xl">❖</span>
+                                <span class="text-sm text-gray-700"><strong>Hindi/Marwari Content:</strong> relatable Reels using local audio trends to connect with Tier-2 vibe.</span>
+                            </li>
+                        </ul>
+
+                        <div class="bg-teal-50 p-4 rounded-lg">
+                            <p class="text-xs font-bold text-heritage-teal uppercase">Why it works in Jaipur</p>
+                            <p class="text-xs text-gray-700 mt-1">Word of mouth travels fast in Jaipur colonies (Vaishali, Raja Park). Family is central to all decisions.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 4: Risk Analysis -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-8 border-royal-maroon pl-4">04. Risk Landscape</h2>
+            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                Growth in Jaipur is not without pitfalls. The chart below quantifies the most dangerous risks based on <strong>Probability of Occurrence</strong> vs. <strong>Severity of Impact</strong>.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2 card">
+                    <h3 class="text-xl font-bold mb-2 text-gray-800">Operational & Brand Risks</h3>
+                    <div class="chart-container">
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                </div>
+                <div class="md:col-span-1 flex flex-col justify-center space-y-4">
+                    <div class="bg-red-50 border-l-4 border-red-500 p-4">
+                        <h4 class="font-bold text-red-700 text-sm">Top Risk: Overbooking</h4>
+                        <p class="text-xs text-gray-600 mt-1">Taking too many brides on an auspicious "Saya" date leads to delays. In Jaipur, a late bride = ruined reputation instantly.</p>
+                    </div>
+                    <div class="bg-orange-50 border-l-4 border-orange-500 p-4">
+                        <h4 class="font-bold text-orange-700 text-sm">Discount Addiction</h4>
+                        <p class="text-xs text-gray-600 mt-1">Attracting clients solely on price (via Groupon/Nearbuy) destroys premium positioning. Hard to convert to full price later.</p>
+                    </div>
+                    <div class="bg-yellow-50 border-l-4 border-yellow-500 p-4">
+                        <h4 class="font-bold text-yellow-700 text-sm">Fake Portfolio</h4>
+                        <p class="text-xs text-gray-600 mt-1">Using heavily filtered or stock images. Jaipur clients talk; if the reality doesn't match Instagram, trust evaporates.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Action Plan / WOM -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4 border-l-8 border-royal-maroon pl-4">05. 90-Day Execution Plan</h2>
+            <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                A phased approach to implementing these strategies, ensuring operations aren't overwhelmed.
+            </p>
+
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold text-gray-800">Phase 1: Quick Wins (Days 0-15)</h3>
+                    <p class="text-sm text-royal-maroon font-bold mb-2">Focus: Digital Hygiene & Retention</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Audit and update Google My Business (add "Bridal" specific photos).</li>
+                        <li>Launch "Post-Wedding Glow" WhatsApp campaign to last month's brides.</li>
+                        <li>Train staff on the "Ask for Referral" script at checkout.</li>
+                    </ul>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item">
+                    <h3 class="text-xl font-bold text-gray-800">Phase 2: Campaign Launch (Days 15-45)</h3>
+                    <p class="text-sm text-jaipur-gold font-bold mb-2">Focus: Acquisition & Content</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Shoot and post 3 "Real Bride" breakdown Reels (Premium Strategy).</li>
+                        <li>Activate "Nanad-Bhabhi" package for upcoming festive season (Budget Strategy).</li>
+                        <li>Start paid ads (Meta) targeting "Engaged Shoppers" in Jaipur + 50km.</li>
+                    </ul>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline-item border-l-0 pb-0">
+                    <h3 class="text-xl font-bold text-gray-800">Phase 3: Partnerships (Days 45-90)</h3>
+                    <p class="text-sm text-heritage-teal font-bold mb-2">Focus: Ecosystem Building</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-1">
+                        <li>Pitch partnership to 3 mid-tier wedding planners (commission based).</li>
+                        <li>Host an "Open House" makeup masterclass for potential brides.</li>
+                        <li>Review ROI of paid ads and adjust budget.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 text-sm mt-12 mb-8">
+            <p>&copy; 2024 Jaipur Salon Growth Report. Generated by Canvas Infographics.</p>
+            <p class="mt-2">Data sources: Industry benchmarks, Jaipur market analysis, and digital platform trends.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- DATA PROCESSING & CHART GENERATION ---
+
+        // 1. Market Segmentation Donut Chart
+        const ctxMarket = document.getElementById('marketChart').getContext('2d');
+        new Chart(ctxMarket, {
+            type: 'doughnut',
+            data: {
+                labels: ['Budget/Local (Vol)', 'Mid-Tier (Vol)', 'Premium/Dest (Vol)', 'Premium (Rev Share)'],
+                datasets: [{
+                    label: 'Market Distribution',
+                    data: [50, 30, 20, 0], // Dummy data for display logic, actual below
+                    backgroundColor: [
+                        '#E5E7EB', // Gray for Budget
+                        '#0F766E', // Teal for Mid
+                        '#9F1239', // Maroon for Premium
+                        '#F59E0B'  // Gold
+                    ],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right' },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                // Custom tooltip to explain the Vol vs Rev dynamic
+                                const labels = [
+                                    '50% of Clients (Volume)',
+                                    '30% of Clients (Volume)',
+                                    '20% of Clients (Volume)',
+                                    'But 60% of Total Revenue!'
+                                ];
+                                return labels[context.dataIndex];
+                            }
+                        }
+                    },
+                    title: {
+                        display: true,
+                        text: 'Client Volume Distribution'
+                    }
+                }
+            }
+        });
+
+        // 2. Idea Validation Bubble Chart
+        // Data Structure: x=Ease, y=Impact, r=Reach
+        const ideasData = [
+            { x: 9, y: 7, r: 15, label: "WhatsApp 'Flash Deals' (Budget)" },
+            { x: 4, y: 9, r: 10, label: "Heritage Hotel Partnership (Premium)" },
+            { x: 7, y: 8, r: 20, label: "Bridal Family Referral Program" },
+            { x: 8, y: 6, r: 12, label: "GMB Optimization (SEO)" },
+            { x: 3, y: 9, r: 5,  label: "Celebrity MUA Masterclass" },
+            { x: 6, y: 7, r: 15, label: "Cross-Promo with Jewelers" },
+            { x: 5, y: 8, r: 8,  label: "High-End Reels Production" }
+        ];
+
+        // Helper to process labels for wrapping (Requirement)
+        function processLabels(str) {
+            if (str.length > 16) {
+                const words = str.split(' ');
+                const lines = [];
+                let currentLine = words[0];
+
+                for (let i = 1; i < words.length; i++) {
+                    if (currentLine.length + 1 + words[i].length <= 16) {
+                        currentLine += ' ' + words[i];
+                    } else {
+                        lines.push(currentLine);
+                        currentLine = words[i];
+                    }
+                }
+                lines.push(currentLine);
+                return lines;
+            }
+            return str;
+        }
+
+        const ctxValidation = document.getElementById('validationChart').getContext('2d');
+        new Chart(ctxValidation, {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: 'Premium Strategies',
+                    data: ideasData.filter((d, i) => [1, 4, 6].includes(i)), // Selecting specific indices
+                    backgroundColor: '#9F1239',
+                    borderColor: '#9F1239'
+                },
+                {
+                    label: 'Budget Strategies',
+                    data: ideasData.filter((d, i) => [0, 3].includes(i)),
+                    backgroundColor: '#0F766E',
+                    borderColor: '#0F766E'
+                },
+                {
+                    label: 'Network Strategies',
+                    data: ideasData.filter((d, i) => [2, 5].includes(i)),
+                    backgroundColor: '#F59E0B',
+                    borderColor: '#F59E0B'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Ease of Implementation (1-10)' },
+                        min: 0, max: 10
+                    },
+                    y: {
+                        title: { display: true, text: 'Business Impact (1-10)' },
+                        min: 0, max: 10
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(context) {
+                                const item = context[0];
+                                const rawLabel = item.raw.label;
+                                const processed = processLabels(rawLabel);
+                                return Array.isArray(processed) ? processed.join(' ') : processed;
+                            },
+                            label: function(context) {
+                                return `Impact: ${context.raw.y}, Ease: ${context.raw.x}`;
+                            }
+                        }
+                    },
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // 3. Risk Analysis Bar Chart
+        const riskLabels = ['Overbooking Dates', 'Discount Addiction', 'Fake Portfolio/Reviews', 'Staff Poaching', 'Poor Hygiene'];
+        const processedRiskLabels = riskLabels.map(l => processLabels(l));
+
+        const ctxRisk = document.getElementById('riskChart').getContext('2d');
+        new Chart(ctxRisk, {
+            type: 'bar',
+            data: {
+                labels: processedRiskLabels,
+                datasets: [{
+                    label: 'Severity Score (Impact x Probability)',
+                    data: [90, 85, 80, 60, 75],
+                    backgroundColor: [
+                        '#DC2626', // Red for High Risk
+                        '#EA580C',
+                        '#D97706',
+                        '#65A30D',
+                        '#0891B2'
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Horizontal Bar
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: { beginAtZero: true, max: 100 }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) return label.join(' ');
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

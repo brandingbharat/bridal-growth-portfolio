@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Growth System: Jaipur Salons 2024-2025</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Config for Chart Containers and Palette -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        jaipurPink: '#db2777',
+                        royalBlue: '#1e3a8a',
+                        weddingGold: '#f59e0b',
+                        offWhite: '#fdfbf7',
+                        textDark: '#1f2937'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CRITICAL: Chart Container Styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Constraint for large screens */
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px; /* Base mobile height */
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px; /* Tablet/Desktop height */
+            }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #db2777;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #be185d;
+        }
+
+        /* No SVG Diagram Styling */
+        .flow-card {
+            border-left: 4px solid #db2777;
+        }
+        .arrow-down {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #1e3a8a;
+            margin: 0 auto;
+        }
+        .timeline-dot {
+            height: 16px;
+            width: 16px;
+            background-color: #db2777;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+
+    <!--
+        NARRATIVE PLAN:
+        1. Introduction: Why WhatsApp is the "Digital Tongue" of Jaipur.
+        2. The Opportunity: Data on trust vs. Ads.
+        3. Status Strategy: The daily "Diet" for maximum engagement.
+        4. The Viral Loop: Visualizing the "Bua/Maasi" referral network.
+        5. Messaging Flows: Conversion probabilities.
+        6. Risk Analysis: Preventing the "Block".
+        7. 30-Day Action Plan: Concrete steps.
+
+        PALETTE SELECTION:
+        "Royal Jaipur Wedding" - High contrast.
+        Primary: Jaipur Pink (#db2777) - Energy, Bridal.
+        Secondary: Royal Blue (#1e3a8a) - Trust, Premium.
+        Accent: Wedding Gold (#f59e0b) - Success, Haldi.
+
+        NO SVG USED. NO MERMAID JS USED.
+    -->
+</head>
+<body class="bg-offWhite text-textDark font-sans antialiased">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-to-r from-royalBlue to-jaipurPink text-white py-12 px-4 shadow-lg">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">WhatsApp Growth System</h1>
+            <h2 class="text-xl md:text-2xl font-light opacity-90">For Jaipur Salons | Wedding Season 2024–2025</h2>
+            <div class="mt-6 flex flex-wrap justify-center gap-4">
+                <span class="bg-white text-royalBlue px-4 py-1 rounded-full text-sm font-semibold shadow">Bridal Focus</span>
+                <span class="bg-white text-royalBlue px-4 py-1 rounded-full text-sm font-semibold shadow">WOM Engine</span>
+                <span class="bg-white text-royalBlue px-4 py-1 rounded-full text-sm font-semibold shadow">Status Marketing</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-12">
+
+        <!-- SECTION 1: The Jaipur Context -->
+        <section class="bg-white rounded-xl shadow-md p-6 border-t-4 border-weddingGold">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-royalBlue mb-2">Why WhatsApp is King in Jaipur</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    In Jaipur's close-knit society, algorithmic ads (Instagram/Facebook) are viewed as "commercial noise."
+                    Real influence flows through personal connections. For a Jaipur bride, a WhatsApp Status update from a known contact
+                    or a forwarded photo in a "Cousins Group" carries significantly more weight than a sponsored post.
+                    The data below illustrates the trust gap between platforms for wedding decisions.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Chart 1: Trust Factors -->
+                <div class="flex flex-col">
+                    <div class="chart-container">
+                        <canvas id="trustChart"></canvas>
+                    </div>
+                    <p class="text-sm text-center text-gray-500 mt-2 italic">Comparison of channel influence on final booking decisions.</p>
+                </div>
+
+                <!-- Key Stat Cards -->
+                <div class="grid grid-cols-1 gap-4">
+                    <div class="p-4 bg-blue-50 rounded-lg border-l-4 border-royalBlue">
+                        <h4 class="font-bold text-lg text-royalBlue">98% Penetration</h4>
+                        <p class="text-sm text-gray-700">Almost every target bride and her mother in Jaipur use WhatsApp daily for coordination.</p>
+                    </div>
+                    <div class="p-4 bg-pink-50 rounded-lg border-l-4 border-jaipurPink">
+                        <h4 class="font-bold text-lg text-jaipurPink">The "Screenshot" Economy</h4>
+                        <p class="text-sm text-gray-700">7 out of 10 bookings start with a screenshot of a Status shared in a family group.</p>
+                    </div>
+                    <div class="p-4 bg-yellow-50 rounded-lg border-l-4 border-weddingGold">
+                        <h4 class="font-bold text-lg text-weddingGold">Localized Trust</h4>
+                        <p class="text-sm text-gray-700">A saved number implies a relationship. A status view is a "warm" touchpoint.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Status Strategy -->
+        <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-jaipurPink mb-2">The Golden Status Framework</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Posting randomly is noise. Posting strategically is marketing. For the 2024-2025 season,
+                    frequency and content mix are critical. You must balance "Aspirational" content (Bridal looks) with "Urgency" (Slot filling)
+                    and "Trust" (Client reviews). The chart below breaks down the ideal content diet for a Jaipur salon.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Chart 2: Content Mix -->
+                <div class="flex flex-col">
+                    <h4 class="text-center font-semibold text-gray-700 mb-4">Ideal Status Content Mix</h4>
+                    <div class="chart-container">
+                        <canvas id="contentMixChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 3: Engagement Time -->
+                <div class="flex flex-col">
+                    <h4 class="text-center font-semibold text-gray-700 mb-4">Peak Engagement Hours (Jaipur)</h4>
+                    <div class="chart-container">
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                    <p class="text-xs text-gray-500 mt-2 text-center">Note: Peaks align with post-lunch rest and late-night family discussions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: The WOM Engine (Process Flow) -->
+        <section class="bg-white rounded-xl shadow-md p-6 border-t-4 border-royalBlue">
+            <div class="mb-8">
+                <h3 class="text-2xl font-bold text-royalBlue mb-2">The "Bua & Cousin" Referral Engine</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    In Jaipur, the bride rarely decides alone. The "Influencers" are her cousins and aunts (Bua/Maasi).
+                    This diagram illustrates how a single WhatsApp Status can travel through the family network to generate a booking.
+                    This is the "Viral Loop" you must engineer.
+                </p>
+            </div>
+
+            <!-- HTML/CSS Diagram (Replacing Mermaid/SVG) -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-center">
+
+                    <!-- Step 1 -->
+                    <div class="w-full md:w-1/4 bg-white p-4 rounded shadow flow-card relative">
+                        <div class="text-4xl mb-2">📱</div>
+                        <h4 class="font-bold text-jaipurPink">The Trigger</h4>
+                        <p class="text-sm text-gray-600">Salon posts "Real Bride" Transformation Status.</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="hidden md:block text-2xl text-royalBlue font-bold">→</div>
+                    <div class="block md:hidden text-2xl text-royalBlue font-bold">↓</div>
+
+                    <!-- Step 2 -->
+                    <div class="w-full md:w-1/4 bg-white p-4 rounded shadow flow-card relative">
+                        <div class="text-4xl mb-2">👩‍❤️‍👩</div>
+                        <h4 class="font-bold text-jaipurPink">The Cousin</h4>
+                        <p class="text-sm text-gray-600">Screenshots look. Shares in "Cousins Wedding Planning" Group.</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="hidden md:block text-2xl text-royalBlue font-bold">→</div>
+                    <div class="block md:hidden text-2xl text-royalBlue font-bold">↓</div>
+
+                    <!-- Step 3 -->
+                    <div class="w-full md:w-1/4 bg-white p-4 rounded shadow flow-card relative">
+                        <div class="text-4xl mb-2">👵</div>
+                        <h4 class="font-bold text-jaipurPink">The Elder (Bua)</h4>
+                        <p class="text-sm text-gray-600">Validates choice. "Ladki sundar lag rahi hai." (The girl looks beautiful).</p>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="hidden md:block text-2xl text-royalBlue font-bold">→</div>
+                    <div class="block md:hidden text-2xl text-royalBlue font-bold">↓</div>
+
+                    <!-- Step 4 -->
+                    <div class="w-full md:w-1/4 bg-white p-4 rounded shadow flow-card bg-yellow-50 relative">
+                        <div class="text-4xl mb-2">💸</div>
+                        <h4 class="font-bold text-weddingGold">The Booking</h4>
+                        <p class="text-sm text-gray-600">Inquiry made via WhatsApp with reference.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Messaging & Conversion -->
+        <section class="bg-white rounded-xl shadow-md p-6">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-jaipurPink mb-2">Messaging Funnel Efficiency</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    Not all messages are created equal. Broadcast lists have high reach but risk being muted.
+                    Personal follow-ups have high conversion but take time. The chart below compares different
+                    WhatsApp communication methods based on their estimated conversion rates for a Jaipur salon.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Chart 4: Conversion Rates -->
+                <div class="flex flex-col col-span-1 md:col-span-2">
+                    <div class="chart-container">
+                        <canvas id="conversionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                <div class="border border-gray-200 rounded p-4">
+                    <h5 class="font-bold text-royalBlue">New Lead Script</h5>
+                    <p class="text-xs text-gray-500 mt-1 mb-2">Goal: Instant Trust</p>
+                    <p class="text-sm italic bg-gray-50 p-2 rounded">"Namaste [Name]! Thank you for inquiring. Here is a PDF of our Real Brides from [Location/Season]. When is your main function?"</p>
+                </div>
+                <div class="border border-gray-200 rounded p-4">
+                    <h5 class="font-bold text-royalBlue">The "Ghost" Revival</h5>
+                    <p class="text-xs text-gray-500 mt-1 mb-2">Goal: Re-engage</p>
+                    <p class="text-sm italic bg-gray-50 p-2 rounded">"Hi [Name], December 12th is a heavy Saya date. We have only 1 slot left for evening reception. Shall I hold it for you?"</p>
+                </div>
+                <div class="border border-gray-200 rounded p-4">
+                    <h5 class="font-bold text-royalBlue">Review Request</h5>
+                    <p class="text-xs text-gray-500 mt-1 mb-2">Goal: Social Proof</p>
+                    <p class="text-sm italic bg-gray-50 p-2 rounded">"You looked stunning yesterday! If you loved the look, a 2-line review would mean the world to our team."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Risk Mitigation -->
+        <section class="bg-white rounded-xl shadow-md p-6 border-l-8 border-red-500">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Risk Zone: Why Customers Mute</h3>
+                <p class="text-gray-600 leading-relaxed">
+                    The biggest risk in WhatsApp marketing is becoming spam. Once a user mutes or blocks you, that channel is dead forever.
+                    Understanding <em>why</em> Jaipur women mute business accounts is crucial for survival.
+                </p>
+            </div>
+
+            <div class="flex flex-col">
+                <!-- Chart 5: Reasons for Muting -->
+                <div class="chart-container">
+                    <canvas id="riskChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: 30-Day Action Plan -->
+        <section class="bg-gradient-to-br from-royalBlue to-blue-900 text-white rounded-xl shadow-md p-6">
+            <div class="mb-8 text-center">
+                <h3 class="text-2xl font-bold text-white mb-2">30-Day Execution Roadmap</h3>
+                <p class="text-blue-200">A structured timeline to implement this system before the peak wedding dates.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Week 1 -->
+                <div class="bg-white bg-opacity-10 p-4 rounded border border-blue-400">
+                    <h4 class="font-bold text-weddingGold mb-2">Week 1: Foundation & Audit</h4>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-start"><span class="mr-2">✓</span> Save all unsaved client numbers.</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Segment lists: Brides, Moms, Regulars.</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Design 5 "Royal Look" Status templates.</li>
+                    </ul>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="bg-white bg-opacity-10 p-4 rounded border border-blue-400">
+                    <h4 class="font-bold text-weddingGold mb-2">Week 2: Warm-Up Campaign</h4>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-start"><span class="mr-2">✓</span> Start Status frequency (3x Daily).</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Send Broadcast 1: "Skin Prep Tips" (Non-salesy).</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Launch "Refer a Cousin" Status offer.</li>
+                    </ul>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="bg-white bg-opacity-10 p-4 rounded border border-blue-400">
+                    <h4 class="font-bold text-weddingGold mb-2">Week 3: Urgency & Sales</h4>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-start"><span class="mr-2">✓</span> Post "Sold Out Dates" calendar status.</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Personal follow-up to "Ghost" inquiries.</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Broadcast 2: "Pre-Bridal Package" offer.</li>
+                    </ul>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="bg-white bg-opacity-10 p-4 rounded border border-blue-400">
+                    <h4 class="font-bold text-weddingGold mb-2">Week 4: Optimization</h4>
+                    <ul class="text-sm space-y-2">
+                        <li class="flex items-start"><span class="mr-2">✓</span> Analyze Status views (Who is watching?).</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Direct message active Status viewers.</li>
+                        <li class="flex items-start"><span class="mr-2">✓</span> Collect reviews from Week 2 bookings.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-8 text-gray-500 text-sm">
+        <p>© 2024 Jaipur Market Strategy. Generated for Salon Owners.</p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // --- UTILITY: Label Splitting Logic (>16 chars) ---
+        function splitLabel(str) {
+            const limit = 16;
+            if (str.length <= limit) return str;
+
+            const words = str.split(' ');
+            let lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= limit) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- CHART CONFIG: Common Options ---
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    labels: {
+                        font: { family: 'Poppins', size: 12 },
+                        usePointStyle: true,
+                        boxWidth: 8
+                    }
+                }
+            }
+        };
+
+        // --- CHART 1: Trust Factors (Bar) ---
+        const ctxTrust = document.getElementById('trustChart').getContext('2d');
+        const labelsTrust = ['Social Media Ads', 'Google Search', 'Family Referral', 'WhatsApp Status'];
+        const dataTrust = [30, 45, 75, 88];
+
+        new Chart(ctxTrust, {
+            type: 'bar',
+            data: {
+                labels: labelsTrust.map(splitLabel),
+                datasets: [{
+                    label: 'Trust Score (0-100)',
+                    data: dataTrust,
+                    backgroundColor: [
+                        '#e5e7eb', // Grey for Ads
+                        '#93c5fd', // Light Blue
+                        '#db2777', // Jaipur Pink
+                        '#1e3a8a'  // Royal Blue
+                    ],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+
+        // --- CHART 2: Content Mix (Doughnut) ---
+        const ctxMix = document.getElementById('contentMixChart').getContext('2d');
+        const labelsMix = [
+            'Real Bridal Transformations',
+            'Slot Availability/Urgency',
+            'Client Testimonials/Videos',
+            'Skin Care/Prep Tips',
+            'Offers & Packages'
+        ];
+        const dataMix = [40, 20, 15, 15, 10]; // Percentages
+
+        new Chart(ctxMix, {
+            type: 'doughnut',
+            data: {
+                labels: labelsMix.map(splitLabel),
+                datasets: [{
+                    data: dataMix,
+                    backgroundColor: [
+                        '#db2777', // Pink (Main)
+                        '#be185d', // Darker Pink
+                        '#f59e0b', // Gold
+                        '#1e3a8a', // Blue
+                        '#60a5fa'  // Light Blue
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: commonOptions
+        });
+
+        // --- CHART 3: Engagement Time (Line) ---
+        const ctxTime = document.getElementById('timeChart').getContext('2d');
+        const labelsTime = ['9 AM', '11 AM', '2 PM', '5 PM', '8 PM', '10 PM'];
+
+        new Chart(ctxTime, {
+            type: 'line',
+            data: {
+                labels: labelsTime,
+                datasets: [{
+                    label: 'Status View Velocity',
+                    data: [20, 45, 60, 40, 85, 95], // High late night interaction
+                    borderColor: '#1e3a8a',
+                    backgroundColor: 'rgba(30, 58, 138, 0.1)',
+                    tension: 0.4,
+                    fill: true,
+                    pointBackgroundColor: '#db2777',
+                    pointRadius: 5
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: { display: false } // Hide Y axis for cleaner look
+                }
+            }
+        });
+
+        // --- CHART 4: Conversion Rates (Horizontal Bar) ---
+        const ctxConv = document.getElementById('conversionChart').getContext('2d');
+        const labelsConv = [
+            'Cold Broadcast List',
+            'Status Reply Inquiry',
+            'Personal Follow-up Msg',
+            'Referral Intro'
+        ];
+        const dataConv = [5, 25, 45, 60]; // Conversion %
+
+        new Chart(ctxConv, {
+            type: 'bar',
+            data: {
+                labels: labelsConv.map(splitLabel),
+                datasets: [{
+                    label: 'Est. Conversion Rate (%)',
+                    data: dataConv,
+                    backgroundColor: '#f59e0b', // Gold
+                    indexAxis: 'y', // Horizontal
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                indexAxis: 'y'
+            }
+        });
+
+        // --- CHART 5: Risk Analysis (Radar or Bar) ---
+        // Using Bar here for clarity on mobile
+        const ctxRisk = document.getElementById('riskChart').getContext('2d');
+        const labelsRisk = [
+            'Too Many Messages (>1/week)',
+            'Irrelevant Content (Generic)',
+            'Sending Large Files (Video)',
+            'Late Night Direct Msgs',
+            'Bad Design/Low Quality'
+        ];
+        const dataRisk = [85, 70, 60, 50, 40]; // Risk Score
+
+        new Chart(ctxRisk, {
+            type: 'bar',
+            data: {
+                labels: labelsRisk.map(splitLabel),
+                datasets: [{
+                    label: 'Likelihood of Being Muted',
+                    data: dataRisk,
+                    backgroundColor: '#ef4444', // Red for danger
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

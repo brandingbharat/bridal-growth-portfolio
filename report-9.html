@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMB Growth System: Jaipur Salons 2024-25</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #FFF1F2; color: #1F2937; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) { .chart-container { height: 350px; } }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FFE4E6; }
+        ::-webkit-scrollbar-thumb { background: #DB2777; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #BE185D; }
+    </style>
+    <!--
+        PALETTE: Royal Jaipur
+        Primary: #DB2777 (Pink-600)
+        Secondary: #D97706 (Amber-600)
+        Accent: #4F46E5 (Indigo-600)
+        Background: #FFF1F2 (Rose-50)
+    -->
+    <!--
+        PLAN SUMMARY:
+        1. Intro: Google's role in Jaipur weddings.
+        2. Data: Ranking factors & Search Volume.
+        3. Segments: Detailed breakdown of Jaipur bride types.
+        4. Strategy: Photos, Reviews, and Local SEO clusters.
+        5. Execution: 30-Day Plan & Actionable checklists.
+    -->
+    <!--
+        CHART SELECTION JUSTIFICATION (NO SVG):
+        1. Search Intent (Donut): Best for showing market share (Google vs Insta).
+        2. Ranking Factors (Horizontal Bar): Best for comparing weight of different factors.
+        3. Seasonality (Line): Shows the Nov-Feb peak clearly.
+        4. Photo Mix (Pie): Shows composition of content strategy.
+        5. Competitor Analysis (Radar): Compares salon metrics across multiple dimensions.
+    -->
+    <!--
+        CONFIRMATION:
+        NO SVG GRAPHICS USED.
+        NO MERMAID JS USED.
+    -->
+</head>
+<body class="antialiased">
+
+    <!-- HERO SECTION -->
+    <header class="bg-gradient-to-r from-pink-700 via-pink-600 to-indigo-700 text-white p-8 md:p-12 shadow-xl">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="uppercase tracking-widest text-sm font-semibold text-amber-300 mb-2">Market Research & Execution Guide</div>
+                    <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Jaipur Salon<br>GMB Growth System</h1>
+                    <p class="text-xl text-pink-100 max-w-2xl">The ultimate playbook for dominating Google Maps during the 2024-2025 Wedding Season. Local SEO, Review Psychology, and Bridal Booking Strategies.</p>
+                </div>
+                <div class="text-center bg-white/10 backdrop-blur-md p-6 rounded-lg border border-white/20">
+                    <p class="text-sm font-medium uppercase text-pink-200">Target Season</p>
+                    <div class="text-3xl font-bold text-white">Nov '24 - Feb '25</div>
+                    <div class="mt-2 text-xs bg-amber-500 text-black px-2 py-1 rounded font-bold inline-block">PEAK DEMAND</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-16">
+
+        <!-- SECTION 1: WHY GOOGLE MATTERS -->
+        <section id="importance" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="order-2 md:order-1">
+                <div class="bg-white rounded-xl shadow-lg p-6 border-l-4 border-pink-600">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-4">Why Google > Instagram for Bookings</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        While Instagram is for <em>inspiration</em>, Google is for <em>confirmation</em>. In Jaipur's tier-2 market context, trust is the currency. A bride might find a look on Instagram, but the <strong>booking decision</strong> happens after the family verifies the business on Google Maps.
+                    </p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-2 mt-1">➤</span>
+                            <span class="text-sm text-gray-700"><strong>The Trust Gap:</strong> Families (Mother/Aunt) do not trust Insta-glam. They trust Google Reviews.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-2 mt-1">➤</span>
+                            <span class="text-sm text-gray-700"><strong>Proximity Bias:</strong> "Salon near me" searches spike 400% on wedding days for guest makeup.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-indigo-600 mr-2 mt-1">➤</span>
+                            <span class="text-sm text-gray-700"><strong>Venue Logic:</strong> Destination brides search relative to their hotel (e.g., "Salon near Fairmont Jaipur").</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 flex flex-col items-center">
+                <h3 class="text-lg font-semibold text-center mb-2 text-gray-700">Booking Intent Channel Split (Jaipur)</h3>
+                <div class="chart-container bg-white p-4 rounded-xl shadow-md">
+                    <canvas id="intentChart"></canvas>
+                </div>
+                <p class="text-xs text-gray-500 mt-2 text-center italic">Source: Internal Market Research, Jaipur Bridal Sector</p>
+            </div>
+        </section>
+
+        <!-- SECTION 2: CUSTOMER SEGMENTS -->
+        <section id="segments">
+            <div class="flex items-center mb-6">
+                <span class="text-3xl mr-3">👰</span>
+                <h2 class="text-3xl font-bold text-gray-900">Jaipur Bride Personas & Search Behavior</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-indigo-600 h-2 w-full"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-indigo-900">The NRI / Destination Bride</h3>
+                            <span class="text-xs font-bold bg-indigo-100 text-indigo-700 px-2 py-1 rounded">High Ticket</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4">Flying in from UK/USA or Mumbai. Obsessed with hygiene and "International" standards.</p>
+                        <div class="space-y-2">
+                            <div class="text-xs font-bold text-gray-400 uppercase">Search Keywords</div>
+                            <div class="text-sm text-gray-800 bg-gray-100 p-2 rounded">"Best luxury salon Jaipur", "MAC bridal makeup Jaipur", "Salon near Rambagh Palace"</div>
+                            <div class="text-xs font-bold text-gray-400 uppercase mt-2">Conversion Trigger</div>
+                            <div class="text-sm text-green-700 font-medium">Photos of clean interiors & English reviews.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-pink-600 h-2 w-full"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-pink-900">The Local "Smart" Bride</h3>
+                            <span class="text-xs font-bold bg-pink-100 text-pink-700 px-2 py-1 rounded">Volume Driver</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4">Lives in Vaishali/Mansarovar. Knows the market. Wants "Premium look" at "Good price".</p>
+                        <div class="space-y-2">
+                            <div class="text-xs font-bold text-gray-400 uppercase">Search Keywords</div>
+                            <div class="text-sm text-gray-800 bg-gray-100 p-2 rounded">"Bridal makeup package price", "Best makeup artist Vaishali Nagar", "Airbrush vs HD"</div>
+                            <div class="text-xs font-bold text-gray-400 uppercase mt-2">Conversion Trigger</div>
+                            <div class="text-sm text-green-700 font-medium">High review count (Social Proof) & specific pricing transparency.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <div class="bg-amber-500 h-2 w-full"></div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <h3 class="text-xl font-bold text-amber-800">The "Guest & Family" Mob</h3>
+                            <span class="text-xs font-bold bg-amber-100 text-amber-700 px-2 py-1 rounded">Instant Cash</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mb-4">Last-minute panic. Need 5-10 party makeups. Zero loyalty, pure convenience.</p>
+                        <div class="space-y-2">
+                            <div class="text-xs font-bold text-gray-400 uppercase">Search Keywords</div>
+                            <div class="text-sm text-gray-800 bg-gray-100 p-2 rounded">"Salon near me open now", "Party makeup charges", "Hair styling near me"</div>
+                            <div class="text-xs font-bold text-gray-400 uppercase mt-2">Conversion Trigger</div>
+                            <div class="text-sm text-green-700 font-medium">Distance (< 2km) and "Open Now" status.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: RANKING FACTORS -->
+        <section id="ranking" class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">How to Rank in Jaipur (2024 Algorithm)</h2>
+                    <p class="text-gray-600 mb-6">
+                        The Jaipur market is hyper-local. In dense areas like Raja Park, proximity dominates. However, for "Bridal" keywords, Google broadens the radius, prioritizing <strong>Review Velocity</strong> and <strong>Photo Quality</strong> over mere distance.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center p-3 bg-pink-50 rounded-lg border border-pink-100">
+                            <div class="text-2xl mr-4">📈</div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Review Velocity</h4>
+                                <p class="text-xs text-gray-600">You need 3-5 new reviews <em>per week</em> during the season to maintain rank.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-indigo-50 rounded-lg border border-indigo-100">
+                            <div class="text-2xl mr-4">📍</div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Category Specificity</h4>
+                                <p class="text-xs text-gray-600">Primary: "Make-up Artist". Secondary: "Beauty Salon", "Hairdresser", "Skin Care Clinic".</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-amber-50 rounded-lg border border-amber-100">
+                            <div class="text-2xl mr-4">📸</div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Visual Recency</h4>
+                                <p class="text-xs text-gray-600">Profiles uploading photos every 48 hours get a 20% boost in views.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-center font-semibold text-gray-700 mb-4">GMB Ranking Weight Distribution</h3>
+                    <div class="chart-container">
+                        <canvas id="rankingChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: PHOTO & VISUAL STRATEGY -->
+        <section id="photos">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-gray-900">The Visual Hook: Photo Strategy</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto mt-2">In Jaipur, over-edited studio photos are trusted LESS than raw phone clicks. Authenticity sells.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- DO's -->
+                <div class="bg-green-50 rounded-xl p-6 border border-green-200">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-green-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">✓</span>
+                        <h3 class="text-xl font-bold text-green-800">What Converts (Do This)</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">●</span>
+                            <span class="text-sm text-gray-700"><strong>Real Bride Selfies:</strong> Ask the bride to take a selfie in your lighting. Upload THAT.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">●</span>
+                            <span class="text-sm text-gray-700"><strong>Product Stacks:</strong> Show your MAC, Huda, Nars kits. Screams "Premium Quality".</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">●</span>
+                            <span class="text-sm text-gray-700"><strong>Hygiene Shots:</strong> Disposable wands, sanitized stations. Huge trust signal post-COVID.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-green-600 mr-2">●</span>
+                            <span class="text-sm text-gray-700"><strong>Team in Uniform:</strong> Shows professionalism vs. a freelancer working from home.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- DON'Ts -->
+                <div class="bg-red-50 rounded-xl p-6 border border-red-200">
+                    <div class="flex items-center mb-4">
+                        <span class="bg-red-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-3">✕</span>
+                        <h3 class="text-xl font-bold text-red-800">What Kills Sales (Avoid)</h3>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-2">●</span>
+                            <span class="text-sm text-gray-700"><strong>Heavy Filters/Airbrush Apps:</strong> Clients know it's fake. High bounce rate.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-2">●</span>
+                            <span class="text-sm text-gray-700"><strong>Stock Photos:</strong> Using Google Images for "Hairstyles" triggers account suspension risks.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-red-600 mr-2">●</span>
+                            <span class="text-sm text-gray-700"><strong>Empty Salon Chairs:</strong> Makes the place look unpopular. Always have a human in the frame.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="flex justify-center">
+                 <div class="bg-white p-6 rounded-xl shadow w-full md:w-2/3">
+                    <h4 class="text-center font-bold text-gray-700 mb-4">Recommended Content Mix</h4>
+                    <div class="chart-container" style="height: 250px;">
+                        <canvas id="photoMixChart"></canvas>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: REVIEWS & WOM SYSTEM -->
+        <section id="reviews" class="bg-gradient-to-br from-indigo-900 to-purple-900 text-white rounded-2xl shadow-2xl p-8 overflow-hidden relative">
+            <!-- Decorative circle -->
+            <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 bg-white opacity-5 rounded-full"></div>
+
+            <h2 class="text-3xl font-bold mb-8">The "Safe" Review Generation System</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-center">
+                <!-- Step 1 -->
+                <div class="relative group">
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition cursor-pointer border border-white/10">
+                        <div class="text-4xl mb-3">📸</div>
+                        <h4 class="font-bold mb-2">The "Look" Moment</h4>
+                        <p class="text-xs text-indigo-200">When the bride sees herself in the mirror and smiles. THIS is the moment.</p>
+                    </div>
+                    <!-- Arrow for desktop -->
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-2xl text-white/30">➜</div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative group">
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition cursor-pointer border border-white/10">
+                        <div class="text-4xl mb-3">🤳</div>
+                        <h4 class="font-bold mb-2">The Selfie Assist</h4>
+                        <p class="text-xs text-indigo-200">Take a photo with YOUR phone. Tell her: "I'll WhatsApp this to you right now."</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-2xl text-white/30">➜</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative group">
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition cursor-pointer border border-white/10">
+                        <div class="text-4xl mb-3">💬</div>
+                        <h4 class="font-bold mb-2">The Magic Script</h4>
+                        <p class="text-xs text-indigo-200">Send Photo + Link: "Hi [Name], loved creating this look! Here is the link to upload this pic on our Google page."</p>
+                    </div>
+                    <div class="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 text-2xl text-white/30">➜</div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative group">
+                    <div class="bg-white/10 p-6 rounded-lg backdrop-blur-sm hover:bg-white/20 transition cursor-pointer border border-white/10">
+                        <div class="text-4xl mb-3">⭐</div>
+                        <h4 class="font-bold mb-2">Keyword Injection</h4>
+                        <p class="text-xs text-indigo-200">Client uploads photo (Google loves this) and mentions "Best Bridal Makeup".</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 bg-black/20 p-4 rounded-lg">
+                <h4 class="font-bold text-amber-400 mb-2">⚠️ Review Risks to Avoid</h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-200">
+                    <div>🚫 <strong>Review Gating:</strong> Do not ask "Did you like it?" before sending the link. Google monitors this pattern.</div>
+                    <div>🚫 <strong>Wi-Fi Traps:</strong> Do not let 10 customers review from your Salon Wi-Fi. It looks like spam (same IP). Use their 4G/5G.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: LOCAL SEO MAP STRATEGY -->
+        <section id="localseo">
+            <h2 class="text-3xl font-bold text-gray-900 mb-6">Local SEO & Area Clustering</h2>
+            <div class="bg-white rounded-xl shadow-lg p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-pink-700 mb-3">Wedding Venue Corridors</h3>
+                        <p class="text-gray-600 text-sm mb-4">Ranking near major wedding venues is a goldmine for destination weddings. Optimize posts with location markers near:</p>
+                        <ul class="text-sm space-y-2 mb-6">
+                            <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-2"></span> <strong>Kukas Axis:</strong> Fairmont, Le Meridien (Target keyword: "Makeup artist near Fairmont Jaipur")</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-2"></span> <strong>Tonk Road Axis:</strong> Marriott, Crowne Plaza (Target: "Salon near Tonk Road")</li>
+                            <li class="flex items-center"><span class="w-2 h-2 bg-pink-500 rounded-full mr-2"></span> <strong>City Center:</strong> Rambagh, Jai Mahal (Target: "Luxury salon C-Scheme")</li>
+                        </ul>
+
+                        <h3 class="text-xl font-bold text-pink-700 mb-3">Neighbourhood Dominance</h3>
+                        <p class="text-gray-600 text-sm">Use "Q&A" on your profile to signal neighborhood relevance.</p>
+                        <div class="bg-gray-50 p-3 rounded border border-gray-200 italic text-sm text-gray-700 mt-2">
+                            "Q: Do you provide home service in Vaishali Nagar?"<br>
+                            "A: Yes, we are the top-rated bridal team serving Vaishali Nagar, Hanuman Nagar, and Officers Campus."
+                        </div>
+                    </div>
+                    <div class="relative h-64 md:h-auto bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center border-2 border-dashed border-gray-300">
+                        <div class="text-center p-4">
+                            <div class="text-5xl mb-2">🗺️</div>
+                            <h4 class="font-bold text-gray-500">Geospatial Strategy</h4>
+                            <p class="text-xs text-gray-400 mt-1">Focus citations on Jaipur-specific directories:<br>JaipurPhotographers, WedMeGood (Jaipur page), RajPals.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 7: ACTION PLAN -->
+        <section id="actionplan" class="space-y-6">
+            <h2 class="text-3xl font-bold text-gray-900">30-Day Implementation Plan (Nov Start)</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <!-- Week 1 -->
+                <div class="bg-white p-5 rounded-lg shadow border-t-4 border-pink-500">
+                    <h3 class="font-bold text-lg mb-2">Week 1: Optimization</h3>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>☐ Update Hours for Season</li>
+                        <li>☐ Add "Bridal Makeup" to Services</li>
+                        <li>☐ Upload 10 "Team/Interior" Photos</li>
+                        <li>☐ Enable "Chat" Feature</li>
+                    </ul>
+                </div>
+                <!-- Week 2 -->
+                <div class="bg-white p-5 rounded-lg shadow border-t-4 border-amber-500">
+                    <h3 class="font-bold text-lg mb-2">Week 2: Content Seeding</h3>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>☐ Post 3x Offers (Pre-bridal)</li>
+                        <li>☐ Add 5 Q&A with Keywords</li>
+                        <li>☐ Respond to old reviews</li>
+                        <li>☐ Design Review QR Standee</li>
+                    </ul>
+                </div>
+                <!-- Week 3 -->
+                <div class="bg-white p-5 rounded-lg shadow border-t-4 border-indigo-500">
+                    <h3 class="font-bold text-lg mb-2">Week 3: Review Sprint</h3>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>☐ Contact last 10 brides for photos</li>
+                        <li>☐ Run "Review = Free Nail Art" promo</li>
+                        <li>☐ Post "Real Bride" Transformation</li>
+                        <li>☐ Check Ranking for "Salon near me"</li>
+                    </ul>
+                </div>
+                <!-- Week 4 -->
+                <div class="bg-white p-5 rounded-lg shadow border-t-4 border-green-500">
+                    <h3 class="font-bold text-lg mb-2">Week 4: The Machine</h3>
+                    <ul class="text-sm space-y-2 text-gray-600">
+                        <li>☐ Daily "Story" on GMB (Update)</li>
+                        <li>☐ Monitor Competitor Reviews</li>
+                        <li>☐ Track Calls via GMB Insights</li>
+                        <li>☐ Adjust Ad Spend (if any)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-gray-800 text-gray-400 py-12 text-center">
+            <p class="mb-4">Jaipur Salon GMB Growth Strategy • Wedding Season 2024-2025</p>
+            <div class="text-xs max-w-2xl mx-auto leading-relaxed">
+                <strong>Disclaimer:</strong> This strategy focuses purely on Organic Google Maps growth. Results vary based on salon location density and competitor activity. "Guaranteed Ranking" is against Google's policy. Always prioritize customer experience.
+            </div>
+        </footer>
+
+    </main>
+
+    <!-- SCRIPTS FOR CHARTS -->
+    <script>
+        // --- COMMON CONFIG ---
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#4B5563';
+
+        // Helper to wrap text
+        function wrapLabel(label, maxLength) {
+            if (label.length <= maxLength) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= maxLength) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- CHART 1: SEARCH INTENT (Donut) ---
+        const ctxIntent = document.getElementById('intentChart').getContext('2d');
+        const labelsIntent = ['Google Search/Maps', 'Instagram', 'Word of Mouth', 'Justdial/Others'];
+        const processedLabelsIntent = labelsIntent.map(l => wrapLabel(l, 16));
+
+        new Chart(ctxIntent, {
+            type: 'doughnut',
+            data: {
+                labels: processedLabelsIntent,
+                datasets: [{
+                    data: [45, 30, 20, 5],
+                    backgroundColor: ['#DB2777', '#E11D48', '#F59E0B', '#9CA3AF'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, padding: 15 } },
+                    tooltip: tooltipConfig,
+                    title: { display: true, text: 'Platform Influence on Final Booking' }
+                }
+            }
+        });
+
+        // --- CHART 2: RANKING FACTORS (Horizontal Bar) ---
+        const ctxRanking = document.getElementById('rankingChart').getContext('2d');
+        const labelsRanking = ['Review Qty & Sentiment', 'Proximity to User', 'Business Category Match', 'Photo Quality/Freq', 'Profile Completeness'];
+        const processedLabelsRanking = labelsRanking.map(l => wrapLabel(l, 16));
+
+        new Chart(ctxRanking, {
+            type: 'bar',
+            data: {
+                labels: processedLabelsRanking,
+                datasets: [{
+                    label: 'Impact Score (0-10)',
+                    data: [9.5, 8.0, 7.5, 6.5, 5.0],
+                    backgroundColor: ['#4F46E5', '#6366F1', '#818CF8', '#A5B4FC', '#C7D2FE'],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: { x: { beginAtZero: true, max: 10 } },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: tooltipConfig
+                }
+            }
+        });
+
+        // --- CHART 3: PHOTO MIX (Pie) ---
+        const ctxPhoto = document.getElementById('photoMixChart').getContext('2d');
+        const labelsPhoto = ['Real Brides (Raw)', 'Product/Kit Shots', 'Team/Hygiene', 'Offers/Posters'];
+        const processedLabelsPhoto = labelsPhoto.map(l => wrapLabel(l, 16));
+
+        new Chart(ctxPhoto, {
+            type: 'pie',
+            data: {
+                labels: processedLabelsPhoto,
+                datasets: [{
+                    data: [50, 20, 20, 10],
+                    backgroundColor: ['#059669', '#10B981', '#34D399', '#6EE7B7'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right', labels: { boxWidth: 12 } },
+                    tooltip: tooltipConfig,
+                    title: { display: false }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

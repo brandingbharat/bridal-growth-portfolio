@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Visual Content Blueprint for Indian Salons (2024–25)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-annotation/2.1.0/chartjs-plugin-annotation.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            background-color: #FFF5F5; /* Very pale pink background */
+            color: #4A0404; /* Deep maroon text */
+        }
+        h1, h2, h3, h4, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            height: 400px;
+            max-height: 500px;
+        }
+        .jaipur-card {
+            background: white;
+            border: 1px solid #FBCFE8;
+            box-shadow: 0 4px 6px -1px rgba(190, 24, 93, 0.1), 0 2px 4px -1px rgba(190, 24, 93, 0.06);
+            border-radius: 0.5rem;
+        }
+        .jaipur-accent {
+            background: linear-gradient(135deg, #BE185D 0%, #B91C1C 100%);
+            color: white;
+        }
+        /* Custom scrollbar for aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFF1F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #BE185D;
+            border-radius: 4px;
+        }
+    </style>
+    <!--
+        PALETTE: Jaipur Royal & Vibrant
+        Primary: #BE185D (Pink-700)
+        Secondary: #B45309 (Amber-700/Gold)
+        Bg: #FFF5F5 (Rose-50)
+        Text: #4A0404 (Red-950)
+
+        NO SVG USED. NO MERMAID JS USED.
+    -->
+</head>
+<body class="antialiased">
+
+    <!-- HERO SECTION -->
+    <header class="jaipur-accent py-12 px-4 shadow-lg">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4">The Visual Content Blueprint</h1>
+            <h2 class="text-xl md:text-2xl font-light tracking-wide mb-6">For Indian Salons • Jaipur Edition • 2024–25</h2>
+            <p class="max-w-2xl mx-auto text-pink-100 text-lg">
+                A psychology-backed strategic guide to posting science, quality vs. quantity, and cultural aesthetics for the modern Indian beauty business.
+            </p>
+        </div>
+    </header>
+
+    <!-- MAIN GRID LAYOUT -->
+    <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-12">
+
+        <!-- INTRO & PSYCHOLOGY SECTION -->
+        <section>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div>
+                    <h3 class="text-3xl font-bold mb-4 text-pink-800">01. Visual Psychology</h3>
+                    <p class="mb-4 text-lg leading-relaxed">
+                        In the Indian context, specifically Jaipur, trust is visual. A bride's family judges a salon not by its logo, but by the "realness" of its brides. Over-editing breaks trust; authenticity builds it.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="jaipur-card p-4 border-l-4 border-pink-600">
+                            <h4 class="font-bold text-lg">✨ The "Sister's Approval" Factor</h4>
+                            <p class="text-sm">Content isn't just for the bride. It's scrutinized by sisters and mothers. High-definition skin texture proves skill; blurry filters suggest hiding flaws.</p>
+                        </div>
+                        <div class="jaipur-card p-4 border-l-4 border-amber-600">
+                            <h4 class="font-bold text-lg">🏯 Jaipur Aesthetic Anchor</h4>
+                            <p class="text-sm">Rajputana grandeur meets modern minimalism. Audiences respond to gold tones, warm lighting, and backgrounds that hint at heritage (Jharokhas, arches) rather than generic sterile salon walls.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CHART: Trust Factors -->
+                <div class="jaipur-card p-6">
+                    <h4 class="text-center font-bold text-xl mb-4 text-pink-900">What Builds Trust in Visuals?</h4>
+                    <div class="chart-container" style="height: 300px;">
+                        <canvas id="trustRadar"></canvas>
+                    </div>
+                    <p class="text-center text-xs text-gray-500 mt-2">Survey data simulated based on consumer psychology research.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- DO's & DON'Ts SECTION -->
+        <section class="bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="jaipur-accent p-4">
+                <h3 class="text-2xl font-bold text-center text-white">02. The Rulebook: Do's & Don'ts</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2">
+                <!-- DO LIST -->
+                <div class="p-6 bg-green-50">
+                    <h4 class="text-green-800 font-bold text-xl mb-4 flex items-center">
+                        <span class="text-2xl mr-2">✅</span> What TO Post
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><span class="mr-2 text-green-600">✓</span> <span><strong>Real Brides:</strong> Candid smiles, natural skin texture (pores visible).</span></li>
+                        <li class="flex items-start"><span class="mr-2 text-green-600">✓</span> <span><strong>Process Shots:</strong> BTS of draping or eye makeup application.</span></li>
+                        <li class="flex items-start"><span class="mr-2 text-green-600">✓</span> <span><strong>Jaipur Context:</strong> Outdoor shots at heritage venues/hotels.</span></li>
+                        <li class="flex items-start"><span class="mr-2 text-green-600">✓</span> <span><strong>4K Video:</strong> High bitrate, well-lit transformation reels.</span></li>
+                        <li class="flex items-start"><span class="mr-2 text-green-600">✓</span> <span><strong>Haldi/Sangeet:</strong> Fun, emotional, colorful chaos.</span></li>
+                    </ul>
+                </div>
+                <!-- DON'T LIST -->
+                <div class="p-6 bg-red-50">
+                    <h4 class="text-red-800 font-bold text-xl mb-4 flex items-center">
+                        <span class="text-2xl mr-2">❌</span> What NOT To Post
+                    </h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start"><span class="mr-2 text-red-600">✗</span> <span><strong>Heavy Filters:</strong> "Plastic" skin apps (Snapchat filters).</span></li>
+                        <li class="flex items-start"><span class="mr-2 text-red-600">✗</span> <span><strong>Stolen Pinterest Images:</strong> Immediate loss of credibility.</span></li>
+                        <li class="flex items-start"><span class="mr-2 text-red-600">✗</span> <span><strong>Messy Backgrounds:</strong> Towels on floor, clutter in frame.</span></li>
+                        <li class="flex items-start"><span class="mr-2 text-red-600">✗</span> <span><strong>Collages:</strong> Grid collages often look cheap/dated.</span></li>
+                        <li class="flex items-start"><span class="mr-2 text-red-600">✗</span> <span><strong>Bad Lighting:</strong> Shadows under eyes or yellow indoor tint.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- MISTAKES SEVERITY CHART -->
+        <section>
+            <h3 class="text-3xl font-bold mb-6 text-pink-800 text-center">03. Common Mistakes & Severity Score</h3>
+            <p class="text-center max-w-3xl mx-auto mb-8">
+                Not all mistakes are equal. Some are annoying; others destroy your brand reputation instantly. We ranked the most common errors by their impact on client trust (Severity Score / 10).
+            </p>
+            <div class="chart-container bg-white p-4 rounded-lg shadow-md">
+                <canvas id="mistakesChart"></canvas>
+            </div>
+        </section>
+
+        <!-- QUALITY VS QUANTITY & STRATEGY -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Text Content -->
+            <div>
+                <h3 class="text-3xl font-bold mb-4 text-pink-800">04. Quality vs. Quantity Framework</h3>
+                <div class="prose text-gray-700">
+                    <p class="mb-4">
+                        The eternal dilemma: post daily to please the algorithm, or post weekly to maintain premium standards? For a salon charging premium rates, <strong>Trust > Reach</strong>.
+                    </p>
+                    <div class="jaipur-card p-5 mb-4 bg-gradient-to-r from-pink-50 to-white">
+                        <h5 class="font-bold text-pink-700">The Golden Ratio</h5>
+                        <p class="text-2xl font-serif font-bold my-2">70% Quality : 30% Quantity</p>
+                        <ul class="text-sm list-disc pl-5">
+                            <li><strong>70% High Polish:</strong> Professional camera, planned lighting, final bridal looks.</li>
+                            <li><strong>30% Raw/Real:</strong> Phone BTS, quick tips, stories, candid moments.</li>
+                        </ul>
+                    </div>
+                    <p class="text-sm italic">
+                        "A bad photo stays on your grid forever. A missed posting day is forgotten tomorrow."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Chart: The Tradeoff -->
+            <div class="jaipur-card p-4 flex flex-col justify-center">
+                <h4 class="text-center font-bold mb-2">The Brand Perception Curve</h4>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="qualityQuantityChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIDEO STRATEGY -->
+        <section>
+             <h3 class="text-3xl font-bold mb-6 text-pink-800">05. Video Posting Strategy</h3>
+             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                 <div class="jaipur-card p-4 text-center">
+                     <div class="text-4xl mb-2">🎥</div>
+                     <h4 class="font-bold text-lg">Reels (IG/FB)</h4>
+                     <p class="text-sm text-gray-600">6-15 Seconds. Fast cuts. Audio trending. Focus: Transformation or "The Reveal".</p>
+                 </div>
+                 <div class="jaipur-card p-4 text-center">
+                     <div class="text-4xl mb-2">📺</div>
+                     <h4 class="font-bold text-lg">YouTube/IGTV</h4>
+                     <p class="text-sm text-gray-600">2-5 Minutes. Tutorials, Full Client Journey. Focus: Expertise & Education.</p>
+                 </div>
+                 <div class="jaipur-card p-4 text-center">
+                     <div class="text-4xl mb-2">🟢</div>
+                     <h4 class="font-bold text-lg">WhatsApp Status</h4>
+                     <p class="text-sm text-gray-600">30 Seconds. Raw, unedited closeups. Focus: Current Availability & Realness.</p>
+                 </div>
+             </div>
+
+             <div class="chart-container bg-white p-4 rounded-lg shadow-md">
+                 <h4 class="text-center font-bold mb-4">Optimal Video Lengths by Platform (Seconds)</h4>
+                 <canvas id="videoLengthChart"></canvas>
+             </div>
+        </section>
+
+        <!-- CAPTION TEMPLATES -->
+        <section class="bg-pink-900 text-white rounded-xl shadow-xl p-8">
+            <h3 class="text-3xl font-bold mb-2 text-center text-amber-400">06. Caption Strategy: Emotional & Regional</h3>
+            <p class="text-center text-pink-200 mb-8">Don't just describe the makeup. Tell the bride's story. Use Hinglish for warmth.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Template 1 -->
+                <div class="bg-white/10 p-6 rounded-lg border border-pink-700 backdrop-blur-sm">
+                    <h4 class="text-amber-400 font-bold mb-2">👑 The Royal Bride (Jaipur Special)</h4>
+                    <p class="text-sm italic text-gray-300 mb-2">Use for: Heavy lehenga, polki jewellery visuals.</p>
+                    <div class="bg-black/30 p-4 rounded text-sm font-mono text-pink-100">
+                        "A modern Rani for her big day. ✨ <br><br>
+                        When [Bride Name] walked in, she wanted a look that honored her Rajputana roots but felt fresh for 2024. We chose deep maroon lips 💄 and classic gold eyes to complement her heavy Polki set.<br><br>
+                        Royal, timeless, and 100% regal.<br><br>
+                        MUA: @YourSalon<br>
+                        #JaipurBride #RajputanaStyle #RoyalWedding #IndianBride #YourSalonName"
+                    </div>
+                </div>
+
+                <!-- Template 2 -->
+                <div class="bg-white/10 p-6 rounded-lg border border-pink-700 backdrop-blur-sm">
+                    <h4 class="text-amber-400 font-bold mb-2">💄 The "Less is More" Look</h4>
+                    <p class="text-sm italic text-gray-300 mb-2">Use for: Subtle makeup, day weddings, engagement.</p>
+                    <div class="bg-black/30 p-4 rounded text-sm font-mono text-pink-100">
+                        "Skin that looks like... SKIN. ✨<br><br>
+                        Pov: You want to look like yourself, just polished. No heavy layers, just glow. 🌟 We focused on hydration and soft highlighting for [Bride Name]'s engagement look.<br><br>
+                        Kyunki natural glow ka alag hi maza hai. ❤️<br><br>
+                        Book your consultation: [Link]<br>
+                        #NaturalMakeup #EngagementLook #SkinFinish #JaipurMUA #MinimalBride"
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 30 DAY PLAN -->
+        <section>
+            <h3 class="text-3xl font-bold mb-6 text-pink-800">07. The 30-Day Content Mix</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse bg-white rounded-lg shadow overflow-hidden">
+                    <thead>
+                        <tr class="bg-pink-100 text-pink-900">
+                            <th class="p-4 border-b border-pink-200">Week</th>
+                            <th class="p-4 border-b border-pink-200">Mon (Edu)</th>
+                            <th class="p-4 border-b border-pink-200">Wed (Viral/Reel)</th>
+                            <th class="p-4 border-b border-pink-200">Fri (Bridal/Proof)</th>
+                            <th class="p-4 border-b border-pink-200">Sun (Pers/BTS)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm">
+                        <tr>
+                            <td class="p-4 border-b border-gray-100 font-bold">Week 1</td>
+                            <td class="p-4 border-b border-gray-100">Skincare tip for brides</td>
+                            <td class="p-4 border-b border-gray-100">Transition Reel (Bare -> Glam)</td>
+                            <td class="p-4 border-b border-gray-100">Signature Bride Photo (Close up)</td>
+                            <td class="p-4 border-b border-gray-100">Salon team introduction</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b border-gray-100 font-bold">Week 2</td>
+                            <td class="p-4 border-b border-gray-100">Product breakdown (Lipstick)</td>
+                            <td class="p-4 border-b border-gray-100">Slow-mo Jewellery adjustment</td>
+                            <td class="p-4 border-b border-gray-100">Full length Lehenga shot</td>
+                            <td class="p-4 border-b border-gray-100">Client testimonial video</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b border-gray-100 font-bold">Week 3</td>
+                            <td class="p-4 border-b border-gray-100">Q&A: Booking process</td>
+                            <td class="p-4 border-b border-gray-100">Trending Audio lip-sync/vibe</td>
+                            <td class="p-4 border-b border-gray-100">Haldi/Sangeet Vibrant Look</td>
+                            <td class="p-4 border-b border-gray-100">Coffee/Tea break BTS</td>
+                        </tr>
+                        <tr>
+                            <td class="p-4 border-b border-gray-100 font-bold">Week 4</td>
+                            <td class="p-4 border-b border-gray-100">"Mistakes brides make" reel</td>
+                            <td class="p-4 border-b border-gray-100">Venue walk-in video</td>
+                            <td class="p-4 border-b border-gray-100">Before & After Split Photo</td>
+                            <td class="p-4 border-b border-gray-100">Month recap / Thank you</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center text-sm">
+        <p>&copy; 2024-25 Visual Strategy Report. Generated for Jaipur Salon Market Analysis.</p>
+        <p class="mt-2">Sources: Indian Consumer Psychology 2024 • Meta Creative Playbook • WeddingWire India Trends</p>
+    </footer>
+
+    <!-- SCRIPTS FOR CHARTS -->
+    <script>
+        // Common Color Palette
+        const colors = {
+            pink: '#BE185D',
+            gold: '#B45309',
+            darkRed: '#881337',
+            lightPink: '#FBCFE8',
+            teal: '#0F766E'
+        };
+
+        // --- CHART 1: TRUST RADAR ---
+        const ctxRadar = document.getElementById('trustRadar').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: ['Skin Texture (Realness)', 'Lighting Quality', 'Consistent Style', 'Social Proof (Reviews)', 'Cultural Relevance', 'Video Clarity'],
+                datasets: [{
+                    label: 'Impact on Booking Decision',
+                    data: [95, 80, 70, 90, 85, 75],
+                    fill: true,
+                    backgroundColor: 'rgba(190, 24, 93, 0.2)',
+                    borderColor: colors.pink,
+                    pointBackgroundColor: colors.gold,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: colors.gold
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0,0,0,0.1)' },
+                        grid: { color: 'rgba(0,0,0,0.1)' },
+                        pointLabels: {
+                            font: { size: 12, family: 'Lato' },
+                            color: '#4A0404'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                return Array.isArray(label) ? label.join(' ') : label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 2: MISTAKES SEVERITY (Horizontal Bar) ---
+        const ctxMistakes = document.getElementById('mistakesChart').getContext('2d');
+
+        // Data processing for labels > 16 chars
+        const mistakeLabels = [
+            'Over-Smoothing Skin (Blur)',
+            'Stolen/Stock Images',
+            'Bad Lighting (Yellow)',
+            'Messy Backgrounds',
+            'Inconsistent Posting',
+            'Wrong Hashtags'
+        ];
+
+        const processLabels = (labels) => {
+            return labels.map(label => {
+                if (label.length > 16) {
+                    const words = label.split(' ');
+                    const lines = [];
+                    let currentLine = words[0];
+                    for (let i = 1; i < words.length; i++) {
+                        if ((currentLine + " " + words[i]).length < 16) {
+                            currentLine += " " + words[i];
+                        } else {
+                            lines.push(currentLine);
+                            currentLine = words[i];
+                        }
+                    }
+                    lines.push(currentLine);
+                    return lines;
+                }
+                return label;
+            });
+        };
+
+        new Chart(ctxMistakes, {
+            type: 'bar',
+            data: {
+                labels: processLabels(mistakeLabels),
+                datasets: [{
+                    label: 'Severity Score (out of 10)',
+                    data: [9.5, 10, 8, 7, 5, 3],
+                    backgroundColor: [
+                        '#991B1B', // Red 800
+                        '#7F1D1D', // Red 900
+                        '#B91C1C', // Red 700
+                        '#D97706', // Amber
+                        '#F59E0B', // Yellow
+                        '#10B981'  // Green (Low severity)
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                indexAxis: 'y',
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 10,
+                        title: { display: true, text: 'Damage to Trust (10 = Fatal)' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                return Array.isArray(label) ? label.join(' ') : label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 3: QUALITY VS QUANTITY (Scatter/Line) ---
+        const ctxQQ = document.getElementById('qualityQuantityChart').getContext('2d');
+        new Chart(ctxQQ, {
+            type: 'line',
+            data: {
+                labels: ['1 Post/Week', '3 Posts/Week', '5 Posts/Week', 'Daily', '3x Daily'],
+                datasets: [{
+                    label: 'Algorithmic Reach',
+                    data: [20, 50, 80, 95, 100],
+                    borderColor: colors.gold,
+                    backgroundColor: colors.gold,
+                    tension: 0.4,
+                    yAxisID: 'y'
+                }, {
+                    label: 'Perceived Quality/Trust',
+                    data: [95, 90, 85, 60, 30], // Drops as quantity forces lower quality
+                    borderColor: colors.pink,
+                    backgroundColor: colors.pink,
+                    tension: 0.4,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'left',
+                        title: { display: true, text: 'Reach %' }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        grid: { drawOnChartArea: false },
+                        title: { display: true, text: 'Trust Score %' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                return Array.isArray(label) ? label.join(' ') : label;
+                            }
+                        }
+                    },
+                    annotation: {
+                        annotations: {
+                            line1: {
+                                type: 'line',
+                                xMin: 2, // Around 5 posts/week
+                                xMax: 2,
+                                borderColor: 'grey',
+                                borderWidth: 2,
+                                borderDash: [6, 6],
+                                label: {
+                                    content: 'Optimal Balance',
+                                    display: true,
+                                    position: 'start',
+                                    backgroundColor: 'rgba(0,0,0,0.7)'
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // --- CHART 4: VIDEO LENGTHS (Bar) ---
+        const ctxVideo = document.getElementById('videoLengthChart').getContext('2d');
+        new Chart(ctxVideo, {
+            type: 'bar',
+            data: {
+                labels: ['Instagram Reels', 'Facebook Video', 'WhatsApp Status', 'YouTube Shorts', 'GMB Updates'],
+                datasets: [{
+                    label: 'Min Seconds',
+                    data: [6, 60, 15, 15, 10],
+                    backgroundColor: 'rgba(190, 24, 93, 0.5)',
+                    stack: 'Stack 0',
+                }, {
+                    label: 'Max Seconds',
+                    data: [90, 180, 30, 60, 30],
+                    backgroundColor: colors.pink,
+                    stack: 'Stack 0',
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: { display: true, text: 'Duration (Seconds)' }
+                    }
+                },
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                return Array.isArray(label) ? label.join(' ') : label;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

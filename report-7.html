@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Growth System: Jaipur Bridal Market 2024-25</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Palette: "Brilliant Blues" with "Royal Jaipur" Accents */
+        :root {
+            --color-bg-primary: #f0f9ff; /* Light Blue 50 */
+            --color-primary: #1e40af; /* Blue 800 */
+            --color-secondary: #0ea5e9; /* Sky 500 */
+            --color-accent: #f59e0b; /* Amber 500 - for Wedding Gold */
+            --color-text-dark: #0f172a; /* Slate 900 */
+            --color-card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-bg-primary);
+            color: var(--color-text-dark);
+        }
+
+        /* Chart Container Styling - MANDATORY */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px; /* Base height */
+            max-height: 450px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        /* Material Design Card Styling */
+        .infographic-card {
+            background-color: var(--color-card-bg);
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            transition: transform 0.2s ease-in-out;
+            border-top: 4px solid var(--color-secondary);
+        }
+
+        .infographic-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .timeline-connector {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--color-secondary);
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            color: var(--color-primary);
+        }
+    </style>
+    <!--
+    Analysis of Source Material:
+    The document outlines a Facebook-first marketing strategy for Jaipur bridal salons.
+    Key Themes: Trust verification via FB, importance of family decision makers, specific content types (Real brides > models), and hyper-local targeting.
+    Data Points: Comparison of platforms, Audience segmentation, Content impact scores, Ad budget/CPL, and Risk/Reward validation.
+
+    Narrative Plan:
+    1. Introduction: The unique role of FB in Jaipur (Verification Engine).
+    2. The Landscape: FB vs IG vs Others (Radar Chart).
+    3. The Audience: Segmentation Breakdown (Donut Chart).
+    4. The Content: What drives impact? (Bar Chart).
+    5. The Strategy Matrix: Risk vs Reward validation (Bubble Chart).
+    6. Financials: Budget & CPL (Grouped Bar).
+    7. Roadmap: 30-Day Execution Plan (Timeline).
+
+    Palette Selection:
+    "Brilliant Blues" with Royal Gold/Amber accents.
+    Hex Codes: #1e40af (Royal Blue), #0ea5e9 (Sky Blue), #f59e0b (Gold), #ffffff (White).
+    -->
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- Header Section -->
+    <header class="max-w-7xl mx-auto mb-12 text-center">
+        <div class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-4 py-1 rounded-full mb-4">
+            WEDDING SEASON 2024-25
+        </div>
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Facebook Growth System</h1>
+        <h2 class="text-xl md:text-2xl text-slate-600 font-light">For Jaipur Bridal Salons & Makeup Artists</h2>
+        <p class="mt-4 max-w-3xl mx-auto text-slate-500">
+            A strategic manual for dominating the Tier-2 bridal market by leveraging local trust, family networks, and hyper-targeted Facebook campaigns.
+        </p>
+    </header>
+
+    <!-- Main Content Grid -->
+    <main class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-8">
+
+        <!-- Section 1: The Digital Landscape (Radar Chart) -->
+        <section class="col-span-1 md:col-span-12 lg:col-span-6 infographic-card">
+            <h3 class="text-2xl font-bold mb-3">1. The "Verification Engine"</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                In Jaipur, Instagram is for inspiration, but <strong>Facebook is for trust</strong>. Families and financial decision-makers (Mothers, Buas) use Facebook to verify a salon's credibility before booking. While Instagram captures the bride, Facebook captures the family paying the bill.
+            </p>
+            <div class="chart-container">
+                <canvas id="platformRadarChart"></canvas>
+            </div>
+            <div class="mt-4 text-xs text-center text-slate-400">
+                Comparison of platform strengths for the Jaipur Bridal Market context.
+            </div>
+        </section>
+
+        <!-- Section 2: Target Audience Composition (Donut Chart) -->
+        <section class="col-span-1 md:col-span-12 lg:col-span-6 infographic-card">
+            <h3 class="text-2xl font-bold mb-3">2. Who are we Targeting?</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                The Jaipur market is segmented by budget and decision power. The "Smart-Value Bride" and "Budget Bride" represent the largest volume, while the "Premium Bride" is a niche segment. Crucially, the "Mother/Decision Maker" segment controls the final booking.
+            </p>
+            <div class="chart-container">
+                <canvas id="audienceDonutChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 3: Content Impact Analysis (Horizontal Bar Chart) -->
+        <section class="col-span-1 md:col-span-12 infographic-card">
+            <h3 class="text-2xl font-bold mb-3">3. High-Impact Content Strategy</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                Not all content is created equal. In Jaipur, <strong>Video Content</strong> (long-form tutorials, transformations) and structured <strong>Facebook Albums</strong> drive the highest reach and conversion. Text posts have minimal impact. Authenticity beats aesthetics—"Real Bride" photos perform better than models.
+            </p>
+            <div class="chart-container h-80">
+                <canvas id="contentImpactChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 4: Strategy Validation Matrix (Bubble Chart) -->
+        <section class="col-span-1 md:col-span-12 infographic-card bg-slate-50 border-t-0 border-l-4 border-blue-800">
+            <h3 class="text-2xl font-bold mb-3">4. Strategic Validation Matrix</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                We analyzed various strategies based on their <strong>Success Likelihood</strong> (Y-Axis), <strong>Implementation Difficulty</strong> (X-Axis), and <strong>Reach Potential</strong> (Bubble Size).
+                <br><br>
+                <span class="font-semibold text-green-600">&#9679; Low Risk</span> strategies like <strong>Review Mining</strong> and <strong>Local Ads</strong> are the safest bets.
+                <span class="font-semibold text-orange-500">&#9679; Medium Risk</span> strategies like <strong>Influencer Collabs</strong> require more effort for variable returns.
+            </p>
+            <div class="chart-container h-96">
+                <canvas id="strategyBubbleChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Section 5: Financial Projections (Bar Chart) -->
+        <section class="col-span-1 md:col-span-12 lg:col-span-5 infographic-card">
+            <h3 class="text-2xl font-bold mb-3">5. Ad Budget & Lead Costs</h3>
+            <p class="text-slate-600 mb-6 text-sm leading-relaxed">
+                For a viable campaign in Jaipur, a daily spend of ₹500 is recommended, split between Lead Gen (60%) and Awareness (40%). Cost Per Lead (CPL) varies significantly by method.
+            </p>
+            <div class="chart-container">
+                <canvas id="budgetBarChart"></canvas>
+            </div>
+            <div class="mt-6 grid grid-cols-2 gap-4 text-center">
+                <div class="bg-blue-50 p-2 rounded">
+                    <div class="text-2xl font-bold text-blue-800">₹40-80</div>
+                    <div class="text-xs text-slate-500">Msg Lead Cost</div>
+                </div>
+                <div class="bg-blue-50 p-2 rounded">
+                    <div class="text-2xl font-bold text-blue-800">₹80-150</div>
+                    <div class="text-xs text-slate-500">Form Lead Cost</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: 30-Day Action Plan (Timeline) -->
+        <section class="col-span-1 md:col-span-12 lg:col-span-7 infographic-card">
+            <h3 class="text-2xl font-bold mb-6">6. 30-Day Execution Roadmap</h3>
+            <div class="relative pl-8">
+                <div class="timeline-connector left-8 md:left-8 bg-slate-200" style="width: 2px; left: 31px; top: 10px; bottom: 20px; z-index:0;"></div>
+
+                <!-- Week 1 -->
+                <div class="relative z-10 mb-8 flex items-start">
+                    <div class="bg-blue-600 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shrink-0 border-4 border-white shadow-md">1</div>
+                    <div class="ml-6 bg-white border border-slate-100 p-4 rounded-lg shadow-sm w-full">
+                        <h4 class="font-bold text-blue-800">Week 1: Foundation & Hygiene</h4>
+                        <ul class="mt-2 text-sm text-slate-600 space-y-1 list-disc list-inside">
+                            <li>Audit FB Page & Update Cover (Wedding Season Branding)</li>
+                            <li>Organize Portfolios into Specific Albums (Bridal, Haldi)</li>
+                            <li>Join 10 Local Jaipur Women's Groups</li>
+                            <li>Setup Messenger Auto-replies</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="relative z-10 mb-8 flex items-start">
+                    <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shrink-0 border-4 border-white shadow-md">2</div>
+                    <div class="ml-6 bg-white border border-slate-100 p-4 rounded-lg shadow-sm w-full">
+                        <h4 class="font-bold text-blue-800">Week 2: Content & Ad Launch</h4>
+                        <ul class="mt-2 text-sm text-slate-600 space-y-1 list-disc list-inside">
+                            <li>Launch <strong>Local Awareness Ads</strong> (5km radius)</li>
+                            <li>Launch <strong>Lead Gen Ads</strong> (Offer-based)</li>
+                            <li>Post "Educational" content in Groups</li>
+                            <li>Refresh Marketplace Listings</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="relative z-10 mb-8 flex items-start">
+                    <div class="bg-blue-400 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shrink-0 border-4 border-white shadow-md">3</div>
+                    <div class="ml-6 bg-white border border-slate-100 p-4 rounded-lg shadow-sm w-full">
+                        <h4 class="font-bold text-blue-800">Week 3: Engagement & Partnerships</h4>
+                        <ul class="mt-2 text-sm text-slate-600 space-y-1 list-disc list-inside">
+                            <li>Execute Collab with Mehendi Artist/Jeweler</li>
+                            <li>Host FB Live Q&A (Hindi)</li>
+                            <li>"Seed" referrals in Colony Groups</li>
+                            <li>Intensive Lead Call Follow-ups</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Week 4 -->
+                <div class="relative z-10 flex items-start">
+                    <div class="bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-sm shrink-0 border-4 border-white shadow-md">4</div>
+                    <div class="ml-6 bg-white border border-slate-100 p-4 rounded-lg shadow-sm w-full">
+                        <h4 class="font-bold text-amber-600">Week 4: Conversion & Sales</h4>
+                        <ul class="mt-2 text-sm text-slate-600 space-y-1 list-disc list-inside">
+                            <li>Kill underperforming ads, boost winners</li>
+                            <li>Post Client Review Collages</li>
+                            <li>Run "Flash Sale" for remaining dates</li>
+                            <li><strong>Goal:</strong> 5-8 Bridal Bookings Secured</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-12 mb-8 text-center text-slate-400 text-xs">
+        <p>© 2024 Jaipur Bridal Market Strategy. Internal Research Document.</p>
+        <p class="mt-1">Generated by Canvas Infographics Strategy Engine.</p>
+    </footer>
+
+    <!-- JavaScript for Chart Generation -->
+    <script>
+        // ---------------------------------------------------------
+        // Utility Functions
+        // ---------------------------------------------------------
+
+        // Label Wrapping Function (16 char limit)
+        function wrapLabel(str, maxChars) {
+            if (str.length <= maxChars) return str;
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= maxChars) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Process labels for all charts
+        const processLabels = (labels) => labels.map(label => wrapLabel(label, 16));
+
+        // Common Tooltip Configuration (Multiline support)
+        const commonTooltipOptions = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            },
+            backgroundColor: 'rgba(30, 64, 175, 0.9)', // Blue 800
+            titleFont: { size: 13, family: 'Inter' },
+            bodyFont: { size: 12, family: 'Inter' },
+            padding: 10,
+            cornerRadius: 4,
+            displayColors: true
+        };
+
+        // Common Chart Options
+        const baseChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        font: { family: 'Inter', size: 11 },
+                        usePointStyle: true,
+                        boxWidth: 8
+                    }
+                },
+                tooltip: commonTooltipOptions
+            }
+        };
+
+        // Color Palette References
+        const colors = {
+            blueDark: '#1e40af',
+            blueMid: '#3b82f6',
+            blueLight: '#93c5fd',
+            gold: '#f59e0b',
+            teal: '#14b8a6',
+            pink: '#db2777', // For Jaipur Pink accents
+            grey: '#94a3b8'
+        };
+
+        // ---------------------------------------------------------
+        // Chart 1: Platform Radar Chart
+        // ---------------------------------------------------------
+        const ctxRadar = document.getElementById('platformRadarChart').getContext('2d');
+        const radarLabels = ["Trust & Verification", "Mother/Family Reach", "Viral Trendiness", "Local Targeting", "Conversion Cost", "Booking Decision"];
+
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: processLabels(radarLabels),
+                datasets: [
+                    {
+                        label: 'Facebook',
+                        data: [95, 90, 40, 95, 85, 90],
+                        backgroundColor: 'rgba(30, 64, 175, 0.2)',
+                        borderColor: colors.blueDark,
+                        pointBackgroundColor: colors.blueDark,
+                        borderWidth: 2,
+                    },
+                    {
+                        label: 'Instagram',
+                        data: [40, 30, 95, 50, 60, 40],
+                        backgroundColor: 'rgba(219, 39, 119, 0.1)', // Pinkish
+                        borderColor: colors.pink,
+                        pointBackgroundColor: colors.pink,
+                        borderWidth: 1.5,
+                        borderDash: [5, 5]
+                    },
+                    {
+                        label: 'Google/JD',
+                        data: [80, 50, 10, 60, 40, 70],
+                        backgroundColor: 'rgba(148, 163, 184, 0.1)',
+                        borderColor: colors.grey,
+                        pointBackgroundColor: colors.grey,
+                        borderWidth: 1.5
+                    }
+                ]
+            },
+            options: {
+                ...baseChartOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0,0,0,0.05)' },
+                        grid: { color: 'rgba(0,0,0,0.05)' },
+                        pointLabels: {
+                            font: { family: 'Inter', size: 11 },
+                            color: '#475569'
+                        },
+                        ticks: { display: false }
+                    }
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // Chart 2: Audience Donut Chart
+        // ---------------------------------------------------------
+        const ctxDonut = document.getElementById('audienceDonutChart').getContext('2d');
+        const audienceLabels = ["Smart-Value Bride", "Budget Bride", "Mothers/Relatives", "Premium Bride", "Party Guests"];
+
+        new Chart(ctxDonut, {
+            type: 'doughnut',
+            data: {
+                labels: processLabels(audienceLabels),
+                datasets: [{
+                    data: [30, 35, 20, 5, 10], // Estimated composition
+                    backgroundColor: [
+                        colors.blueMid,   // Smart Value
+                        colors.blueLight, // Budget
+                        colors.gold,      // Mothers (Key decision maker - highlighted)
+                        colors.blueDark,  // Premium
+                        colors.grey       // Guests
+                    ],
+                    borderWidth: 0,
+                    hoverOffset: 10
+                }]
+            },
+            options: {
+                ...baseChartOptions,
+                cutout: '60%',
+                plugins: {
+                    ...baseChartOptions.plugins,
+                    legend: { position: 'right' }
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // Chart 3: Content Impact Bar Chart
+        // ---------------------------------------------------------
+        const ctxBar = document.getElementById('contentImpactChart').getContext('2d');
+        const contentTypes = ["Video/Reels (Hindi)", "Albums (Real Brides)", "Stories (Updates)", "Text/Status Posts", "Event Pages"];
+
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: processLabels(contentTypes),
+                datasets: [{
+                    label: 'Impact Score (1-10)',
+                    data: [9, 8, 6, 3, 5],
+                    backgroundColor: [
+                        colors.blueDark,
+                        colors.blueMid,
+                        colors.teal,
+                        colors.grey,
+                        colors.blueLight
+                    ],
+                    borderRadius: 4,
+                    barThickness: 20
+                }]
+            },
+            options: {
+                ...baseChartOptions,
+                indexAxis: 'y', // Horizontal Bar
+                scales: {
+                    x: {
+                        beginAtZero: true,
+                        max: 10,
+                        grid: { display: false }
+                    },
+                    y: {
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // Chart 4: Strategy Bubble Chart (Validation)
+        // ---------------------------------------------------------
+        const ctxBubble = document.getElementById('strategyBubbleChart').getContext('2d');
+
+        // Data format: x: Difficulty, y: Success %, r: Reach/Impact
+        // Difficulty: 1 (Easy) to 10 (Hard)
+        const bubbleData = [
+            { x: 2, y: 90, r: 15, label: "Local Ads", type: "Low Risk" },
+            { x: 1, y: 95, r: 10, label: "Review Mining", type: "Low Risk" },
+            { x: 8, y: 80, r: 20, label: "Video Content", type: "Med Risk" }, // High effort
+            { x: 3, y: 60, r: 12, label: "Marketplace", type: "Med Risk" },
+            { x: 4, y: 75, r: 18, label: "Group Seeding", type: "Low Risk" },
+            { x: 6, y: 50, r: 14, label: "Influencer Collab", type: "High Risk" },
+            { x: 2, y: 65, r: 8, label: "Check-in Disc.", type: "Low Risk" }
+        ];
+
+        new Chart(ctxBubble, {
+            type: 'bubble',
+            data: {
+                datasets: [
+                    {
+                        label: 'Low Risk Strategies',
+                        data: bubbleData.filter(d => d.type === 'Low Risk'),
+                        backgroundColor: colors.teal,
+                        borderColor: colors.teal,
+                    },
+                    {
+                        label: 'Medium Risk Strategies',
+                        data: bubbleData.filter(d => d.type === 'Med Risk'),
+                        backgroundColor: colors.gold,
+                        borderColor: colors.gold,
+                    },
+                    {
+                        label: 'High Risk Strategies',
+                        data: bubbleData.filter(d => d.type === 'High Risk'),
+                        backgroundColor: colors.pink,
+                        borderColor: colors.pink,
+                    }
+                ]
+            },
+            options: {
+                ...baseChartOptions,
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Implementation Difficulty (Lower is Easier)' },
+                        min: 0, max: 10,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: {
+                        title: { display: true, text: 'Success Likelihood (%)' },
+                        min: 40, max: 100,
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    }
+                },
+                plugins: {
+                    ...baseChartOptions.plugins,
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw.label +
+                                       ` (Success: ${context.raw.y}%, Diff: ${context.raw.x})`;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        // ---------------------------------------------------------
+        // Chart 5: Budget Bar Chart
+        // ---------------------------------------------------------
+        const ctxBudget = document.getElementById('budgetBarChart').getContext('2d');
+
+        new Chart(ctxBudget, {
+            type: 'bar',
+            data: {
+                labels: processLabels(["Message Leads", "Lead Forms", "Awareness Ads"]),
+                datasets: [
+                    {
+                        label: 'Cost Per Result (Lower Range)',
+                        data: [40, 80, 0.5], // CPV is very low for awareness, treating as negligible for viz scaling or just showing Leads
+                        backgroundColor: colors.blueLight,
+                        stack: 'Stack 0',
+                    },
+                    {
+                        label: 'Cost Per Result (Upper Range)',
+                        data: [40, 70, 0.5], // Added to create range (40+40=80)
+                        backgroundColor: colors.blueDark,
+                        stack: 'Stack 0',
+                    }
+                ]
+            },
+            options: {
+                ...baseChartOptions,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                // Custom logic to show range
+                                if(context.datasetIndex === 0) return `Min: ₹${context.raw}`;
+                                if(context.datasetIndex === 1) {
+                                    const min = context.chart.data.datasets[0].data[context.dataIndex];
+                                    return `Max: ₹${min + context.raw}`;
+                                }
+                            }
+                        }
+                    },
+                    legend: { display: false },
+                    title: {
+                        display: true,
+                        text: 'Estimated Cost Per Lead Range (INR)',
+                        font: { family: 'Inter', size: 12 }
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

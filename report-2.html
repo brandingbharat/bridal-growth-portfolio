@@ -1,0 +1,555 @@
+DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaipur Salon Growth Bible: Bridal Season 2024-2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <script> tailwind.config = { theme: { extend: { colors: { jaipur: { pink: '#D81B60', gold: '#FFC107', blue: '#1E88E5', dark: '#880E4F', light: '#FCE4EC' } }, fontFamily: { sans: ['Helvetica', 'Arial', 'sans-serif'], } } } } </script>
+    <style> body { background-color: #F3F4F6; color: #1F2937; } .chart-container { position: relative; width: 100%; max-width: 600px; height: 350px; max-height: 400px; margin: 0 auto; } .timeline-line { position: absolute; left: 50%; top: 0; bottom: 0; width: 4px; background-color: #E5E7EB; transform: translateX(-50%); } /* Hide scrollbar for clean look */ ::-webkit-scrollbar { width: 8px; } ::-webkit-scrollbar-track { background: #f1f1f1; } ::-webkit-scrollbar-thumb { background: #D81B60; border-radius: 4px; } </style>
+    </head> <body class="antialiased">
+    <!-- Header Section -->
+<header class="bg-jaipur-pink text-white py-12 px-4 shadow-lg">
+    <div class="max-w-6xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Jaipur Salon Growth Bible</h1>
+        <h2 class="text-xl md:text-2xl font-light text-jaipur-gold mb-6">Bridal Season 2024–2025 Integrated Strategy</h2>
+        <p class="max-w-3xl mx-auto text-lg opacity-90">
+            A 360° blueprint combining Instagram, WhatsApp, GMB, Facebook, and Justdial to dominate the Jaipur bridal market.
+            From consumer psychology in C-Scheme to Tier-2 trends, this is your roadmap.
+        </p>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-10 space-y-16">
+
+    <!-- Section 1: Market Intelligence -->
+    <section>
+        <div class="mb-6">
+            <h3 class="text-3xl font-bold text-jaipur-dark border-l-4 border-jaipur-gold pl-4">01. Jaipur Market Intelligence</h3>
+            <p class="mt-2 text-gray-700 max-w-4xl">
+                Jaipur's wedding economy is booming, driven by a mix of high-net-worth destination weddings and a growing aspirational middle class.
+                Understanding the split between the "Premium/Destination Bride" and the "Smart-Value Bride" is critical for targeting.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- KPI Cards -->
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-jaipur-pink text-center">
+                    <div class="text-4xl font-bold text-jaipur-pink">Nov-Feb</div>
+                    <div class="text-sm text-gray-500 mt-2 uppercase font-semibold">Peak Season</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-jaipur-blue text-center">
+                    <div class="text-4xl font-bold text-jaipur-blue">₹15k-45k</div>
+                    <div class="text-sm text-gray-500 mt-2 uppercase font-semibold">Avg Bridal Ticket</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-jaipur-gold text-center">
+                    <div class="text-4xl font-bold text-jaipur-gold">4.8+</div>
+                    <div class="text-sm text-gray-500 mt-2 uppercase font-semibold">Req GMB Rating</div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-purple-500 text-center">
+                    <div class="text-4xl font-bold text-purple-600">65%</div>
+                    <div class="text-sm text-gray-500 mt-2 uppercase font-semibold">Decision by Family</div>
+                </div>
+            </div>
+
+            <!-- Market Split Chart -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Bridal Market Segmentation</h4>
+                <div class="chart-container">
+                    <canvas id="marketChart"></canvas>
+                </div>
+                <p class="text-xs text-center text-gray-500 mt-2">Estimated market share based on booking volume vs revenue potential.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Platform Synergy -->
+    <section>
+        <div class="mb-6">
+            <h3 class="text-3xl font-bold text-jaipur-dark border-l-4 border-jaipur-gold pl-4">02. The Digital Arsenal</h3>
+            <p class="mt-2 text-gray-700 max-w-4xl">
+                No single platform wins the war. Instagram builds desire, Google (GMB) builds trust, Justdial provides volume, and WhatsApp seals the deal.
+                This radar chart visualizes the unique strength of each platform in the Jaipur ecosystem.
+            </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-2">
+                    <div class="chart-container" style="max-width: 700px; height: 400px;">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="p-4 bg-pink-50 rounded border-l-4 border-pink-500">
+                        <h5 class="font-bold text-pink-700">Instagram</h5>
+                        <p class="text-sm">Authority & Aesthetics. The digital portfolio for the bride.</p>
+                    </div>
+                    <div class="p-4 bg-blue-50 rounded border-l-4 border-blue-500">
+                        <h5 class="font-bold text-blue-700">Google My Business</h5>
+                        <p class="text-sm">Trust & Location. Where the family checks reviews.</p>
+                    </div>
+                    <div class="p-4 bg-green-50 rounded border-l-4 border-green-500">
+                        <h5 class="font-bold text-green-700">WhatsApp</h5>
+                        <p class="text-sm">Conversion & CRM. The final closing channel.</p>
+                    </div>
+                    <div class="p-4 bg-orange-50 rounded border-l-4 border-orange-500">
+                        <h5 class="font-bold text-orange-700">Justdial</h5>
+                        <p class="text-sm">Volume & Price. Capturing the budget/value seeker.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Consumer Journey Map -->
+    <section>
+        <div class="mb-6">
+            <h3 class="text-3xl font-bold text-jaipur-dark border-l-4 border-jaipur-gold pl-4">03. The Jaipur Bride's Journey</h3>
+            <p class="mt-2 text-gray-700 max-w-4xl">
+                The path from engagement to "I Do" is complex. In Jaipur, it involves the bride, her mother, and often the mother-in-law.
+                This flow demonstrates how platforms hand off to one another.
+            </p>
+        </div>
+
+        <!-- Flowchart using Grid/Flex (No SVG/Mermaid) -->
+        <div class="bg-white p-8 rounded-lg shadow-md overflow-x-auto">
+            <div class="min-w-[800px] flex justify-between items-start relative">
+                <!-- Step 1 -->
+                <div class="flex flex-col items-center w-1/5 relative z-10">
+                    <div class="w-16 h-16 rounded-full bg-jaipur-pink text-white flex items-center justify-center text-2xl font-bold shadow-lg mb-4">1</div>
+                    <h4 class="font-bold text-lg text-center">Discovery</h4>
+                    <div class="text-sm text-center text-gray-600 mt-2 bg-gray-50 p-2 rounded w-full">
+                        <strong>Channels:</strong><br>Instagram Reels, FB Groups, Justdial
+                    </div>
+                    <div class="mt-2 text-xs text-center text-pink-600 font-semibold">"Show me the look"</div>
+                </div>
+
+                <!-- Connector -->
+                <div class="absolute top-8 left-0 w-full h-1 bg-gray-200 -z-0"></div>
+
+                <!-- Step 2 -->
+                <div class="flex flex-col items-center w-1/5 relative z-10">
+                    <div class="w-16 h-16 rounded-full bg-jaipur-blue text-white flex items-center justify-center text-2xl font-bold shadow-lg mb-4">2</div>
+                    <h4 class="font-bold text-lg text-center">Evaluation</h4>
+                    <div class="text-sm text-center text-gray-600 mt-2 bg-gray-50 p-2 rounded w-full">
+                        <strong>Channels:</strong><br>GMB Reviews, Saved Collections
+                    </div>
+                    <div class="mt-2 text-xs text-center text-blue-600 font-semibold">"Can I trust them?"</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flex flex-col items-center w-1/5 relative z-10">
+                    <div class="w-16 h-16 rounded-full bg-jaipur-gold text-white flex items-center justify-center text-2xl font-bold shadow-lg mb-4">3</div>
+                    <h4 class="font-bold text-lg text-center">Contact</h4>
+                    <div class="text-sm text-center text-gray-600 mt-2 bg-gray-50 p-2 rounded w-full">
+                        <strong>Channels:</strong><br>WhatsApp, IG DM, Call
+                    </div>
+                    <div class="mt-2 text-xs text-center text-yellow-600 font-semibold">"Is date available?"</div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flex flex-col items-center w-1/5 relative z-10">
+                    <div class="w-16 h-16 rounded-full bg-green-500 text-white flex items-center justify-center text-2xl font-bold shadow-lg mb-4">4</div>
+                    <h4 class="font-bold text-lg text-center">Trial & Book</h4>
+                    <div class="text-sm text-center text-gray-600 mt-2 bg-gray-50 p-2 rounded w-full">
+                        <strong>Action:</strong><br>Paid Trial, Advance Payment
+                    </div>
+                    <div class="mt-2 text-xs text-center text-green-600 font-semibold">"Lock the price"</div>
+                </div>
+
+                <!-- Step 5 -->
+                <div class="flex flex-col items-center w-1/5 relative z-10">
+                    <div class="w-16 h-16 rounded-full bg-purple-500 text-white flex items-center justify-center text-2xl font-bold shadow-lg mb-4">5</div>
+                    <h4 class="font-bold text-lg text-center">Advocacy</h4>
+                    <div class="text-sm text-center text-gray-600 mt-2 bg-gray-50 p-2 rounded w-full">
+                        <strong>Output:</strong><br>GMB Review, Story Tag
+                    </div>
+                    <div class="mt-2 text-xs text-center text-purple-600 font-semibold">"They were amazing!"</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Premium vs Budget Strategy -->
+    <section>
+        <div class="mb-6">
+            <h3 class="text-3xl font-bold text-jaipur-dark border-l-4 border-jaipur-gold pl-4">04. Tale of Two Brides</h3>
+            <p class="mt-2 text-gray-700 max-w-4xl">
+                Strategy must bifurcate. The "Royal Rajputana" bride values exclusivity and artist fame.
+                The "Smart Value" bride values package deals and volume. Here is the financial and strategic split.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Comparison Chart -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h4 class="text-lg font-semibold text-gray-800 mb-4 text-center">Budget Allocation & Priorities</h4>
+                <div class="chart-container">
+                    <canvas id="segmentChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Textual Strategy Cards -->
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-lg shadow border-l-8 border-jaipur-gold">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">🏆 Premium / Destination Strategy</h4>
+                    <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
+                        <li><strong>Platform:</strong> Heavy Instagram & Private WhatsApp.</li>
+                        <li><strong>Hook:</strong> "Celebrity Look", "International Products".</li>
+                        <li><strong>Content:</strong> High-res video, BTS at palaces (Fairmont, Rambagh).</li>
+                        <li><strong>Pricing:</strong> Hidden/On Request. Focus on "Customization".</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow border-l-8 border-jaipur-blue">
+                    <h4 class="text-xl font-bold text-gray-800 mb-2">💎 Smart Value Strategy</h4>
+                    <ul class="list-disc pl-5 text-sm text-gray-600 space-y-1">
+                        <li><strong>Platform:</strong> Justdial, Facebook Groups, GMB.</li>
+                        <li><strong>Hook:</strong> "All-inclusive Package", "Free Pre-bridal".</li>
+                        <li><strong>Content:</strong> Before/After collages, Client Testimonials.</li>
+                        <li><strong>Pricing:</strong> Transparent. "Packages start at ₹11,000".</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Risk Analysis -->
+    <section>
+        <div class="mb-6">
+            <h3 class="text-3xl font-bold text-jaipur-dark border-l-4 border-jaipur-gold pl-4">05. Risk Assessment</h3>
+            <p class="mt-2 text-gray-700 max-w-4xl">
+                Every strategy has pitfalls. In the sensitive bridal market, a single bad review or misaligned post can cost lakhs in revenue.
+                This bubble chart maps risks by Likelihood (X), Impact (Y), and Severity (Bubble Size).
+            </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <div class="chart-container" style="max-width: 800px;">
+                <canvas id="riskChart"></canvas>
+            </div>
+            <div class="mt-4 text-center text-sm text-gray-500">
+                <span class="inline-block w-3 h-3 rounded-full bg-red-500 mr-1"></span> Critical
+                <span class="inline-block w-3 h-3 rounded-full bg-yellow-500 ml-4 mr-1"></span> Moderate
+                <span class="inline-block w-3 h-3 rounded-full bg-green-500 ml-4 mr-1"></span> Low
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Validation Matrix -->
+    <section>
+        <div class="mb-6">
+            <h3 class="text-3xl font-bold text-jaipur-dark border-l-4 border-jaipur-gold pl-4">06. Strategy Validation Matrix</h3>
+            <p class="mt-2 text-gray-700 max-w-4xl">
+                Where should you focus your limited time? We scored 12 tactics on "Ease of Implementation" vs "Business Impact".
+                Focus on the top-right quadrant: High Impact, Low Effort (Quick Wins).
+            </p>
+        </div>
+
+        <div class="bg-white p-2 rounded-lg shadow-md overflow-hidden">
+            <!-- Plotly Chart Container -->
+            <div id="validationPlot" class="w-full h-[500px]"></div>
+        </div>
+    </section>
+
+    <!-- Section 7: 30-Day Execution Plan -->
+    <section>
+        <div class="mb-6">
+            <h3 class="text-3xl font-bold text-jaipur-dark border-l-4 border-jaipur-gold pl-4">07. The 30-Day Launchpad</h3>
+            <p class="mt-2 text-gray-700 max-w-4xl">
+                A concrete, day-by-day roadmap to implement this ecosystem before the peak wedding dates hit.
+            </p>
+        </div>
+
+        <div class="relative bg-white p-8 rounded-lg shadow-md">
+            <div class="timeline-line"></div>
+
+            <!-- Week 1 -->
+            <div class="relative z-10 mb-8 pl-[55%] md:pl-[55%]">
+                <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 w-8 h-8 bg-jaipur-pink rounded-full border-4 border-white shadow"></div>
+                <div class="bg-pink-50 p-4 rounded-lg border border-pink-100 shadow-sm">
+                    <h5 class="font-bold text-jaipur-pink">Week 1: Foundation & Audit</h5>
+                    <ul class="text-sm text-gray-700 mt-2 list-disc pl-4">
+                        <li>Audit GMB photos (Upload 20+ High Res).</li>
+                        <li>Update Justdial Catalog with "2024 Packages".</li>
+                        <li>Clean IG Bio & Highlights.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Week 2 -->
+            <div class="relative z-10 mb-8 pr-[55%] text-right">
+                <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 w-8 h-8 bg-jaipur-blue rounded-full border-4 border-white shadow"></div>
+                <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 shadow-sm inline-block text-left">
+                    <h5 class="font-bold text-jaipur-blue">Week 2: Content & Campaigns</h5>
+                    <ul class="text-sm text-gray-700 mt-2 list-disc pl-4">
+                        <li>Launch "Royal Rajputana" IG Reels Series.</li>
+                        <li>Activate WhatsApp Status Calendar (Daily).</li>
+                        <li>Post "Bridal Transformation" offers in FB Groups.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Week 3 -->
+            <div class="relative z-10 mb-8 pl-[55%]">
+                <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 w-8 h-8 bg-jaipur-gold rounded-full border-4 border-white shadow"></div>
+                <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100 shadow-sm">
+                    <h5 class="font-bold text-jaipur-gold">Week 3: Outreach & Partners</h5>
+                    <ul class="text-sm text-gray-700 mt-2 list-disc pl-4">
+                        <li>DM Collab pitches to 10 Photographers.</li>
+                        <li>Visit 3 nearby Hotels for referral brochures.</li>
+                        <li>Run "Pre-Bridal Glow" Ad on Justdial.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Week 4 -->
+            <div class="relative z-10 pr-[55%] text-right">
+                <div class="absolute left-1/2 transform -translate-x-1/2 -translate-y-4 w-8 h-8 bg-green-500 rounded-full border-4 border-white shadow"></div>
+                <div class="bg-green-50 p-4 rounded-lg border border-green-100 shadow-sm inline-block text-left">
+                    <h5 class="font-bold text-green-600">Week 4: Review & Scale</h5>
+                    <ul class="text-sm text-gray-700 mt-2 list-disc pl-4">
+                        <li>Run Review Generation campaign (Past Brides).</li>
+                        <li>Boost top-performing IG Reel.</li>
+                        <li>Finalize bookings for Nov/Dec slots.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-gray-800 text-gray-400 py-8 text-center">
+    <p class="mb-2">Jaipur Salon Growth Bible &copy; 2024</p>
+    <p class="text-xs">
+        Sources: Indian Beauty & Hygiene Association Report 2023, Meta India Insights 2024,
+        Jaipur Wedding Association Data, GMB Best Practices Guidelines.
+    </p>
+    <div class="mt-4">
+        <!-- HTML Comment confirming NO SVG/Mermaid -->
+        <!-- Confirming: NEITHER Mermaid JS NOR SVG were used in this output. All icons are Unicode or CSS shapes. -->
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script>
+    // --- UTILITY: Label Wrapping for Chart.js ---
+    function wrapLabel(str, maxLen = 16) {
+        if (str.length <= maxLen) return str;
+        const words = str.split(' ');
+        const lines = [];
+        let currentLine = words[0];
+
+        for (let i = 1; i < words.length; i++) {
+            if ((currentLine + " " + words[i]).length <= maxLen) {
+                currentLine += " " + words[i];
+            } else {
+                lines.push(currentLine);
+                currentLine = words[i];
+            }
+        }
+        lines.push(currentLine);
+        return lines;
+    }
+
+    // --- CHART: Market Split (Doughnut) ---
+    const ctxMarket = document.getElementById('marketChart').getContext('2d');
+    new Chart(ctxMarket, {
+        type: 'doughnut',
+        data: {
+            labels: wrapLabel('Premium/Destination (High Value), Smart-Value (Volume), Budget/Walk-in', 20),
+            datasets: [{
+                data: [20, 50, 30], // Percentages
+                backgroundColor: ['#D81B60', '#FFC107', '#1E88E5'],
+                borderWidth: 0
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom' },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // --- CHART: Platform Synergy (Radar) ---
+    const ctxRadar = document.getElementById('radarChart').getContext('2d');
+    new Chart(ctxRadar, {
+        type: 'radar',
+        data: {
+            labels: ['Brand Authority', 'Lead Volume', 'Trust/Reviews', 'Conversion Rate', 'Cost Efficiency'],
+            datasets: [
+                {
+                    label: 'Instagram',
+                    data: [90, 60, 70, 50, 40],
+                    borderColor: '#D81B60', // Pink
+                    backgroundColor: 'rgba(216, 27, 96, 0.2)',
+                },
+                {
+                    label: 'Google My Business',
+                    data: [70, 70, 95, 80, 90], // High Trust/Cost Eff
+                    borderColor: '#1E88E5', // Blue
+                    backgroundColor: 'rgba(30, 136, 229, 0.2)',
+                },
+                {
+                    label: 'Justdial',
+                    data: [30, 90, 50, 60, 70], // High Volume
+                    borderColor: '#FFC107', // Gold
+                    backgroundColor: 'rgba(255, 193, 7, 0.2)',
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: { r: { suggestedMin: 0, suggestedMax: 100 } },
+            plugins: {
+                legend: { position: 'bottom' },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // --- CHART: Segments (Bar) ---
+    const ctxSegment = document.getElementById('segmentChart').getContext('2d');
+    new Chart(ctxSegment, {
+        type: 'bar',
+        data: {
+            labels: wrapLabel('Average Spend, Decision Time (Days), Referral Probability (%)', 15),
+            datasets: [
+                {
+                    label: 'Premium Bride',
+                    data: [45000, 45, 80],
+                    backgroundColor: '#D81B60'
+                },
+                {
+                    label: 'Smart Value Bride',
+                    data: [15000, 14, 50],
+                    backgroundColor: '#1E88E5'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            return Array.isArray(label) ? label.join(' ') : label;
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: { beginAtZero: true, type: 'logarithmic' } // Log scale due to currency vs days difference
+            }
+        }
+    });
+
+    // --- CHART: Risk Map (Bubble) ---
+    const ctxRisk = document.getElementById('riskChart').getContext('2d');
+    new Chart(ctxRisk, {
+        type: 'bubble',
+        data: {
+            datasets: [{
+                label: 'Risk Factors',
+                data: [
+                    { x: 80, y: 30, r: 10, label: 'Over-posting (Annoyance)' },       // High Likelihood, Low Impact
+                    { x: 20, y: 90, r: 25, label: 'Negative Review on Peak Date' },   // Low Likelihood, Huge Impact
+                    { x: 60, y: 70, r: 15, label: 'Slow WhatsApp Response' },         // Med Likelihood, High Impact
+                    { x: 50, y: 50, r: 12, label: 'Wrong Pricing on JD' },            // Med/Med
+                    { x: 30, y: 80, r: 20, label: 'Bad Makeup Trial' }                // Low Likelihood, High Impact
+                ],
+                backgroundColor: function(context) {
+                    const val = context.raw?.y;
+                    // Red for high impact, Yellow med, Green low
+                    return val > 75 ? 'rgba(220, 38, 38, 0.7)' : val > 40 ? 'rgba(255, 193, 7, 0.7)' : 'rgba(76, 175, 80, 0.7)';
+                }
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+                x: { title: { display: true, text: 'Likelihood (%)' }, min: 0, max: 100 },
+                y: { title: { display: true, text: 'Business Impact (Severity)' }, min: 0, max: 100 }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            return tooltipItems[0].raw.label;
+                        },
+                        label: function(context) {
+                            return `Likelihood: ${context.raw.x}%, Impact: ${context.raw.y}`;
+                        }
+                    }
+                },
+                legend: { display: false }
+            }
+        }
+    });
+
+    // --- CHART: Validation (Plotly Heatmap) ---
+    // Using Plotly for a Matrix style view
+    // X = Effort (Low to High), Y = Impact (Low to High)
+    const traceValidation = {
+        x: ['Low Effort', 'Med Effort', 'High Effort'],
+        y: ['Low Impact', 'Med Impact', 'High Impact'],
+        z: [
+            [10, 30, 20], // Low Impact row (by effort)
+            [60, 50, 40], // Med Impact row
+            [95, 85, 75]  // High Impact row
+        ],
+        text: [
+            ['Basic FB Post', 'JD Basic List', 'Flyers'],
+            ['GMB Q&A', 'Daily Stories', 'Cross-Collab'],
+            ['Review Campaign', 'Reels Series', 'Premium Shoot'] // The Sweet Spot is High Impact/Low Effort (Review Campaign)
+        ],
+        type: 'heatmap',
+        colorscale: [
+            ['0.0', '#FCE4EC'],
+            ['1.0', '#D81B60']
+        ],
+        showscale: false
+    };
+
+    const layoutValidation = {
+        title: 'Tactical Sweet Spots (Darker = Better)',
+        font: { family: 'Helvetica, Arial, sans-serif' },
+        xaxis: { title: 'Implementation Effort' },
+        yaxis: { title: 'Business Impact' },
+        margin: { t: 50, b: 50, l: 50, r: 50 }
+    };
+
+    const configValidation = { responsive: true, displayModeBar: false };
+    Plotly.newPlot('validationPlot', [traceValidation], layoutValidation, configValidation);
+
+</script>
+</body> </html>

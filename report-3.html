@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jaipur Salon Digital Audit System 2024-25</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #F3F4F6; /* Light gray background */
+            color: #1F2937; /* Dark gray text */
+        }
+
+        /* Palette Definition (Vibrant & Professional) */
+        :root {
+            --color-budget: #D97706; /* Amber-600 */
+            --color-inter: #DB2777; /* Pink-600 */
+            --color-high: #4F46E5; /* Indigo-600 */
+        }
+
+        .text-budget { color: var(--color-budget); }
+        .bg-budget { background-color: var(--color-budget); }
+        .text-inter { color: var(--color-inter); }
+        .bg-inter { background-color: var(--color-inter); }
+        .text-high { color: var(--color-high); }
+        .bg-high { background-color: var(--color-high); }
+
+        /* Chart Container Strict Styling */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Max width to prevent stretching */
+            height: 350px;    /* Base height */
+            max-height: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        /* Card Hover Effects */
+        .stat-card {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+        }
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Process Flow Styling (CSS only, no Mermaid) */
+        .step-connector {
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            width: 2rem;
+            height: 2px;
+            background-color: #9CA3AF;
+            transform: translateY(-50%);
+            z-index: 0;
+        }
+        .last-step .step-connector { display: none; }
+    </style>
+
+    <!--
+        Palette Used: "Vibrant Professional"
+        Primary: #4F46E5 (Indigo)
+        Secondary: #DB2777 (Pink)
+        Accent: #D97706 (Amber)
+        Background: #F3F4F6
+
+        NO SVG used.
+        NO Mermaid JS used.
+    -->
+</head>
+<body class="antialiased">
+
+    <!-- HEADER / HERO -->
+    <header class="bg-white shadow-lg relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-amber-600 via-pink-600 to-indigo-600"></div>
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">The 6-Checklist Digital Audit System</h1>
+            <p class="text-xl text-gray-600 font-light mb-2">For Jaipur Salons (2024-25)</p>
+            <p class="text-md text-indigo-600 font-semibold uppercase tracking-wider">Analysis + Action Framework</p>
+        </div>
+    </header>
+
+    <!-- INTRO SECTION -->
+    <section class="container mx-auto px-6 py-12">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-6 text-gray-800">Why This Audit Matters</h2>
+            <p class="text-lg text-gray-600 leading-relaxed">
+                The Jaipur beauty market is a unique ecosystem driven by hyper-local trust, destination weddings, and intense "Word of Mouth" (WOM). A generic digital strategy fails here. This infographic visualizes a <strong>segment-specific</strong> audit system designed to diagnose weaknesses and unlock growth for Budget, Intermediate, and High-Value salons.
+            </p>
+        </div>
+    </section>
+
+    <!-- SECTION 1: THE THREE TIERS (Comparison) -->
+    <section class="container mx-auto px-6 py-8">
+        <div class="flex flex-col md:flex-row gap-6 justify-center">
+            <!-- Budget Card -->
+            <div class="stat-card bg-white rounded-xl shadow-md p-6 border-t-4 border-amber-600 flex-1">
+                <div class="text-center mb-4">
+                    <span class="text-4xl">🏷️</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 text-center mb-2">Budget Segment</h3>
+                <p class="text-sm text-gray-500 text-center uppercase tracking-wide font-semibold">Volume & Trust</p>
+                <hr class="my-4 border-gray-100">
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start"><span class="mr-2 text-amber-600">➤</span> <strong>Goal:</strong> "Sasta aur Accha" (Good & Cheap)</li>
+                    <li class="flex items-start"><span class="mr-2 text-amber-600">➤</span> <strong>Key Driver:</strong> Justdial & WhatsApp</li>
+                    <li class="flex items-start"><span class="mr-2 text-amber-600">➤</span> <strong>Fear:</strong> Hidden Charges</li>
+                </ul>
+            </div>
+
+            <!-- Intermediate Card -->
+            <div class="stat-card bg-white rounded-xl shadow-md p-6 border-t-4 border-pink-600 flex-1">
+                <div class="text-center mb-4">
+                    <span class="text-4xl">✨</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 text-center mb-2">Intermediate Segment</h3>
+                <p class="text-sm text-gray-500 text-center uppercase tracking-wide font-semibold">Growth & Validation</p>
+                <hr class="my-4 border-gray-100">
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start"><span class="mr-2 text-pink-600">➤</span> <strong>Goal:</strong> Lifestyle Upgrade</li>
+                    <li class="flex items-start"><span class="mr-2 text-pink-600">➤</span> <strong>Key Driver:</strong> Instagram Reels & Social Proof</li>
+                    <li class="flex items-start"><span class="mr-2 text-pink-600">➤</span> <strong>Fear:</strong> Being "Average"</li>
+                </ul>
+            </div>
+
+            <!-- High-Value Card -->
+            <div class="stat-card bg-white rounded-xl shadow-md p-6 border-t-4 border-indigo-600 flex-1">
+                <div class="text-center mb-4">
+                    <span class="text-4xl">👑</span>
+                </div>
+                <h3 class="text-2xl font-bold text-gray-800 text-center mb-2">High-Value Segment</h3>
+                <p class="text-sm text-gray-500 text-center uppercase tracking-wide font-semibold">Brand & Exclusivity</p>
+                <hr class="my-4 border-gray-100">
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-start"><span class="mr-2 text-indigo-600">➤</span> <strong>Goal:</strong> Aspirational Status</li>
+                    <li class="flex items-start"><span class="mr-2 text-indigo-600">➤</span> <strong>Key Driver:</strong> Brand Authority & Aesthetics</li>
+                    <li class="flex items-start"><span class="mr-2 text-indigo-600">➤</span> <strong>Fear:</strong> Inconsistency</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: STRATEGIC FOCUS RADAR -->
+    <section class="bg-white py-12 shadow-inner">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Strategic Focus by Segment</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+                Not all salons should play the same game. This radar chart reveals the drastic shift in platform priority. Budget salons survive on local listings (Justdial/GMB), while Luxury salons live or die by their Instagram aesthetic.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <!-- Chart Col -->
+                <div class="bg-gray-50 rounded-lg p-4 shadow-sm">
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Legend/Context Col -->
+                <div class="space-y-6">
+                    <div class="flex items-center p-4 bg-amber-50 border-l-4 border-amber-600 rounded">
+                        <div class="text-3xl mr-4">📍</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Budget Strategy</h4>
+                            <p class="text-sm text-gray-600">Maximize <strong>Justdial & GMB</strong>. Aesthetics are secondary to clarity and price transparency.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-pink-50 border-l-4 border-pink-600 rounded">
+                        <div class="text-3xl mr-4">⭐</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Intermediate Strategy</h4>
+                            <p class="text-sm text-gray-600">Balance is key. <strong>Review Velocity</strong> and decent aesthetics drive social proof.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center p-4 bg-indigo-50 border-l-4 border-indigo-600 rounded">
+                        <div class="text-3xl mr-4">💎</div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Luxury Strategy</h4>
+                            <p class="text-sm text-gray-600"><strong>Aesthetics</strong> are non-negotiable. Listings matter less than brand desirability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ACTION PRIORITY MATRIX -->
+    <section class="container mx-auto px-6 py-12">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">The Action Priority Matrix</h2>
+        <p class="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+            Based on the "Action Checklists," this scatter plot maps tasks by <strong>Difficulty vs. Impact</strong>. The "Quick Wins" (Top Left) should be executed in Week 1. The "Major Projects" (Top Right) define long-term growth.
+        </p>
+
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <div class="chart-container" style="max-width: 800px; height: 500px; max-height: 600px;">
+                <canvas id="scatterChart"></canvas>
+            </div>
+            <div class="mt-6 text-center">
+                <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-bold mr-2">Top Left: Quick Wins</span>
+                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-bold mr-2">Top Right: Major Projects</span>
+                <span class="inline-block px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-xs font-bold">Bottom: Low Priority</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: JAIPUR SEASONALITY & SCORE -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                <!-- Line Chart: Seasonality -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">The "Jaipur Season" Effect</h3>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        Revenue in Jaipur is heavily skewed towards the wedding season (Oct-Feb). The audit system emphasizes ramping up digital presence in <strong>September</strong> to capture this wave.
+                    </p>
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                        <div class="chart-container">
+                            <canvas id="lineChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Doughnut Chart: Score Breakdown -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Audit Score Composition</h3>
+                    <p class="text-gray-600 mb-6 text-sm">
+                        The final "Digital Health Score" (0-100) is a weighted average. Notice how <strong>Trust Signals</strong> and <strong>Visual Quality</strong> make up 50% of the total score.
+                    </p>
+                    <div class="bg-white rounded-lg shadow-md p-4">
+                        <div class="chart-container">
+                            <canvas id="doughnutChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: PROCESS FLOW -->
+    <section class="container mx-auto px-6 py-12 text-center">
+        <h2 class="text-3xl font-bold text-gray-800 mb-10">The Audit Implementation Loop</h2>
+
+        <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+
+            <!-- Step 1 -->
+            <div class="relative group w-full md:w-1/4">
+                <div class="bg-white p-6 rounded-lg shadow-md border-b-4 border-indigo-500 z-10 relative">
+                    <div class="text-4xl mb-2">📋</div>
+                    <h4 class="font-bold text-lg">1. Analysis</h4>
+                    <p class="text-xs text-gray-500">Run the Segment Specific Checklist (Budget/Inter/High)</p>
+                </div>
+                <div class="hidden md:block absolute top-1/2 -right-4 text-gray-400 transform -translate-y-1/2 text-2xl">➔</div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="relative group w-full md:w-1/4">
+                <div class="bg-white p-6 rounded-lg shadow-md border-b-4 border-pink-500 z-10 relative">
+                    <div class="text-4xl mb-2">🛠️</div>
+                    <h4 class="font-bold text-lg">2. Action</h4>
+                    <p class="text-xs text-gray-500">Execute "Quick Wins" from the Action Matrix immediately.</p>
+                </div>
+                <div class="hidden md:block absolute top-1/2 -right-4 text-gray-400 transform -translate-y-1/2 text-2xl">➔</div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="relative group w-full md:w-1/4">
+                <div class="bg-white p-6 rounded-lg shadow-md border-b-4 border-amber-500 z-10 relative">
+                    <div class="text-4xl mb-2">📈</div>
+                    <h4 class="font-bold text-lg">3. Optimization</h4>
+                    <p class="text-xs text-gray-500">Monitor GMB Rank & Review Velocity weekly.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2 font-light">The 6-Checklist Digital Audit System</p>
+            <p class="text-xs text-gray-500">Based on Jaipur Market Dynamics & Indian Consumer Psychology</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT FOR CHARTS -->
+    <script>
+        // --- UTILITY: LABEL WRAPPING ---
+        function splitLabel(label) {
+            if (typeof label !== 'string' || label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + ' ' + words[i]).length <= 16) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- UTILITY: TOOLTIP CALLBACK ---
+        const tooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // --- CHART 1: RADAR CHART (Strategic Focus) ---
+        const ctxRadar = document.getElementById('radarChart').getContext('2d');
+        const radarLabels = ['Justdial Visibility', 'GMB Optimization', 'Review Velocity', 'Insta Aesthetics', 'Brand Exclusivity'];
+
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: radarLabels.map(splitLabel),
+                datasets: [
+                    {
+                        label: 'Budget Salon',
+                        data: [95, 90, 60, 30, 10],
+                        borderColor: '#D97706', // Amber
+                        backgroundColor: 'rgba(217, 119, 6, 0.2)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'Intermediate',
+                        data: [50, 80, 85, 70, 40],
+                        borderColor: '#DB2777', // Pink
+                        backgroundColor: 'rgba(219, 39, 119, 0.2)',
+                        borderWidth: 2
+                    },
+                    {
+                        label: 'High-Value',
+                        data: [20, 70, 60, 100, 100],
+                        borderColor: '#4F46E5', // Indigo
+                        backgroundColor: 'rgba(79, 70, 229, 0.2)',
+                        borderWidth: 2
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    r: {
+                        angleLines: { color: '#E5E7EB' },
+                        grid: { color: '#E5E7EB' },
+                        pointLabels: {
+                            font: { size: 11, family: 'Poppins' },
+                            color: '#4B5563'
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // --- CHART 2: SCATTER PLOT (Action Matrix) ---
+        const ctxScatter = document.getElementById('scatterChart').getContext('2d');
+
+        new Chart(ctxScatter, {
+            type: 'scatter',
+            data: {
+                datasets: [
+                    {
+                        label: 'Quick Wins (High Impact, Low Effort)',
+                        data: [
+                            {x: 2, y: 9, label: 'Fix GMB Pin'},
+                            {x: 3, y: 8, label: 'Upload Rate Card'},
+                            {x: 3, y: 9, label: 'Family Reviews'},
+                            {x: 4, y: 7, label: 'Update Bio'}
+                        ],
+                        backgroundColor: '#10B981', // Emerald
+                        pointRadius: 6
+                    },
+                    {
+                        label: 'Major Projects (High Impact, High Effort)',
+                        data: [
+                            {x: 8, y: 10, label: 'Prof. Photoshoot'},
+                            {x: 7, y: 9, label: 'Influencer Collab'},
+                            {x: 9, y: 8, label: 'Salon Renovation'},
+                            {x: 7, y: 8, label: 'Reels Strategy'}
+                        ],
+                        backgroundColor: '#4F46E5', // Indigo
+                        pointRadius: 6
+                    },
+                    {
+                        label: 'Maintenance (Low Impact)',
+                        data: [
+                            {x: 2, y: 3, label: 'Quote Posts'},
+                            {x: 4, y: 4, label: 'FB Sync'},
+                            {x: 5, y: 3, label: 'Festive Wishes'}
+                        ],
+                        backgroundColor: '#9CA3AF', // Gray
+                        pointRadius: 6
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.raw.label;
+                            }
+                        }
+                    },
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    x: {
+                        title: { display: true, text: 'Difficulty (1-10)' },
+                        min: 0, max: 10
+                    },
+                    y: {
+                        title: { display: true, text: 'Business Impact (1-10)' },
+                        min: 0, max: 11
+                    }
+                }
+            }
+        });
+
+        // --- CHART 3: LINE CHART (Seasonality) ---
+        const ctxLine = document.getElementById('lineChart').getContext('2d');
+
+        new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: ['Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'], // Short labels don't need wrapping
+                datasets: [{
+                    label: 'Revenue Index (Jaipur)',
+                    data: [30, 45, 70, 95, 100, 90, 85, 50],
+                    borderColor: '#DB2777', // Pink
+                    backgroundColor: 'rgba(219, 39, 119, 0.1)',
+                    fill: true,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { display: false }
+                },
+                scales: {
+                    y: { beginAtZero: true, title: { display: true, text: 'Activity Level' } }
+                }
+            }
+        });
+
+        // --- CHART 4: DOUGHNUT CHART (Score Breakdown) ---
+        const ctxDoughnut = document.getElementById('doughnutChart').getContext('2d');
+        const scoreLabels = ['Visual Quality', 'Platform Hygiene', 'Review Quality', 'Brand Consistency', 'Trust Signals'];
+
+        new Chart(ctxDoughnut, {
+            type: 'doughnut',
+            data: {
+                labels: scoreLabels.map(splitLabel),
+                datasets: [{
+                    data: [25, 20, 20, 15, 20],
+                    backgroundColor: [
+                        '#4F46E5', // Indigo
+                        '#D97706', // Amber
+                        '#DB2777', // Pink
+                        '#10B981', // Emerald
+                        '#3B82F6'  // Blue
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: tooltipConfig,
+                    legend: { position: 'right', labels: { boxWidth: 12, font: { size: 11 } } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

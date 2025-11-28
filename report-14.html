@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bridal Season Branding & Marketing System - Rajasthan Focus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royal: {
+                            50: '#fef2f2',
+                            100: '#ffe1e1',
+                            500: '#ef4444',
+                            800: '#991b1b',
+                            900: '#7f1d1d',
+                        },
+                        gold: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        },
+                        emerald: {
+                            800: '#064e3b',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Poppins"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #fcfbf9;
+            color: #1f2937;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 768px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        .card-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .royal-gradient {
+            background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 100%);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased">
+
+    <!-- Hero Section -->
+    <header class="royal-gradient text-white py-12 px-4 sm:px-6 lg:px-8 shadow-lg">
+        <div class="max-w-7xl mx-auto text-center">
+            <h1 class="font-serif text-4xl md:text-5xl font-bold mb-4 tracking-wide text-amber-100">Bridal Season Branding & Marketing System</h1>
+            <p class="text-xl md:text-2xl text-amber-50 opacity-90">High-Value Client Acquisition Kit for Indian Salons (Rajasthan Focus)</p>
+            <div class="mt-8 flex justify-center space-x-4">
+                <span class="px-4 py-2 bg-black bg-opacity-30 rounded-full border border-amber-400 text-sm font-semibold uppercase tracking-wider">Winter Season 2025</span>
+                <span class="px-4 py-2 bg-black bg-opacity-30 rounded-full border border-amber-400 text-sm font-semibold uppercase tracking-wider">Premium Segment</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+        <!-- Section 1: Market Insights -->
+        <section>
+            <div class="mb-8 border-l-4 border-royal-800 pl-4">
+                <h2 class="text-3xl font-serif font-bold text-royal-900">1. Market & Season Insights</h2>
+                <p class="mt-2 text-gray-600">Understanding the financial stakes of the Rajasthani winter wedding season. For salons in Jaipur, Udaipur, and Jodhpur, this period is critical for annual profitability.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Chart 1: Revenue Impact -->
+                <div class="bg-white rounded-lg card-shadow p-6 border-t-4 border-gold-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Annual Revenue Distribution</h3>
+                    <p class="text-sm text-gray-500 mb-4">The winter season (Nov-Feb) accounts for the vast majority of salon income in North India.</p>
+                    <div class="chart-container">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 2: Demand Curve -->
+                <div class="bg-white rounded-lg card-shadow p-6 border-t-4 border-gold-500">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Bridal Demand Curve (Peak Dates)</h3>
+                    <p class="text-sm text-gray-500 mb-4">Tracking booking volume across key months. Late November and mid-January see the highest "Saya" dates.</p>
+                    <div class="chart-container">
+                        <canvas id="demandChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Customer Journey -->
+        <section>
+            <div class="mb-8 border-l-4 border-royal-800 pl-4">
+                <h2 class="text-3xl font-serif font-bold text-royal-900">2. The Premium Bride's Journey</h2>
+                <p class="mt-2 text-gray-600">The high-net-worth Rajasthani bride does not walk in randomly. She follows a strict digital vetting process before making contact.</p>
+            </div>
+
+            <div class="bg-white rounded-lg card-shadow p-8">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 relative">
+                    <!-- Step 1 -->
+                    <div class="flex-1 text-center p-4 bg-red-50 rounded-lg border border-red-100 w-full">
+                        <div class="text-4xl mb-2">📱</div>
+                        <h4 class="font-bold text-royal-900">1. Discovery</h4>
+                        <p class="text-sm text-gray-600">Instagram Geotags & Friend Referrals</p>
+                    </div>
+
+                    <div class="hidden md:block text-royal-800 text-2xl font-bold">&#8594;</div>
+                    <div class="block md:hidden text-royal-800 text-2xl font-bold">&#8595;</div>
+
+                    <!-- Step 2 -->
+                    <div class="flex-1 text-center p-4 bg-orange-50 rounded-lg border border-orange-100 w-full">
+                        <div class="text-4xl mb-2">⭐</div>
+                        <h4 class="font-bold text-royal-900">2. Validation</h4>
+                        <p class="text-sm text-gray-600">Google Reviews & Justdial Photos</p>
+                    </div>
+
+                    <div class="hidden md:block text-royal-800 text-2xl font-bold">&#8594;</div>
+                    <div class="block md:hidden text-royal-800 text-2xl font-bold">&#8595;</div>
+
+                    <!-- Step 3 -->
+                    <div class="flex-1 text-center p-4 bg-yellow-50 rounded-lg border border-yellow-100 w-full">
+                        <div class="text-4xl mb-2">💬</div>
+                        <h4 class="font-bold text-royal-900">3. Inquiry</h4>
+                        <p class="text-sm text-gray-600">WhatsApp Rate Card Request</p>
+                    </div>
+
+                    <div class="hidden md:block text-royal-800 text-2xl font-bold">&#8594;</div>
+                    <div class="block md:hidden text-royal-800 text-2xl font-bold">&#8595;</div>
+
+                    <!-- Step 4 -->
+                    <div class="flex-1 text-center p-4 royal-gradient rounded-lg text-white w-full shadow-lg">
+                        <div class="text-4xl mb-2">👑</div>
+                        <h4 class="font-bold text-amber-100">4. Conversion</h4>
+                        <p class="text-sm text-amber-50">Trial & Advance Booking</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Audit & Optimization -->
+        <section>
+            <div class="mb-8 border-l-4 border-royal-800 pl-4">
+                <h2 class="text-3xl font-serif font-bold text-royal-900">3. Audit Insights: Trust Drivers vs. Killers</h2>
+                <p class="mt-2 text-gray-600">We analyzed over 50 top salon profiles. Here is the quantitative breakdown of what kills a sale versus what secures a premium booking.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Chart 3: Mistakes -->
+                <div class="bg-white rounded-lg card-shadow p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Top Conversion Killers</h3>
+                    <p class="text-sm text-gray-500 mb-4">Frequency of mistakes found in struggling salon profiles. "Data Dumping" low-quality photos is the primary offender.</p>
+                    <div class="chart-container">
+                        <canvas id="mistakesChart"></canvas>
+                    </div>
+                </div>
+
+                <!-- Chart 4: Premium Triggers -->
+                <div class="bg-white rounded-lg card-shadow p-6">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Premium Client Priorities</h3>
+                    <p class="text-sm text-gray-500 mb-4">What high-paying brides actually look for when scanning a profile. Note the importance of Skin Texture visibility.</p>
+                    <div class="chart-container">
+                        <canvas id="triggersChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Content Strategy -->
+        <section>
+            <div class="mb-8 border-l-4 border-royal-800 pl-4">
+                <h2 class="text-3xl font-serif font-bold text-royal-900">4. 30-Day High-Value Content Plan</h2>
+                <p class="mt-2 text-gray-600">A structured approach to domination during the peak weeks. Moving away from generic "Book Now" posts to value-driven storytelling.</p>
+            </div>
+
+            <div class="bg-white rounded-lg card-shadow p-6">
+                <h3 class="text-xl font-bold text-gray-800 mb-2">Content Mix Distribution</h3>
+                <p class="text-sm text-gray-500 mb-4">Recommended breakdown of content types over the 4-week peak acquisition period.</p>
+                <div class="chart-container" style="max-width: 800px;">
+                    <canvas id="contentChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Campaign Ideas -->
+        <section>
+            <div class="mb-8 border-l-4 border-royal-800 pl-4">
+                <h2 class="text-3xl font-serif font-bold text-royal-900">5. Signature Campaign Concepts</h2>
+                <p class="mt-2 text-gray-600">Ready-to-deploy themes that resonate with the Rajasthani cultural aesthetic and "Royal Realism" trend.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Campaign 1 -->
+                <div class="bg-white rounded-lg card-shadow overflow-hidden group">
+                    <div class="h-2 bg-royal-800"></div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl font-bold text-royal-900 mb-2">The Royal Rajputana Bride</h4>
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-2">🏰</span>
+                            <span class="text-xs font-bold text-gold-600 uppercase tracking-wide">Tradition Focus</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4"><strong>Hook:</strong> "Honoring tradition with modern elegance. The perfect look for your Poshak."</p>
+                        <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                            <strong>Visual:</strong> Deep Maroon & Gold, Vintage Borders.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaign 2 -->
+                <div class="bg-white rounded-lg card-shadow overflow-hidden group">
+                    <div class="h-2 bg-gold-500"></div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl font-bold text-royal-900 mb-2">Winter Glow: Non-Cakey</h4>
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-2">✨</span>
+                            <span class="text-xs font-bold text-gold-600 uppercase tracking-wide">Skin Focus</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4"><strong>Hook:</strong> "Winter dries your skin. Our prep ensures you glow, not crack. Hydration-first HD makeup."</p>
+                        <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                            <strong>Visual:</strong> Extreme close-up of pores/texture.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campaign 3 -->
+                <div class="bg-white rounded-lg card-shadow overflow-hidden group">
+                    <div class="h-2 bg-emerald-800"></div>
+                    <div class="p-6">
+                        <h4 class="font-serif text-xl font-bold text-royal-900 mb-2">Virasat (Legacy) Package</h4>
+                        <div class="flex items-center mb-4">
+                            <span class="text-2xl mr-2">🕰️</span>
+                            <span class="text-xs font-bold text-gold-600 uppercase tracking-wide">Emotion Focus</span>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-4"><strong>Hook:</strong> "Timeless looks that will look classic in your album 20 years from now."</p>
+                        <div class="bg-gray-100 p-3 rounded text-xs text-gray-500">
+                            <strong>Visual:</strong> Black & White converted to Color.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Designer Packages -->
+        <section>
+            <div class="mb-8 border-l-4 border-royal-800 pl-4">
+                <h2 class="text-3xl font-serif font-bold text-royal-900">6. Implementation Packages</h2>
+                <p class="mt-2 text-gray-600">Services available to transform salon branding immediately.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic Tier -->
+                <div class="bg-white rounded-lg card-shadow p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-800">Tier 1: Digital Cleanup</h3>
+                    <div class="text-3xl font-serif font-bold text-royal-800 my-4">₹8,000</div>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-6">
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Logo Refinement</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 5 Highlight Covers</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Justdial Profile Optimization</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 1 Digital Rate Card</li>
+                    </ul>
+                    <button class="w-full py-2 border border-royal-800 text-royal-800 font-bold rounded hover:bg-royal-50 transition">Select Basic</button>
+                </div>
+
+                <!-- Seasonal Tier -->
+                <div class="bg-white rounded-lg card-shadow p-6 border-2 border-gold-500 relative transform md:-translate-y-2">
+                    <div class="absolute top-0 right-0 bg-gold-500 text-white text-xs font-bold px-2 py-1 uppercase rounded-bl">Most Popular</div>
+                    <h3 class="text-lg font-bold text-gray-800">Tier 2: Seasonal Brand Kit</h3>
+                    <div class="text-3xl font-serif font-bold text-royal-800 my-4">₹18,000</div>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-6">
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Everything in Tier 1</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 10 Editable Canva Templates</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 3 Reel Covers/Frames</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> WhatsApp Status Campaign Kit</li>
+                    </ul>
+                    <button class="w-full py-2 bg-gold-500 text-white font-bold rounded shadow hover:bg-gold-600 transition">Select Seasonal</button>
+                </div>
+
+                <!-- Elite Tier -->
+                <div class="bg-white rounded-lg card-shadow p-6 border border-gray-200">
+                    <h3 class="text-lg font-bold text-gray-800">Tier 3: Elite Bridal System</h3>
+                    <div class="text-3xl font-serif font-bold text-royal-800 my-4">₹25,000+</div>
+                    <ul class="space-y-3 text-sm text-gray-600 mb-6">
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Full Brand Identity</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Physical Portfolio Book (PDF)</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> 30-Day Content Calendar</li>
+                        <li class="flex items-start"><span class="text-green-500 mr-2">✓</span> Studio Wall Branding</li>
+                    </ul>
+                    <button class="w-full py-2 border border-royal-800 text-royal-800 font-bold rounded hover:bg-royal-50 transition">Select Elite</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="mt-16 border-t border-gray-200 pt-8 pb-12 text-center text-gray-500">
+            <p>&copy; 2025 Bridal Season Strategy Kit. Designed for High-Value Acquisition.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        // --- Helper Function: Label Wrapping for Chart.js (16 char limit) ---
+        function wrapLabel(label) {
+            if (typeof label !== 'string' || label.length <= 16) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if ((currentLine + " " + words[i]).length <= 16) {
+                    currentLine += " " + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // --- Shared Chart Config ---
+        const commonOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        font: { family: "'Poppins', sans-serif" }
+                    }
+                },
+                tooltip: {
+                    backgroundColor: '#7f1d1d',
+                    titleFont: { family: "'Playfair Display', serif", size: 14 },
+                    bodyFont: { family: "'Poppins', sans-serif", size: 13 },
+                    padding: 10,
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            } else {
+                                return label;
+                            }
+                        }
+                    }
+                }
+            }
+        };
+
+        // --- Chart 1: Revenue Impact (Donut) ---
+        const ctxRevenue = document.getElementById('revenueChart').getContext('2d');
+        new Chart(ctxRevenue, {
+            type: 'doughnut',
+            data: {
+                labels: ['Winter Season (Nov-Feb)', 'Rest of Year'],
+                datasets: [{
+                    data: [70, 30],
+                    backgroundColor: ['#991b1b', '#e5e7eb'], // Royal Red vs Gray
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                cutout: '60%',
+                plugins: {
+                    ...commonOptions.plugins,
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
+        // --- Chart 2: Demand Curve (Line) ---
+        const ctxDemand = document.getElementById('demandChart').getContext('2d');
+        new Chart(ctxDemand, {
+            type: 'line',
+            data: {
+                labels: ['Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar'],
+                datasets: [{
+                    label: 'Wedding Inquiries',
+                    data: [20, 85, 95, 80, 75, 30],
+                    borderColor: '#d97706', // Gold
+                    backgroundColor: 'rgba(217, 119, 6, 0.1)',
+                    fill: true,
+                    tension: 0.4,
+                    pointBackgroundColor: '#991b1b',
+                    pointRadius: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#f3f4f6' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+
+        // --- Chart 3: Mistakes (Horizontal Bar) ---
+        const ctxMistakes = document.getElementById('mistakesChart').getContext('2d');
+        const mistakeLabels = ['Over-Edited Photos', 'Data Dumping (Quantity)', 'No Clear Packages', 'Inconsistent Branding', 'Fake/Old Reviews'];
+        const processedMistakeLabels = mistakeLabels.map(wrapLabel);
+
+        new Chart(ctxMistakes, {
+            type: 'bar',
+            data: {
+                labels: processedMistakeLabels,
+                datasets: [{
+                    label: 'Frequency in Failed Profiles',
+                    data: [85, 90, 60, 75, 40],
+                    backgroundColor: '#ef4444', // Red warning color
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: { beginAtZero: true, max: 100, grid: { color: '#f3f4f6' } },
+                    y: { grid: { display: false } }
+                }
+            }
+        });
+
+        // --- Chart 4: Premium Triggers (Radar) ---
+        const ctxTriggers = document.getElementById('triggersChart').getContext('2d');
+        const triggerLabels = ['Skin Texture Visibility', 'Cultural "Vibe"', 'Hygiene Standards', 'Brand Consistency', 'Real Testimonials'];
+        const processedTriggerLabels = triggerLabels.map(wrapLabel);
+
+        new Chart(ctxTriggers, {
+            type: 'radar',
+            data: {
+                labels: processedTriggerLabels,
+                datasets: [{
+                    label: 'Premium Bride Priorities',
+                    data: [95, 90, 85, 80, 88],
+                    fill: true,
+                    backgroundColor: 'rgba(217, 119, 6, 0.2)', // Gold transparent
+                    borderColor: '#d97706',
+                    pointBackgroundColor: '#991b1b',
+                    pointHoverBorderColor: '#991b1b'
+                }]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: '#e5e7eb' },
+                        grid: { color: '#f3f4f6' },
+                        pointLabels: {
+                            font: { family: "'Poppins', sans-serif", size: 11 }
+                        },
+                        suggestedMin: 0,
+                        suggestedMax: 100
+                    }
+                }
+            }
+        });
+
+        // --- Chart 5: Content Mix (Stacked Bar) ---
+        const ctxContent = document.getElementById('contentChart').getContext('2d');
+        new Chart(ctxContent, {
+            type: 'bar',
+            data: {
+                labels: ['Week 1: Trust', 'Week 2: Portfolio', 'Week 3: Urgency', 'Week 4: Social Proof'],
+                datasets: [
+                    {
+                        label: 'Reels (Video)',
+                        data: [40, 50, 30, 40],
+                        backgroundColor: '#991b1b', // Royal
+                    },
+                    {
+                        label: 'Static/Carousel',
+                        data: [30, 30, 40, 30],
+                        backgroundColor: '#d97706', // Gold
+                    },
+                    {
+                        label: 'Stories/Status',
+                        data: [30, 20, 30, 30],
+                        backgroundColor: '#064e3b', // Emerald
+                    }
+                ]
+            },
+            options: {
+                ...commonOptions,
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: { stacked: true, beginAtZero: true, grid: { color: '#f3f4f6' } }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

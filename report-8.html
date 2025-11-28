@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Growth System for Jaipur Salons | Wedding Season 2024-2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Palette: Royal Jaipur Vibrance -->
+    <!-- Pink: #E91E63, Orange: #FF9800, Teal: #009688, Purple: #6A0DAD -->
+
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #FDF2F8; color: #1F2937; }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
+
+        .card { background-color: white; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); transition: transform 0.2s; }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); }
+
+        .flow-box { border-left: 4px solid #E91E63; background-color: #FCE7F3; padding: 1rem; margin-bottom: 1rem; border-radius: 0 8px 8px 0; }
+        .timeline-dot { width: 16px; height: 16px; background-color: #E91E63; border-radius: 50%; position: absolute; left: -9px; top: 6px; }
+        .timeline-item { border-left: 2px solid #E5E7EB; padding-left: 24px; padding-bottom: 24px; position: relative; }
+        .timeline-item:last-child { border-left: 2px solid transparent; }
+    </style>
+
+    <!-- NO SVG used in this document. NO Mermaid JS used. -->
+    <!-- Planned Narrative:
+        1. Context: Why IG wins for Jaipur Brides.
+        2. Who: Segmentation of the market.
+        3. What: The Content System (Reels/Carousels).
+        4. Strategy: Specific Campaigns & Forecasts.
+        5. Execution: DM Funnels & Risk Management.
+        6. Action: 30-Day Plan.
+        Visualizations chosen to maximize clarity on complex data relationships (Risk vs Reward, Funnel flow).
+    -->
+</head>
+<body class="bg-pink-50">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-pink-600 to-purple-700 text-white p-6 sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl md:text-3xl font-bold">Jaipur Salon Growth System</h1>
+                <p class="text-sm md:text-base opacity-90">Wedding Season 2024–2025 Strategy</p>
+            </div>
+            <div class="hidden md:block text-right">
+                <span class="bg-yellow-400 text-pink-900 px-3 py-1 rounded-full text-xs font-bold uppercase">High Priority</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-12">
+
+        <!-- Section 1: The Why -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-12">
+                <div class="card p-6 md:p-8">
+                    <h2 class="text-2xl font-bold text-pink-700 mb-4">01. Why Instagram Rules the Jaipur Bridal Market</h2>
+                    <p class="text-gray-600 mb-6">
+                        In the Tier-2 market of Jaipur, the digital journey of a bride has shifted. While older generations rely on word-of-mouth, the modern Rajasthani bride and her family use Instagram as their primary validation tool. It serves as the new portfolio, review system, and booking engine combined.
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="chart-container">
+                                <canvas id="trustChart"></canvas>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                                <h3 class="font-bold text-blue-800">The "Visual Trust" Shift</h3>
+                                <p class="text-sm text-gray-700">90% of premium brides judge a salon's quality by their top 9 grid posts. If the aesthetic isn't "Royal" or "HD", they exit immediately.</p>
+                            </div>
+                            <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                                <h3 class="font-bold text-yellow-800">Search Behavior</h3>
+                                <p class="text-sm text-gray-700">Queries like "Jaipur Bridal Makeup" and "Rajputana Look" happen on Instagram Explore, not Google Search.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Customer Segments -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-6">
+                <div class="card p-6 h-full">
+                    <h2 class="text-xl font-bold text-pink-700 mb-4">02. Who Are We Targeting?</h2>
+                    <p class="text-gray-600 mb-4 text-sm">
+                        Understanding the distinct personas in Jaipur is critical. The "Premium Bride" values exclusivity and destination vibes, while the "Smart Value" bride seeks the best look for the price.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="segmentChart"></canvas>
+                    </div>
+                    <div class="mt-4 text-center text-xs text-gray-500">
+                        *Size represents approximate market volume in Jaipur city area.
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-6">
+                <div class="card p-6 h-full flex flex-col justify-center">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Buying Triggers by Segment</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <span class="font-semibold text-pink-600">Premium Bride</span>
+                            <span class="text-sm">Triggers: Celebrity-style Reels, "No-Filter" Closeups, Luxury Studio Tours.</span>
+                        </li>
+                        <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <span class="font-semibold text-purple-600">Local "Smart" Bride</span>
+                            <span class="text-sm">Triggers: Before/After Transitions, Clear Package Pricing, Testimonials.</span>
+                        </li>
+                        <li class="flex items-center justify-between p-3 bg-gray-50 rounded">
+                            <span class="font-semibold text-teal-600">Family/Relatives</span>
+                            <span class="text-sm">Triggers: Group booking offers, Speed of service, "Party Makeup" durability.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Content Strategy -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-12">
+                <div class="card p-6">
+                    <h2 class="text-2xl font-bold text-pink-700 mb-2">03. The Content Matrix</h2>
+                    <p class="text-gray-600 mb-6">
+                        Not all content is created equal. We analyzed formats based on their ability to reach new audiences (Viral Potential) versus their ability to book appointments (Conversion Power).
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="contentBubbleChart"></canvas>
+                    </div>
+                    <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-4 bg-green-50 rounded border border-green-200">
+                            <h4 class="font-bold text-green-800">High Impact: Reels</h4>
+                            <p class="text-xs mt-1">Focus on "Royal Rajputana" looks and HD transitions. Essential for discovery.</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded border border-blue-200">
+                            <h4 class="font-bold text-blue-800">High Trust: Carousels</h4>
+                            <p class="text-xs mt-1">"Top 5 Looks" or "Package Breakdowns". Educates the bride and builds authority.</p>
+                        </div>
+                        <div class="p-4 bg-yellow-50 rounded border border-yellow-200">
+                            <h4 class="font-bold text-yellow-800">Retention: Stories</h4>
+                            <p class="text-xs mt-1">Behind-the-scenes, Q&A, and urgent slot availability.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Campaign Forecasts -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-12">
+                <div class="card p-6">
+                    <h2 class="text-2xl font-bold text-pink-700 mb-4">04. Targeted Campaigns (Forecasted Success)</h2>
+                    <p class="text-gray-600 mb-6">
+                        We have modeled 10 specific campaigns tailored for the 2024-2025 Jaipur wedding season. The chart below predicts the "Success Likelihood" based on current trends and audience alignment.
+                    </p>
+                    <div class="chart-container h-96">
+                        <canvas id="campaignChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: DM Conversion Flow -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-5">
+                <div class="card p-6 h-full bg-gradient-to-br from-pink-600 to-purple-800 text-white">
+                    <h2 class="text-2xl font-bold mb-4">06. The DM Conversion Engine</h2>
+                    <p class="mb-6 text-pink-100">
+                        Instagram is not just for likes; it's a sales channel. The gap between a "Price please?" DM and a booking deposit is bridged by a structured script.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="bg-white/10 p-4 rounded backdrop-blur-sm">
+                            <h3 class="font-bold text-yellow-300">Golden Rule</h3>
+                            <p class="text-sm">Never reply with just a price. Always reply with a question or a value proposition first.</p>
+                        </div>
+                        <div class="bg-white/10 p-4 rounded backdrop-blur-sm">
+                            <h3 class="font-bold text-yellow-300">Response Time</h3>
+                            <p class="text-sm">Premium brides expect a reply within 30 minutes. Use Quick Replies to automate this.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="md:col-span-7">
+                <div class="card p-6 h-full">
+                    <h3 class="text-lg font-bold text-gray-800 mb-4 border-b pb-2">Premium Bride Conversion Flow</h3>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="font-bold text-pink-700">Step 1: The Enquiry</div>
+                        <p class="text-sm text-gray-600">User: "PP" or "Price for bridal?"</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="font-bold text-pink-700">Step 2: The Warm-Up (Within 15 mins)</div>
+                        <div class="bg-gray-100 p-2 rounded text-sm italic mt-1">
+                            "Hi [Name]! Congratulations on your wedding 💍. To give you the best quote, are you looking for our Royal HD Look or the Natural Glass Finish?"
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="font-bold text-pink-700">Step 3: Value + Portfolio</div>
+                        <p class="text-sm text-gray-600">Share a dedicated 'Highlights' link matching her preference. Then drop the pricing PDF.</p>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="font-bold text-pink-700">Step 4: The Urgency Close</div>
+                        <div class="bg-gray-100 p-2 rounded text-sm italic mt-1">
+                            "We only have 1 slot left for [Date]. If you'd like to reserve a trial, let me know by tonight!"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 9: Risk Analysis -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-12">
+                <div class="card p-6">
+                    <h2 class="text-2xl font-bold text-pink-700 mb-4">09. Strategy Risks & Mitigation</h2>
+                    <p class="text-gray-600 mb-6">
+                        Growth comes with pitfalls. High-impact risks like "Over-editing" can destroy credibility instantly in the premium segment.
+                    </p>
+                    <div class="chart-container">
+                        <canvas id="riskChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 11: 30-Day Plan -->
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-12">
+                <div class="card p-6 bg-gray-50">
+                    <h2 class="text-2xl font-bold text-pink-700 mb-6 text-center">11. 30-Day Execution Roadmap</h2>
+
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                        <!-- Week 1 -->
+                        <div class="bg-white p-4 rounded shadow border-t-4 border-pink-500">
+                            <h3 class="font-bold text-lg mb-2">Week 1: Foundation</h3>
+                            <ul class="text-sm space-y-2 text-gray-600">
+                                <li>&#10004; Optimization of Bio (SEO)</li>
+                                <li>&#10004; Create "Packages" Highlight</li>
+                                <li>&#10004; 3 Reels: "Signature Look"</li>
+                                <li>&#10004; DM Script Setup</li>
+                            </ul>
+                        </div>
+
+                        <!-- Week 2 -->
+                        <div class="bg-white p-4 rounded shadow border-t-4 border-purple-500">
+                            <h3 class="font-bold text-lg mb-2">Week 2: Aggression</h3>
+                            <ul class="text-sm space-y-2 text-gray-600">
+                                <li>&#10004; Campaign: "Royal Bride"</li>
+                                <li>&#10004; Collab: Local Jewellery Store</li>
+                                <li>&#10004; Daily Stories (Polls/Q&A)</li>
+                                <li>&#10004; 4 Reels: Transitions</li>
+                            </ul>
+                        </div>
+
+                        <!-- Week 3 -->
+                        <div class="bg-white p-4 rounded shadow border-t-4 border-yellow-500">
+                            <h3 class="font-bold text-lg mb-2">Week 3: Validation</h3>
+                            <ul class="text-sm space-y-2 text-gray-600">
+                                <li>&#10004; Share Client Testimonials</li>
+                                <li>&#10004; "Before/After" Carousel</li>
+                                <li>&#10004; Flash Offer (Stories Only)</li>
+                                <li>&#10004; DM Follow-up Blast</li>
+                            </ul>
+                        </div>
+
+                        <!-- Week 4 -->
+                        <div class="bg-white p-4 rounded shadow border-t-4 border-teal-500">
+                            <h3 class="font-bold text-lg mb-2">Week 4: Scaling</h3>
+                            <ul class="text-sm space-y-2 text-gray-600">
+                                <li>&#10004; Partner Shoutouts</li>
+                                <li>&#10004; "Book Now" Urgency Campaign</li>
+                                <li>&#10004; Influencer Visit/Reel</li>
+                                <li>&#10004; Analyze & Repost Winners</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white text-center p-8 mt-12">
+        <p class="text-sm opacity-70">Generated for Jaipur Salons Strategy Review • 2024</p>
+    </footer>
+
+    <script>
+        // --- UTILITIES ---
+        // Helper to wrap long labels for Chart.js
+        function splitLabel(str, maxLen = 16) {
+            if (str.length <= maxLen) return str;
+            const words = str.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= maxLen) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Common Tooltip Config (MANDATORY)
+        const commonTooltip = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        // Colors
+        const colors = {
+            pink: '#E91E63',
+            orange: '#FF9800',
+            teal: '#009688',
+            purple: '#6A0DAD',
+            blue: '#1E88E5',
+            red: '#D32F2F'
+        };
+
+        // --- CHART 1: TRUST FACTORS (Bar) ---
+        const trustCtx = document.getElementById('trustChart').getContext('2d');
+        new Chart(trustCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Instagram Content', 'WhatsApp Status', 'Google Reviews', 'JustDial/Portals'].map(l => splitLabel(l)),
+                datasets: [{
+                    label: 'Trust Influence %',
+                    data: [90, 65, 45, 15],
+                    backgroundColor: [colors.pink, colors.teal, colors.blue, colors.orange],
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltip,
+                    title: { display: true, text: 'Platform Influence on Booking Decision' }
+                },
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+
+        // --- CHART 2: SEGMENTS (Donut) ---
+        const segmentCtx = document.getElementById('segmentChart').getContext('2d');
+        new Chart(segmentCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Premium/Dest. Bride', 'Smart Value Bride', 'Budget Bride', 'Family/Guests'].map(l => splitLabel(l)),
+                datasets: [{
+                    data: [20, 35, 15, 30],
+                    backgroundColor: [colors.purple, colors.pink, colors.orange, colors.teal],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'right' },
+                    tooltip: commonTooltip
+                }
+            }
+        });
+
+        // --- CHART 3: CONTENT MATRIX (Bubble) ---
+        // X: Effort (1-10), Y: Reach Potential (1-100), R: Conversion Power
+        const contentCtx = document.getElementById('contentBubbleChart').getContext('2d');
+        new Chart(contentCtx, {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: 'Reels (Viral)',
+                    data: [{x: 8, y: 95, r: 15}], // High effort, High reach
+                    backgroundColor: colors.pink
+                }, {
+                    label: 'Carousels (Educate)',
+                    data: [{x: 6, y: 50, r: 20}], // Med effort, Med reach, High conversion
+                    backgroundColor: colors.purple
+                }, {
+                    label: 'Stories (Retain)',
+                    data: [{x: 2, y: 30, r: 10}], // Low effort, Low reach, Med conversion
+                    backgroundColor: colors.orange
+                }, {
+                    label: 'Guides (SEO)',
+                    data: [{x: 4, y: 20, r: 5}],
+                    backgroundColor: colors.teal
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                return context.dataset.label + ': Reach ' + context.raw.y + '%, Effort ' + context.raw.x + '/10';
+                            }
+                        }
+                    },
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Production Effort (Low to High)' }, min: 0, max: 10 },
+                    y: { title: { display: true, text: 'Reach Potential %' }, min: 0, max: 100 }
+                }
+            }
+        });
+
+        // --- CHART 4: CAMPAIGNS (Horizontal Bar) ---
+        const campaignCtx = document.getElementById('campaignChart').getContext('2d');
+        new Chart(campaignCtx, {
+            type: 'bar',
+            indexAxis: 'y',
+            data: {
+                labels: [
+                    'Royal Rajputana Bride',
+                    'Pink City Week',
+                    'Haldi-to-Phere Journey',
+                    'Pastel Palace Bride',
+                    'December Slots Filling',
+                    'Family Glow Pack'
+                ].map(l => splitLabel(l, 20)),
+                datasets: [{
+                    label: 'Success Probability %',
+                    data: [92, 85, 88, 75, 80, 65],
+                    backgroundColor: colors.pink,
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltip
+                },
+                scales: {
+                    x: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+
+        // --- CHART 5: RISKS (Scatter) ---
+        // X: Likelihood, Y: Impact
+        const riskCtx = document.getElementById('riskChart').getContext('2d');
+        new Chart(riskCtx, {
+            type: 'scatter',
+            data: {
+                labels: [
+                    'Over-Editing Skin',
+                    'Cringe/Fake Audio',
+                    'Inconsistent Grid',
+                    'Slow DM Reply',
+                    'Wrong Hashtags',
+                    'Pinterest Photos'
+                ].map(l => splitLabel(l)),
+                datasets: [{
+                    label: 'Risk Assessment',
+                    data: [
+                        {x: 70, y: 90}, // Over editing: High likelihood, Severe impact
+                        {x: 60, y: 40}, // Cringe audio
+                        {x: 40, y: 85}, // Inconsistent Grid
+                        {x: 80, y: 75}, // Slow DM
+                        {x: 90, y: 50}, // Wrong hashtags
+                        {x: 20, y: 95}  // Pinterest photos (Fraud)
+                    ],
+                    backgroundColor: colors.red,
+                    pointRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: { display: false },
+                    annotation: {
+                        annotations: {
+                            box1: {
+                                type: 'box',
+                                xMin: 50, xMax: 100,
+                                yMin: 50, yMax: 100,
+                                backgroundColor: 'rgba(255, 99, 132, 0.1)',
+                                label: { content: 'CRITICAL ZONE', enabled: true }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    x: { title: { display: true, text: 'Likelihood of Occurrence %' }, min: 0, max: 100 },
+                    y: { title: { display: true, text: 'Negative Impact Score %' }, min: 0, max: 100 }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

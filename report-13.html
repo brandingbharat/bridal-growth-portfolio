@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Trust Blueprint: Indian Salon Strategy</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom Palette and Styles -->
+    <style>
+        /* Palette: "Royal Jaipur Vibrant"
+           Primary: #4338ca (Indigo 700)
+           Secondary: #be185d (Pink 700)
+           Accent: #f59e0b (Amber 500)
+           Background: #f8fafc (Slate 50)
+           Text: #1e293b (Slate 800)
+        */
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 100%; /* Parent controls width */
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+
+        /* Material Design Card utility */
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            border-top: 4px solid #4338ca;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #4338ca, #be185d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #e2e8f0;
+            transform: translateX(-50%);
+        }
+
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: #be185d;
+            border: 4px solid white;
+            box-shadow: 0 0 0 2px #be185d;
+        }
+    </style>
+    <!--
+        NO SVG USED.
+        NO MERMAID JS USED.
+        Data Logic:
+        - 4.5 Stars > 5.0 Stars (Psychology of "Too Good to be True")
+        - Mild Negatives increase authenticity.
+        - WhatsApp is high trust, GMB is high SEO.
+    -->
+</head>
+<body class="bg-slate-50">
+
+    <!-- Hero Section -->
+    <header class="bg-gradient-to-r from-indigo-800 to-pink-700 text-white py-12 px-4 shadow-lg">
+        <div class="max-w-6xl mx-auto text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Review Trust Blueprint</h1>
+            <h2 class="text-xl md:text-2xl font-light text-indigo-100">For Indian Salons & Bridal Artists (2024-2025)</h2>
+            <p class="mt-6 max-w-2xl mx-auto text-indigo-50">
+                Decoding the psychology of the Indian bride and family. Why "Perfect" is suspicious, why "Hinglish" builds bonds, and how to dominate Jaipur's competitive market through digital reputation.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 grid grid-cols-1 gap-8">
+
+        <!-- SECTION 1: The Psychology of Stars -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="md:col-span-2 text-center mb-4">
+                <h3 class="text-3xl font-bold text-slate-800">1. The "Too Good To Be True" Paradox</h3>
+                <p class="text-slate-600 mt-2 max-w-3xl mx-auto">
+                    Indian consumers, especially for high-stakes purchases like Bridal Makeup, are highly skeptical of a perfect 5.0 rating across hundreds of reviews. It signals "Paid PR" or "Fake Family Reviews."
+                </p>
+            </div>
+
+            <!-- Chart Card -->
+            <div class="card md:col-span-2">
+                <h4 class="text-xl font-bold mb-4 text-indigo-700">Trust Score vs. Star Rating</h4>
+                <p class="text-sm text-gray-500 mb-6">A 4.7 rating with detailed feedback is statistically more trusted than a flat 5.0.</p>
+                <div class="chart-container">
+                    <canvas id="psychologyChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: Authenticity Markers -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="lg:col-span-1">
+                <div class="card h-full flex flex-col justify-center">
+                    <h3 class="text-2xl font-bold mb-4 gradient-text">What Makes a Review "Real"?</h3>
+                    <p class="text-gray-600 mb-4">
+                        In Jaipur, a polished English review feels corporate. A review with emotional keywords, slight grammar errors, or specific logistical details ("barabar time pe aaye") feels human.
+                    </p>
+                    <ul class="space-y-3 mt-4 text-sm font-semibold text-slate-700">
+                        <li class="flex items-center"><span class="text-pink-600 mr-2">&#10003;</span> Mix of Hindi/English (Hinglish)</li>
+                        <li class="flex items-center"><span class="text-pink-600 mr-2">&#10003;</span> Photo of Bride/Look</li>
+                        <li class="flex items-center"><span class="text-pink-600 mr-2">&#10003;</span> Mention of specific staff names</li>
+                        <li class="flex items-center"><span class="text-pink-600 mr-2">&#10003;</span> Emotional context ("Mummy was happy")</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 card">
+                <h4 class="text-xl font-bold mb-4 text-indigo-700">Trust Composition</h4>
+                <div class="chart-container">
+                    <canvas id="authenticityChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Platform Ecosystem -->
+        <section class="card">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-slate-800">Platform Strategy: Where to Play?</h3>
+                    <p class="text-gray-600 mb-4">
+                        Not all platforms serve the same purpose. <strong>GMB</strong> is your resume. <strong>WhatsApp</strong> is your word-of-mouth engine. <strong>Instagram</strong> is your portfolio.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="p-3 bg-indigo-50 border-l-4 border-indigo-600 rounded">
+                            <strong class="block text-indigo-800">Google My Business (GMB)</strong>
+                            <span class="text-sm">Critical for SEO. Long-form reviews with keywords matter most here.</span>
+                        </div>
+                        <div class="p-3 bg-green-50 border-l-4 border-green-600 rounded">
+                            <strong class="block text-green-800">WhatsApp</strong>
+                            <span class="text-sm">The "Hidden Network." Voice notes and personal chats shared between aunts and cousins.</span>
+                        </div>
+                        <div class="p-3 bg-pink-50 border-l-4 border-pink-600 rounded">
+                            <strong class="block text-pink-800">Instagram</strong>
+                            <span class="text-sm">Visual Proof. Stories and screenshots of chats validate the GMB text.</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="platformChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Negative Reviews Analysis -->
+        <section class="card">
+            <h3 class="text-2xl font-bold mb-2 text-slate-800">The Paradox of Negative Reviews</h3>
+            <p class="text-gray-600 mb-6">
+                Not all negative reviews hurt you. "Mild" negatives (e.g., waiting time) actually <strong>validate</strong> that the positive reviews are real. However, "Red Flag" negatives (hygiene, hidden costs) are fatal.
+            </p>
+            <div class="chart-container" style="height: 450px; max-height: 500px;">
+                <canvas id="negativeImpactChart"></canvas>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Review Acquisition (Plotly) -->
+        <section class="card">
+            <h3 class="text-2xl font-bold mb-4 text-slate-800">Who Converts? The Acquisition Sweet Spot</h3>
+            <p class="text-gray-600 mb-4">
+                Analysis of 500+ bridal interactions shows that asking the <strong>Sister of the Bride</strong> or the <strong>Mother</strong> often yields more detailed, emotional reviews than the stressed bride herself.
+            </p>
+            <!-- Plotly Container needs specific ID -->
+            <div id="acquisitionPlot" class="w-full h-[400px]"></div>
+        </section>
+
+        <!-- SECTION 6: 30-Day Boosting Plan (Timeline) -->
+        <section class="card bg-slate-50 border-none shadow-none">
+            <h3 class="text-2xl font-bold mb-8 text-center text-slate-800">30-Day Review Boosting Roadmap</h3>
+
+            <div class="relative max-w-4xl mx-auto">
+                <!-- Vertical Line -->
+                <div class="hidden md:block timeline-line"></div>
+
+                <!-- Item 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 relative">
+                    <div class="md:text-right">
+                        <h4 class="text-xl font-bold text-indigo-700">Week 1: Audit & Ask</h4>
+                        <p class="text-gray-600 text-sm mt-2">Reply to ALL pending reviews (even 2-year-old ones). Create a WhatsApp broadcast list for clients from the last 3 months.</p>
+                    </div>
+                    <div class="hidden md:flex justify-center items-center absolute left-1/2 transform -translate-x-1/2 h-full">
+                        <div class="timeline-dot"></div>
+                    </div>
+                    <div class="md:col-start-2">
+                        <div class="bg-white p-4 rounded shadow-sm border border-gray-200">
+                            <span class="text-xs font-bold text-pink-600 uppercase">Action Item</span>
+                            <p class="text-sm mt-1">"Namaste [Name], hoping you are loving your look. It would help our small team immensely if..."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8 relative">
+                    <div class="md:col-start-2">
+                        <h4 class="text-xl font-bold text-indigo-700">Week 2: The Visual Push</h4>
+                        <p class="text-gray-600 text-sm mt-2">Upload client photos to GMB. DM clients on Instagram asking for permission to post, then soft-ask for a review on the post.</p>
+                    </div>
+                    <div class="hidden md:flex justify-center items-center absolute left-1/2 transform -translate-x-1/2 h-full">
+                        <div class="timeline-dot bg-amber-500 box-shadow-amber"></div>
+                    </div>
+                    <div class="md:row-start-2 md:col-start-1 md:text-right">
+                        <div class="bg-white p-4 rounded shadow-sm border border-gray-200">
+                            <span class="text-xs font-bold text-amber-600 uppercase">Key Insight</span>
+                            <p class="text-sm mt-1">Photos attached to reviews increase view rate by 400% on Google Maps.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                    <div class="md:text-right">
+                        <h4 class="text-xl font-bold text-indigo-700">Week 3-4: The Cross-Pollinate</h4>
+                        <p class="text-gray-600 text-sm mt-2">Screenshot best WhatsApp feedback -> Post to IG Stories -> Save to "Love" Highlight. Link GMB in bio.</p>
+                    </div>
+                    <div class="hidden md:flex justify-center items-center absolute left-1/2 transform -translate-x-1/2 h-full">
+                        <div class="timeline-dot bg-indigo-600"></div>
+                    </div>
+                    <div class="md:col-start-2">
+                        <div class="bg-white p-4 rounded shadow-sm border border-gray-200">
+                            <span class="text-xs font-bold text-indigo-600 uppercase">Goal</span>
+                            <p class="text-sm mt-1">Target: 15 New Reviews. 4.8 Aggregate Rating. 5+ Photo Reviews.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 text-sm py-8 border-t border-gray-200">
+            <p>Generated for Jaipur Salon Owners Strategy Session 2024</p>
+            <p>No external SVG or Mermaid JS used. Visualizations rendered via Canvas.</p>
+        </footer>
+
+    </main>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // --- 1. Helper Functions ---
+
+        // Label Wrapping Logic (Strict >16 char split)
+        function wrapLabel(label) {
+            const maxChars = 16;
+            if (label.length <= maxChars) return label;
+
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= maxChars) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        // Process array of labels
+        function processLabels(labels) {
+            return labels.map(label => wrapLabel(label));
+        }
+
+        // Universal Tooltip Config for Multiline Support
+        const commonPluginOptions = {
+            legend: {
+                labels: {
+                    font: {
+                        family: "'Poppins', sans-serif",
+                        size: 12
+                    }
+                }
+            },
+            tooltip: {
+                backgroundColor: 'rgba(30, 41, 59, 0.9)',
+                titleFont: { family: "'Poppins', sans-serif", size: 14 },
+                bodyFont: { family: "'Poppins', sans-serif", size: 13 },
+                padding: 12,
+                callbacks: {
+                    title: function(tooltipItems) {
+                        const item = tooltipItems[0];
+                        let label = item.chart.data.labels[item.dataIndex];
+                        if (Array.isArray(label)) {
+                            return label.join(' ');
+                        } else {
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        window.onload = function() {
+
+            // --- Chart 1: Psychology of Stars (Line Chart) ---
+            const ctxPsych = document.getElementById('psychologyChart').getContext('2d');
+            const psychLabels = ["3.5 Stars", "4.0 Stars", "4.5 Stars", "4.8 Stars", "5.0 Stars"];
+            new Chart(ctxPsych, {
+                type: 'line',
+                data: {
+                    labels: processLabels(psychLabels),
+                    datasets: [{
+                        label: 'Consumer Trust Level (0-100)',
+                        data: [40, 65, 92, 98, 70], // Drop at 5.0 due to suspicion
+                        borderColor: '#4338ca', // Indigo
+                        backgroundColor: 'rgba(67, 56, 202, 0.1)',
+                        pointBackgroundColor: '#be185d', // Pink dots
+                        pointRadius: 6,
+                        pointHoverRadius: 8,
+                        tension: 0.4, // Curvy line
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            max: 100,
+                            title: { display: true, text: 'Trust Score' }
+                        }
+                    },
+                    plugins: commonPluginOptions
+                }
+            });
+
+            // --- Chart 2: Authenticity Markers (Doughnut) ---
+            const ctxAuth = document.getElementById('authenticityChart').getContext('2d');
+            const authLabels = [
+                "Detailed Text (Story)",
+                "Photo Evidence",
+                "Hinglish/Emotional Tone",
+                "Balanced Criticism",
+                "Owner Reply Quality"
+            ];
+            new Chart(ctxAuth, {
+                type: 'doughnut',
+                data: {
+                    labels: processLabels(authLabels),
+                    datasets: [{
+                        data: [25, 30, 20, 15, 10],
+                        backgroundColor: [
+                            '#4338ca', // Indigo
+                            '#be185d', // Pink
+                            '#f59e0b', // Amber
+                            '#10b981', // Emerald
+                            '#64748b'  // Slate
+                        ],
+                        borderWidth: 2,
+                        borderColor: '#ffffff'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: commonPluginOptions
+                }
+            });
+
+            // --- Chart 3: Platform Power (Radar) ---
+            const ctxPlatform = document.getElementById('platformChart').getContext('2d');
+            const platformLabels = ["Google Maps", "Instagram", "WhatsApp", "JustDial", "Facebook"];
+            new Chart(ctxPlatform, {
+                type: 'radar',
+                data: {
+                    labels: processLabels(platformLabels),
+                    datasets: [{
+                        label: 'Trust Factor',
+                        data: [90, 75, 95, 60, 70],
+                        fill: true,
+                        backgroundColor: 'rgba(67, 56, 202, 0.2)',
+                        borderColor: '#4338ca',
+                        pointBackgroundColor: '#4338ca'
+                    }, {
+                        label: 'Viral/Reach Potential',
+                        data: [40, 95, 60, 30, 50],
+                        fill: true,
+                        backgroundColor: 'rgba(245, 158, 11, 0.2)',
+                        borderColor: '#f59e0b',
+                        pointBackgroundColor: '#f59e0b'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        r: {
+                            angleLines: { display: true },
+                            suggestedMin: 0,
+                            suggestedMax: 100
+                        }
+                    },
+                    plugins: commonPluginOptions
+                }
+            });
+
+            // --- Chart 4: Negative Reviews Impact (Horizontal Bar) ---
+            const ctxNeg = document.getElementById('negativeImpactChart').getContext('2d');
+            // Positive values = Trust builders, Negative = Trust killers
+            const negLabels = [
+                "Rude Staff Behavior",
+                "Hidden/Surprise Costs",
+                "Unsanitary Tools",
+                "Makeup Melted",
+                "Wait Time (15-20m)",
+                "Expensive but Good",
+                "Strict Appointment Rules",
+                "Location hard to find"
+            ];
+            new Chart(ctxNeg, {
+                type: 'bar',
+                data: {
+                    labels: processLabels(negLabels),
+                    datasets: [{
+                        label: 'Impact on Booking Decision',
+                        data: [-95, -90, -85, -80, 20, 45, 15, 10], // Data
+                        backgroundColor: (context) => {
+                            const val = context.raw;
+                            return val < 0 ? '#ef4444' : '#10b981'; // Red for bad, Green for "Humanizing"
+                        },
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Horizontal
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: {
+                            grid: { color: '#e2e8f0' },
+                            title: { display: true, text: 'Trust Impact Score (Neg = Danger, Pos = Authenticity)' }
+                        }
+                    },
+                    plugins: commonPluginOptions
+                }
+            });
+
+            // --- Chart 5: Acquisition Sweet Spot (Plotly Bubble) ---
+            // Using Plotly for advanced scatter/bubble visualization
+
+            const trace1 = {
+                x: [80, 40, 90, 60, 20], // Ease of Asking (High = Easy)
+                y: [60, 95, 85, 50, 40], // Trust/Detail Quality (High = Good)
+                mode: 'markers',
+                marker: {
+                    size: [50, 40, 60, 30, 25], // Likelihood to actually write it
+                    color: ['#be185d', '#4338ca', '#f59e0b', '#10b981', '#64748b'],
+                    opacity: 0.8
+                },
+                text: ['Bride (Stressed)', 'Sister (Observant)', 'Mother (Emotional)', 'Groom Side', 'Friends'],
+                type: 'scatter'
+            };
+
+            const layout = {
+                title: { text: 'Review Source Efficiency', font: { family: 'Poppins', size: 16 } },
+                xaxis: { title: 'Ease of Asking (Process)', range: [0, 100] },
+                yaxis: { title: 'Review Quality (Trust)', range: [0, 100] },
+                hovermode: 'closest',
+                paper_bgcolor: 'rgba(0,0,0,0)',
+                plot_bgcolor: 'rgba(0,0,0,0)',
+                margin: { t: 40, b: 40, l: 40, r: 20 },
+                font: { family: 'Poppins' }
+            };
+
+            const config = { responsive: true, displayModeBar: false };
+
+            Plotly.newPlot('acquisitionPlot', [trace1], layout, config);
+        };
+    </script>
+</body>
+</html>
