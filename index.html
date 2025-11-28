@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Art of Bridal Growth | Salon Intelligence Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* [INLINE CSS BLOCK STARTS HERE] */
+        :root {
+            /* NEW RICH, ARTISTIC PALETTE */
+            --color-primary-bg: #FFFBF7; /* Soft Ivory/Linen */
+            --color-text-dark: #3C2A2F; /* Espresso Brown */
+            --color-accent-rose-gold: #AA6B6E; /* Brilliant Rose Gold */
+            --color-accent-plum: #5C3737; /* Deep Plum/Marsala */
+            --color-white: #ffffff;
+
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Open Sans', sans-serif;
+        }
+
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            color: var(--color-text-dark);
+            background-color: var(--color-primary-bg);
+            line-height: 1.6;
+            padding: 0 1rem;
+        }
+
+        /* --- Header & Hero Section (Emotional Storytelling) --- */
+        .hero-section {
+            text-align: center;
+            padding: 5rem 0 3rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-section h1 {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            color: var(--color-accent-plum);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: var(--color-text-dark);
+            opacity: 0.9;
+            font-style: italic;
+            margin-bottom: 2rem;
+        }
+
+        .hero-caption {
+            font-size: 1.5rem;
+            font-family: var(--font-serif);
+            color: var(--color-accent-rose-gold);
+            margin-top: -1rem;
+        }
+
+        .divider {
+            width: 100px;
+            height: 2px;
+            background-color: var(--color-accent-rose-gold);
+            margin: 2rem auto 4rem;
+        }
+
+        /* --- Insights Grid Layout (The Portfolio) --- */
+        .insights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            max-width: 1300px;
+            margin: 0 auto 6rem;
+            padding: 0;
+        }
+
+        /* --- Individual Card Style and Animations (Art Print Look) --- */
+        .insight-card {
+            background-color: var(--color-white);
+            border: 1px solid rgba(92, 55, 55, 0.1);
+            border-radius: 8px;
+            padding: 2.5rem;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.4s ease;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 320px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: artisticFadeIn 1.0s cubic-bezier(0.1, 0.7, 1.0, 1.0) forwards;
+        }
+
+        /* Staggered animation delay for artistic entrance */
+        .insight-card:nth-child(1) { animation-delay: 0.1s; }
+        .insight-card:nth-child(2) { animation-delay: 0.2s; }
+        .insight-card:nth-child(3) { animation-delay: 0.3s; }
+        .insight-card:nth-child(4) { animation-delay: 0.4s; }
+        .insight-card:nth-child(5) { animation-delay: 0.5s; }
+        .insight-card:nth-child(6) { animation-delay: 0.6s; }
+        .insight-card:nth-child(7) { animation-delay: 0.7s; }
+        .insight-card:nth-child(8) { animation-delay: 0.8s; }
+        .insight-card:nth-child(9) { animation-delay: 0.9s; }
+        .insight-card:nth-child(10) { animation-delay: 1.0s; }
+        .insight-card:nth-child(11) { animation-delay: 1.1s; }
+        .insight-card:nth-child(12) { animation-delay: 1.2s; }
+        .insight-card:nth-child(13) { animation-delay: 1.3s; }
+        .insight-card:nth-child(14) { animation-delay: 1.4s; }
+
+
+        .insight-card:hover {
+            transform: translateY(-10px) rotate(0.5deg) scale(1.02);
+            box-shadow: 0 15px 40px rgba(170, 107, 110, 0.4);
+            z-index: 10;
+        }
+
+        .card-header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            color: var(--color-accent-rose-gold);
+            margin-right: 1.2rem;
+            line-height: 1;
+        }
+
+        /* Strategic Title Styling */
+        .insight-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--color-accent-plum);
+            line-height: 1.2;
+        }
+
+        /* Emotional Description Styling */
+        .insight-card p {
+            font-size: 1.05rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+            flex-grow: 1;
+            color: var(--color-text-dark);
+            opacity: 0.85;
+        }
+
+        /* --- Button Styling (Emotional Call to Action) --- */
+        .btn-insights {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--color-accent-plum);
+            color: var(--color-white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            border: none;
+            box-shadow: 0 4px 15px rgba(92, 55, 55, 0.2);
+        }
+
+        .btn-insights:hover {
+            background-color: var(--color-accent-rose-gold);
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(170, 107, 110, 0.4);
+        }
+
+        /* --- Keyframe Animations (Smoother Transition) --- */
+        @keyframes artisticFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* --- Footer --- */
+        .footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(170, 107, 110, 0.2);
+            color: var(--color-text-dark);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .footer strong {
+            color: var(--color-accent-rose-gold);
+            font-family: var(--font-serif);
+        }
+        /* [INLINE CSS BLOCK ENDS HERE] */
+    </style>
+</head>
+<body>
+
+    <header class="hero-section">
+        <p class="hero-caption">Your Strategic Portfolio for the 2024–2025 Season</p>
+        <h1>The Art of Digital Growth & Bridal Connection</h1>
+        <p>Unlock high-value strategies tailored to the artistry, emotion, and luxury market of Jaipur & Rajasthan's bridal salons.</p>
+        <div class="divider"></div>
+    </header>
+
+    <main class="insights-grid">
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-chart-area card-icon"></i>
+                <h3>Rajasthan Salon Market Intelligence Report 2024-25</h3>
+            </div>
+            <p>Explore the <strong>$20 Billion bridal opportunity</strong> for salon owners in Rajasthan. Deep dive into Tier-2 hubs like Udaipur and Kota, revealing where the high-value brides are searching.</p>
+            <a href="/report-1" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-sitemap card-icon"></i>
+                <h3>Jaipur Salon Growth Bible – Integrated Strategy</h3>
+            </div>
+            <p>A <strong>360° blueprint</strong> combining Instagram, WhatsApp, GMB, Facebook, and Justdial to dominate the Jaipur bridal market. Strategy as seamless as the perfect bridal look.</p>
+            <a href="/report-2" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-lightbulb card-icon"></i>
+                <h3>The 6-Checklist Digital Audit System (For Jaipur Salons)</h3>
+            </div>
+            <p>A detailed framework for conducting digital audits to ensure <strong>maximum visibility</strong> and lead generation. Stop guessing, start mastering your presence during the bridal season.</p>
+            <a href="/report-3" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-gem card-icon"></i>
+                <h3>Jaipur Bridal & Salon Intelligence</h3>
+            </div>
+            <p>Market opportunity map and strategic playbook customized for Jaipur bridal salons, focusing on acquiring the <strong>premium, high-spend segment</strong> that values artistry.</p>
+            <a href="/report-4" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-book-open card-icon"></i>
+                <h3>Jaipur Salon Growth Playbook</h3>
+            </div>
+            <p>Validated strategies, campaigns, and <strong>risk analysis</strong> for Jaipur salons during peak wedding season. Your comprehensive guide to flawless execution.</p>
+            <a href="/report-5" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fab fa-whatsapp card-icon"></i>
+                <h3>WhatsApp Growth System (For Jaipur Salons)</h3>
+            </div>
+            <p>Leverage WhatsApp to increase bookings, build <strong>emotional customer loyalty</strong>, and drive authentic word-of-mouth marketing during the bridal season.</p>
+            <a href="/report-6" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fab fa-facebook-f card-icon"></i>
+                <h3>Facebook Growth System (For Jaipur Bridal Salons)</h3>
+            </div>
+            <p>A strategic manual to dominate the bridal market through Facebook ads, focusing on <strong>hyper-targeting family networks</strong> and key decision-makers.</p>
+            <a href="/report-7" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fab fa-instagram card-icon"></i>
+                <h3>Instagram Growth System (For Jaipur Salons)</h3>
+            </div>
+            <p>Master Instagram marketing, from influencer partnerships to organic content strategies, capturing the <strong>visual aspiration</strong> of every Jaipur bride.</p>
+            <a href="/report-8" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-map-marker-alt card-icon"></i>
+                <h3>Google My Business Growth System (For Jaipur Salons)</h3>
+            </div>
+            <p>Dominate <strong>local authority</strong> for bridal salons by optimizing Google My Business listings and reviews, ensuring you are the first name seen.</p>
+            <a href="/report-9" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-bullseye card-icon"></i>
+                <h3>Justdial Growth System (For Jaipur Salons)</h3>
+            </div>
+            <p>How to use Justdial’s premium targeting algorithm to drive <strong>qualified leads</strong> and conversions, turning searches into guaranteed bookings.</p>
+            <a href="/report-10" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-palette card-icon"></i>
+                <h3>Visual Content Blueprint (For Indian Salons – Jaipur Edition)</h3>
+            </div>
+            <p>A guide on using <strong>culturally resonant visual content</strong>, focusing on the aesthetics and psychology behind bridal salon posts that genuinely connect.</p>
+            <a href="/report-11" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-heart-circle-check card-icon"></i>
+                <h3>Review Trust Blueprint (For Indian Salons & Bridal Artists)</h3>
+            </div>
+            <p>Decoding the <strong>psychology of Indian brides and families</strong>, and how to dominate the competitive market through flawless digital reputation and trust building.</p>
+            <a href="/report-12" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-chart-pie card-icon"></i>
+                <h3>Canvas Infographic</h3>
+            </div>
+            <p>A detailed, easy-to-read infographic that summarizes <strong>key trends, strategies, and opportunities</strong> for quick strategic implementation.</p>
+            <a href="/report-13" class="btn-insights">View Portfolio</a>
+        </div>
+
+        <div class="insight-card">
+            <div class="card-header">
+                <i class="fas fa-tiara card-icon"></i>
+                <h3>Bridal Season Branding and Marketing System</h3>
+            </div>
+            <p>A high-value client acquisition kit focusing on <strong>premium segment branding</strong> and marketing for the 2025 bridal season. Position yourself as the unparalleled luxury choice.</p>
+            <a href="/report-14" class="btn-insights">View Portfolio</a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        &copy; 2024 Digital Growth Intelligence. Designed with the <strong>Artistry and Strategy</strong> of the Bridal Market in mind.
+    </footer>
+</body>
+</html>
